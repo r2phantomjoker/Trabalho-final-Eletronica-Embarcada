@@ -49,6 +49,7 @@
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>globals.c</itemPath>
+      <itemPath>motor.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

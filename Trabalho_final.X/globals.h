@@ -26,6 +26,33 @@
 #define MOTOR_DESCENDO  2   ///< Movimento descendente (Direção = 0)
 
 // ==========================================
+// MAPEAMENTO DE HARDWARE (Sensores de Andar)
+// ==========================================
+
+/**
+ * @brief Sensores Digitais (Térreo e 1º Andar).
+ * Conectados ao PORTB com Pull-Up ativado.
+ * Tipo: Sensor de Efeito Hall (A3144) - Coletor Aberto.
+ * * Lógica:
+ * - 1 (HIGH): Sem ímã (Elevador longe).
+ * - 0 (LOW):  Com ímã (Elevador no andar).
+ */
+#define SENSOR_S1       PORTBbits.RB0   ///< Sensor do Térreo (Andar 0). Leitura direta do pino.
+#define SENSOR_S2       PORTBbits.RB3   ///< Sensor do 1º Andar (Andar 1). Leitura direta do pino.
+
+/**
+ * @brief Sensores Analógicos (2º e 3º Andar).
+ * Conectados ao PORTA e lidos através dos Comparadores Analógicos.
+ * Configuração: FVR (2.048V) na entrada Positiva, Sensor na Negativa.
+ * * Lógica (Invertida pelo Comparador):
+ * - 0 (LOW):  Sem ímã (Sensor=5V > Ref=2V -> Saída 0).
+ * - 1 (HIGH): Com ímã (Sensor=0V < Ref=2V -> Saída 1).
+ */
+#define SENSOR_S3       CM1CON0bits.C1OUT  ///< Sensor do 2º Andar (Andar 2). Lê a saída do Comparador 1.
+#define SENSOR_S4       CM2CON0bits.C2OUT  ///< Sensor do 3º Andar (Andar 3). Lê a saída do Comparador 2.
+
+
+// ==========================================
 // MAPEAMENTO DE HARDWARE (Camada HAL)
 // ==========================================
 

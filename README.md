@@ -54,13 +54,6 @@ Exemplo:
 - **VV.V** → velocidade (mm/s, 1 casa decimal)
 - **TT.T** → temperatura da ponte H (°C)
 
-Aplicativos recomendados:
-- **Serial Bluetooth Terminal (Android)**
-- **HTerm (PC)**
-- App desktop de monitoramento:  
-https://github.com/UnB-Embedded-Lab/elevator1x4
-
----
 
 ## ▶️ Algoritmo de Atendimento
 

@@ -66,10 +66,10 @@
 /**
  * @brief Valores de PWM (0 a 1023 - 10 bits).
  * O roteiro sugere ciclo útil entre 40% e 50%[cite: 388].
- * 614 = ~60% de Duty Cycle.
+ * 410 = ~40% de Duty Cycle.
  */
 #define MOTOR_OFF       0
-#define MOTOR_ON        614 
+#define MOTOR_ON        410 
 
 // ==========================================
 // VARIÁVEIS GLOBAIS (TELEMETRIA - TABELA 1)

@@ -20,6 +20,7 @@
         <itemPath>mcc_generated_files/tmr4.h</itemPath>
       </logicalFolder>
       <itemPath>globals.h</itemPath>
+      <itemPath>motor.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

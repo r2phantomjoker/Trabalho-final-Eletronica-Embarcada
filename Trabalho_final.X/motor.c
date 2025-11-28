@@ -26,6 +26,13 @@ static float posicao_mm_fina = 0.0;
  */
 static uint16_t pulsos_para_velocidade = 0;
 
+
+/**
+ * @brief Armazena o estado anterior do pino RA4 para detectar bordas.
+ * Inicializa em 1 (High) assumindo Pull-Up ativo.
+ */
+static bool ultimo_estado_ra4 = 1;
+
 // Constantes Físicas
 #define MM_POR_PULSO  0.8372f  ///< 180mm / 215 pulsos
 #define TEMPO_TMR4    0.1f     ///< Tempo do Timer de Velocidade (100ms = 0.1s)
@@ -229,4 +236,27 @@ void SENSORES_CalcularVelocidade(void){
 void MOTOR_Encoder_ISR(void) {
     // contar pulsos brutos toda fez que detectar a borda de subida do enconder
     pulsos_para_velocidade++; 
+}
+
+
+/**
+ * @brief Verifica manualmente se o pino RA4 mudou de 0 para 1 (Borda de Subida).
+ * * Esta função deve ser chamada repetidamente dentro dos loops de movimento
+ * para garantir que nenhum pulso do encoder seja perdido.
+ */
+void MOTOR_VerificarEncoder(void) {
+    // 1. Leitura Física: Captura o estado atual do pino RA4
+    // (Nota: IO_RA4_GetValue() é uma macro do MCC, ou use PORTAbits.RA4)
+    bool estado_atual = PORTAbits.RA4; 
+    
+    // 2. Detecção de Borda de SUBIDA (Rising Edge)
+    // Se estava 0 (Low) e foi para 1 (High)...
+    if (ultimo_estado_ra4 == 0 && estado_atual == 1) {
+        
+        // Borda detectada! Chama a lógica de contagem.
+        MOTOR_Encoder_ISR();
+    }
+    
+    // 3. Atualização de Histórico: O atual vira o "último" para a próxima checagem
+    ultimo_estado_ra4 = estado_atual;
 }

@@ -26,16 +26,29 @@ static float posicao_mm_fina = 0.0;
  */
 static uint16_t pulsos_para_velocidade = 0;
 
+/**
+ * @brief Armazena a leitura anterior do registrador TMR0.
+ * @note Usada para calcular o diferencial (Delta) de pulsos entre
+ * duas chamadas do Timer de velocidade (Pulsos Atuais - Pulsos Anteriores).
+ */
+static uint8_t ultimo_valor_timer0 = 0;
 
 /**
- * @brief Armazena o estado anterior do pino RA4 para detectar bordas.
- * Inicializa em 1 (High) assumindo Pull-Up ativo.
+ * @brief Fator de conversão de Pulsos para Milímetros.
+ * Cálculo: 180mm (curso total) / 215 pulsos (total) = ~0.8372 mm/pulso.
  */
-static bool ultimo_estado_ra4 = 1;
+#define MM_POR_PULSO  0.8372f 
 
-// Constantes Físicas
-#define MM_POR_PULSO  0.8372f  ///< 180mm / 215 pulsos
-#define TEMPO_TMR4    0.1f     ///< Tempo do Timer de Velocidade (100ms = 0.1s)
+/**
+ * @brief Janela de tempo para cálculo de velocidade.
+ * Definido pela configuração do Timer 4 no MCC (100ms = 0.1s).
+ */
+#define TEMPO_TMR4    0.1f
+
+// ==========================================
+// FUNÇÕES DE CONTROLE DE MOVIMENTO
+// ==========================================
+
 /**
  * @brief Para o motor imediatamente.
  * Define o Duty Cycle do PWM para 0 e atualiza o estado global.
@@ -93,6 +106,13 @@ void MOTOR_reset(void){
     posicao_mm = 0;
     andar_destino = 0;
     estado_motor = MOTOR_PARADO;
+    andar_destino = 0;
+    
+    // Zera o hardware do Timer 0 também para começar limpo
+    TMR0_WriteTimer(0);
+    ultimo_valor_timer0 = 0;
+    
+    
     
     // Limpa a fila de chamadas
     for(uint8_t i=0; i<4; i++) {
@@ -133,7 +153,7 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
     // Regra do Roteiro: Esperar 500ms se inverter o sentido em movimento.
     if ((estado_motor != MOTOR_PARADO) && (nova_direcao != ultima_direcao_aplicada)) {
         MOTOR_parar();      
-        __delay_ms(500);    
+        __delay_ms(500); // Delay comum é seguro agora (TMR0 conta no fundo)
     }
    
     // --- 4. APLICAÇÃO NO HARDWARE ---
@@ -160,6 +180,7 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
         while( (SENSOR_S1 == 1) && (SENSOR_S2 == 1) && 
                (SENSOR_S3 == 0) && (SENSOR_S4 == 0) ) 
         {
+           
             // Proteção de Fim de Curso:
             // Se estiver descendo e bater no S1, sai do loop imediatamente.
             if (DIR == DIRECAO_DESCER && SENSOR_S1 == 0) break;
@@ -175,7 +196,6 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
         if(DIR == DIRECAO_DESCER) atual--;
         else if (DIR == DIRECAO_SUBIR) atual++;
        
-        // Pequeno delay para estabilização mecânica
         __delay_ms(100);
     }
    
@@ -184,79 +204,50 @@ void MOTOR_mover (uint8_t destino, uint8_t atual)
     andar_atual = atual; // Sincroniza a variável global
 }
 
+// ==========================================
+// FUNÇÃO DE CÁLCULO FÍSICO (CALLBACK)
+// ==========================================
+
 /**
- * @brief Cálculo Periódico de Física (Posição e Velocidade).
- * @note **FREQUÊNCIA: 10Hz (100ms)**
- * Executa toda a matemática do sistema baseada nos pulsos acumulados
- * na última janela de tempo.
- * * @see Chamada pelo Callback do Timer 4.
+ * @brief Calcula Velocidade e Posição lendo o Hardware (TMR0).
+ * @note Deve ser chamada periodicamente (ex: Timer 4 a cada 100ms).
+ * * Funcionamento:
+ * 1. Lê o registrador TMR0 (que conta pulsos do pino RA4).
+ * 2. Calcula a diferença (Delta) desde a última leitura.
+ * 3. Atualiza a posição (mm) e velocidade (mm/s).
  */
 void SENSORES_CalcularVelocidade(void){
     
-    // 1. Calcula quantos milímetros andamos NESTA janela de 100ms
-    // (Pulsos * 0.8372mm)
-    float distancia_percorrida_janela = (float)pulsos_para_velocidade * MM_POR_PULSO;
+    // 1. Lê o registrador de hardware do Timer 0 (0-255)
+    uint8_t valor_atual_timer0 = TMR0_ReadTimer();
     
-    // 2. ATUALIZAÇÃO DA POSIÇÃO (ODOMETRIA)
+    // 2. Calcula quantos pulsos ocorreram desde a última vez (100ms atrás)
+    // A subtração uint8 lida com overflow (ex: 5 - 250 = 11) automaticamente.
+    uint8_t delta_pulsos = valor_atual_timer0 - ultimo_valor_timer0;
+    
+    // Atualiza a memória para o próximo ciclo
+    ultimo_valor_timer0 = valor_atual_timer0;
+
+    // 3. Calcula Distância percorrida na janela (mm)
+    float distancia_janela = (float)delta_pulsos * MM_POR_PULSO;
+    
+    // 4. Atualização da Posição Global (Odometria)
     if (estado_motor == MOTOR_SUBINDO) {
-        posicao_mm_fina += distancia_percorrida_janela;
+        posicao_mm_fina += distancia_janela;
         
-        // Trava de segurança no teto (180mm)
-        if (posicao_mm_fina > 180.0f){
-            posicao_mm_fina = 180.0f;
-        }
+        // Trava lógica no teto (180mm)
+        if (posicao_mm_fina > 180.0f) posicao_mm_fina = 180.0f;
     } 
     else if (estado_motor == MOTOR_DESCENDO) {
-        posicao_mm_fina -= distancia_percorrida_janela;
+        posicao_mm_fina -= distancia_janela;
         
-        // Trava de segurança no chão (0mm)
-        if (posicao_mm_fina < 0.0f){
-            posicao_mm_fina = 0.0f;
-        }    
+        // Trava lógica no chão (0mm)
+        if (posicao_mm_fina < 0.0f) posicao_mm_fina = 0.0f;
     }
     
-    // Atualiza a variável global 
+    // Atualiza variável global inteira (para Telemetria)
     posicao_mm = (uint8_t)posicao_mm_fina;
 
-    // 3. CÁLCULO DA VELOCIDADE
-    // V = Distância percorrida na janela / Tempo da janela
-    velocidade_atual = distancia_percorrida_janela / TEMPO_TMR4;
-    
-    // 4. RESET
-    // Zera o contador para começar a medir a próxima janela limpa
-    pulsos_para_velocidade = 0;
-}
-
-
-/**
- * @brief Rotina de Serviço de Interrupção (ISR) do Encoder.
- * Esta função apenas incrementa um contador.
- * * @see Chamada pelo Callback do IOC (Pino RA4).
- */
-void MOTOR_Encoder_ISR(void) {
-    // contar pulsos brutos toda fez que detectar a borda de subida do enconder
-    pulsos_para_velocidade++; 
-}
-
-
-/**
- * @brief Verifica manualmente se o pino RA4 mudou de 0 para 1 (Borda de Subida).
- * * Esta função deve ser chamada repetidamente dentro dos loops de movimento
- * para garantir que nenhum pulso do encoder seja perdido.
- */
-void MOTOR_VerificarEncoder(void) {
-    // 1. Leitura Física: Captura o estado atual do pino RA4
-    // (Nota: IO_RA4_GetValue() é uma macro do MCC, ou use PORTAbits.RA4)
-    bool estado_atual = PORTAbits.RA4; 
-    
-    // 2. Detecção de Borda de SUBIDA (Rising Edge)
-    // Se estava 0 (Low) e foi para 1 (High)...
-    if (ultimo_estado_ra4 == 0 && estado_atual == 1) {
-        
-        // Borda detectada! Chama a lógica de contagem.
-        MOTOR_Encoder_ISR();
-    }
-    
-    // 3. Atualização de Histórico: O atual vira o "último" para a próxima checagem
-    ultimo_estado_ra4 = estado_atual;
+    // 5. Cálculo da Velocidade Instantânea (mm/s)
+    velocidade_atual = distancia_janela / TEMPO_TMR4;
 }

@@ -99,19 +99,15 @@
 #define RA3_SetAnalogMode()         do { ANSELAbits.ANSA3 = 1; } while(0)
 #define RA3_SetDigitalMode()        do { ANSELAbits.ANSA3 = 0; } while(0)
 
-// get/set IO_RA4 aliases
-#define IO_RA4_TRIS                 TRISAbits.TRISA4
-#define IO_RA4_LAT                  LATAbits.LATA4
-#define IO_RA4_PORT                 PORTAbits.RA4
-#define IO_RA4_ANS                  ANSELAbits.ANSA4
-#define IO_RA4_SetHigh()            do { LATAbits.LATA4 = 1; } while(0)
-#define IO_RA4_SetLow()             do { LATAbits.LATA4 = 0; } while(0)
-#define IO_RA4_Toggle()             do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0)
-#define IO_RA4_GetValue()           PORTAbits.RA4
-#define IO_RA4_SetDigitalInput()    do { TRISAbits.TRISA4 = 1; } while(0)
-#define IO_RA4_SetDigitalOutput()   do { TRISAbits.TRISA4 = 0; } while(0)
-#define IO_RA4_SetAnalogMode()      do { ANSELAbits.ANSA4 = 1; } while(0)
-#define IO_RA4_SetDigitalMode()     do { ANSELAbits.ANSA4 = 0; } while(0)
+// get/set RA4 procedures
+#define RA4_SetHigh()            do { LATAbits.LATA4 = 1; } while(0)
+#define RA4_SetLow()             do { LATAbits.LATA4 = 0; } while(0)
+#define RA4_Toggle()             do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0)
+#define RA4_GetValue()              PORTAbits.RA4
+#define RA4_SetDigitalInput()    do { TRISAbits.TRISA4 = 1; } while(0)
+#define RA4_SetDigitalOutput()   do { TRISAbits.TRISA4 = 0; } while(0)
+#define RA4_SetAnalogMode()         do { ANSELAbits.ANSA4 = 1; } while(0)
+#define RA4_SetDigitalMode()        do { ANSELAbits.ANSA4 = 0; } while(0)
 
 // get/set IO_RA7 aliases
 #define IO_RA7_TRIS                 TRISAbits.TRISA7

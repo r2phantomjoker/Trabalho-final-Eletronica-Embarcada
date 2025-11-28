@@ -53,19 +53,20 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     WDT_Initialize();
-    FVR_Initialize();
     CMP2_Initialize();
+    FVR_Initialize();
     CMP1_Initialize();
     ADC_Initialize();
     TMR4_Initialize();
     PWM3_Initialize();
     TMR2_Initialize();
+    TMR0_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
 {
-    // SCS FOSC; SPLLEN disabled; IRCF 8MHz_HF; 
-    OSCCON = 0x70;
+    // SCS INTOSC; SPLLEN disabled; IRCF 8MHz_HF; 
+    OSCCON = 0x72;
     // TUN 0; 
     OSCTUNE = 0x00;
     // SBOREN disabled; 

@@ -28,19 +28,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 ./motor.h
 [; ;./motor.h: 28: void MOTOR_reset(void);
 [v _MOTOR_reset `(v ~T0 @X0 0 ef ]
-"88 ./globals.h
-[; ;./globals.h: 88: extern volatile uint8_t andar_destino;
-[v _andar_destino `Vuc ~T0 @X0 0 e ]
-"37 ./motor.h
-[; ;./motor.h: 37: void MOTOR_mover(uint8_t destino, uint8_t atual);
-[v _MOTOR_mover `(v ~T0 @X0 0 ef2`uc`uc ]
-"82 ./globals.h
-[; ;./globals.h: 82: extern volatile uint8_t andar_atual;
-[v _andar_atual `Vuc ~T0 @X0 0 e ]
-[v F202 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
-[v __delay `JF202 ~T0 @X0 0 e ]
-[p i __delay ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -516,60 +503,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 6748: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"10 main.c
-[; ;main.c: 10: void main(void)
+"11 main.c
+[; ;main.c: 11: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"11
-[; ;main.c: 11: {
+"12
+[; ;main.c: 12: {
 {
 [e :U _main ]
 [f ]
-"13
-[; ;main.c: 13:     SYSTEM_Initialize();
+"14
+[; ;main.c: 14:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"17
-[; ;main.c: 17:     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
+"18
+[; ;main.c: 18:     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
 [e ( _TMR4_SetInterruptHandler (1 &U _SENSORES_CalcularVelocidade ]
-"20
-[; ;main.c: 20:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "21
-[; ;main.c: 21:     (INTCONbits.PEIE = 1);
+[; ;main.c: 21:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"22
+[; ;main.c: 22:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"28
-[; ;main.c: 28:     MOTOR_reset();
+"29
+[; ;main.c: 29:     MOTOR_reset();
 [e ( _MOTOR_reset ..  ]
-"32
-[; ;main.c: 32:     while (1)
-[e :U 359 ]
 "33
-[; ;main.c: 33:     {
+[; ;main.c: 33:     while (1)
+[e :U 359 ]
+"34
+[; ;main.c: 34:     {
 {
-"37
-[; ;main.c: 37:         andar_destino = 3;
-[e = _andar_destino -> -> 3 `i `uc ]
-"46
-[; ;main.c: 46:         MOTOR_mover(andar_destino, andar_atual);
-[e ( _MOTOR_mover (2 , _andar_destino _andar_atual ]
-"50
-[; ;main.c: 50:         _delay((unsigned long)((3000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"55
-[; ;main.c: 55:         andar_destino = 0;
-[e = _andar_destino -> -> 0 `i `uc ]
-"64
-[; ;main.c: 64:         MOTOR_mover(andar_destino, andar_atual);
-[e ( _MOTOR_mover (2 , _andar_destino _andar_atual ]
-"67
-[; ;main.c: 67:         _delay((unsigned long)((3000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"68
-[; ;main.c: 68:     }
+"36
+[; ;main.c: 36:     }
 }
 [e :U 358 ]
 [e $U 359  ]
 [e :U 360 ]
-"69
-[; ;main.c: 69: }
+"37
+[; ;main.c: 37: }
 [e :UE 357 ]
 }

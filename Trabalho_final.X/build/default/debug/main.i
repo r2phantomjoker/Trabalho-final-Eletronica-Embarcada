@@ -4703,16 +4703,26 @@ extern volatile uint8_t posicao_mm;
 
 
 
-extern volatile float velocidade_atual;
+extern volatile uint8_t velocidade_atual;
 
 
 
 
 
-extern volatile float temperatura_ponte;
+extern volatile uint8_t temperatura_ponte;
 # 123 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 # 9 "main.c" 2
+# 1 "./comm.h" 1
+# 19 "./comm.h"
+int UART_RecebeAndar(char* Origem, char* Destino);
+
+
+
+
+
+void UART_EnviaDados(void);
+# 10 "main.c" 2
 
 void main(void)
 {
@@ -4739,24 +4749,5 @@ void main(void)
     while (1)
     {
 
-
-
-        andar_destino = 3;
-# 46 "main.c"
-        MOTOR_mover(andar_destino, andar_atual);
-
-
-
-        _delay((unsigned long)((3000)*(8000000/4000.0)));
-
-
-
-
-        andar_destino = 0;
-# 64 "main.c"
-        MOTOR_mover(andar_destino, andar_atual);
-
-
-        _delay((unsigned long)((3000)*(8000000/4000.0)));
     }
 }

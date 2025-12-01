@@ -13,4 +13,5 @@ mcc_generated_files/fvr.h  \
 mcc_generated_files/pwm3.h  \
 mcc_generated_files/adc.h  \
 motor.h  \
-globals.h 
+globals.h  \
+comm.h 

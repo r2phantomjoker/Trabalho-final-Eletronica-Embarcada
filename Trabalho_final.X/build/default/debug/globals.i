@@ -4376,13 +4376,13 @@ extern volatile uint8_t posicao_mm;
 
 
 
-extern volatile float velocidade_atual;
+extern volatile uint8_t velocidade_atual;
 
 
 
 
 
-extern volatile float temperatura_ponte;
+extern volatile uint8_t temperatura_ponte;
 # 123 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 # 8 "globals.c" 2
@@ -4393,8 +4393,8 @@ volatile uint8_t andar_atual = 0;
 volatile uint8_t andar_destino = 0;
 volatile uint8_t estado_motor = 0;
 volatile uint8_t posicao_mm = 0;
-volatile float velocidade_atual = 0.0;
-volatile float temperatura_ponte = 0.0;
+volatile uint8_t velocidade_atual = 0;
+volatile uint8_t temperatura_ponte = 0;
 
 
 

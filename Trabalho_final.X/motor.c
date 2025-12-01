@@ -249,5 +249,5 @@ void SENSORES_CalcularVelocidade(void){
     posicao_mm = (uint8_t)posicao_mm_fina;
 
     // 5. Cálculo da Velocidade Instantânea (mm/s)
-    velocidade_atual = distancia_janela / TEMPO_TMR4;
+    velocidade_atual = (uint8_t)((distancia_janela / TEMPO_TMR4)*100);
 }

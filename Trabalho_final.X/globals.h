@@ -103,13 +103,13 @@ extern volatile uint8_t posicao_mm;
  * @brief 'Velocidade (VV.V)': Velocidade instantânea calculada via Encoder.
  * Unidade: mm/s.
  */
-extern volatile float velocidade_atual;
+extern volatile uint8_t velocidade_atual;
 
 /**
  * @brief 'Temperatura (TT.T)': Temperatura monitorada na Ponte H.
  * Unidade: Graus Celsius (°C).
  */
-extern volatile float temperatura_ponte;
+extern volatile uint8_t temperatura_ponte;
 
 // ==========================================
 // VARIÁVEIS DE LÓGICA INTERNA

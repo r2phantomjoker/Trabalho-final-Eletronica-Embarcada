@@ -4396,13 +4396,13 @@ extern volatile uint8_t posicao_mm;
 
 
 
-extern volatile float velocidade_atual;
+extern volatile uint8_t velocidade_atual;
 
 
 
 
 
-extern volatile float temperatura_ponte;
+extern volatile uint8_t temperatura_ponte;
 # 123 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 # 12 "motor.c" 2
@@ -4914,5 +4914,5 @@ void SENSORES_CalcularVelocidade(void){
     posicao_mm = (uint8_t)posicao_mm_fina;
 
 
-    velocidade_atual = distancia_janela / 0.1f;
+    velocidade_atual = (uint8_t)((distancia_janela / 0.1f)*100);
 }

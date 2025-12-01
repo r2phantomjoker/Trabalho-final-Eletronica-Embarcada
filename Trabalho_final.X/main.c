@@ -6,6 +6,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "motor.h"
 #include "globals.h"
+#include "comm.h"
 
 void main(void)
 {

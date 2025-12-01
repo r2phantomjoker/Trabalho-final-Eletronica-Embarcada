@@ -75,8 +75,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/tmr0.h: 129: uint8_t TMR0_ReadTimer(void);
 [v _TMR0_ReadTimer `(uc ~T0 @X0 0 ef ]
 "106 ./globals.h
-[; ;./globals.h: 106: extern volatile float velocidade_atual;
-[v _velocidade_atual `Vf ~T0 @X0 0 e ]
+[; ;./globals.h: 106: extern volatile uint8_t velocidade_atual;
+[v _velocidade_atual `Vuc ~T0 @X0 0 e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -959,8 +959,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor.c: 249:     posicao_mm = (uint8_t)posicao_mm_fina;
 [e = _posicao_mm -> _posicao_mm_fina `uc ]
 "252
-[; ;motor.c: 252:     velocidade_atual = distancia_janela / 0.1f;
-[e = _velocidade_atual / _distancia_janela -> .0.1 `f ]
+[; ;motor.c: 252:     velocidade_atual = (uint8_t)((distancia_janela / 0.1f)*100);
+[e = _velocidade_atual -> * / _distancia_janela -> .0.1 `f -> -> 100 `i `f `uc ]
 "253
 [; ;motor.c: 253: }
 [e :UE 390 ]

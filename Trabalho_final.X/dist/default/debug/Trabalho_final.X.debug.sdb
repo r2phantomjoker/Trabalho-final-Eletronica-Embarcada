@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F1827 ]
 [d frameptr 6 ]
-"85 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
+"85 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
 [e E2495 . `uc
 channel_Temp 29
 channel_DAC 30
@@ -29,29 +29,29 @@ channel_FVR 31
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"10 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"11 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"67 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
+"67 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
 [v _CMP1_Initialize CMP1_Initialize `(v  1 e 1 0 ]
 "85
 [v _CMP1_ISR CMP1_ISR `(v  1 e 1 0 ]
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
 [v _CMP2_Initialize CMP2_Initialize `(v  1 e 1 0 ]
 "85
 [v _CMP2_ISR CMP2_ISR `(v  1 e 1 0 ]
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
 [v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
-"52 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
+"52 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"50 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
+"50 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "66
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "76
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "119
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
@@ -67,17 +67,17 @@ channel_FVR 31
 [v _IOCBF3_SetInterruptHandler IOCBF3_SetInterruptHandler `(v  1 e 1 0 ]
 "188
 [v _IOCBF3_DefaultInterruptHandler IOCBF3_DefaultInterruptHandler `(v  1 e 1 0 ]
-"64 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
+"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
 "82
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
-"63 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
+"63 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "80
 [v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
 "89
 [v _TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
-"64 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
+"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "119
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
@@ -85,7 +85,7 @@ channel_FVR 31
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
 "136
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
-"64 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 "119
 [v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
@@ -93,7 +93,7 @@ channel_FVR 31
 [v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
 "136
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
-"56 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"56 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _MOTOR_parar MOTOR_parar `(v  1 e 1 0 ]
 "69
 [v _MOTOR_reset MOTOR_reset `(v  1 e 1 0 ]
@@ -118,7 +118,7 @@ channel_FVR 31
 ]
 [u S430 . 1 `S416 1 . 1 0 `S425 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES430  1 e 1 @11 ]
-[s S952 . 1 `uc 1 RB0 1 0 :1:0 
+[s S970 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -128,8 +128,8 @@ channel_FVR 31
 `uc 1 RB7 1 0 :1:7 
 ]
 "508
-[u S961 . 1 `S952 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES961  1 e 1 @13 ]
+[u S979 . 1 `S970 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES979  1 e 1 @13 ]
 [s S622 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -276,7 +276,7 @@ channel_FVR 31
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2039
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1027 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1046 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -286,13 +286,13 @@ channel_FVR 31
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2056
-[u S1036 . 1 `S1027 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1036  1 e 1 @268 ]
+[u S1055 . 1 `S1046 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1055  1 e 1 @268 ]
 "2096
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2158
 [v _CM1CON0 CM1CON0 `VEuc  1 e 1 @273 ]
-[s S974 . 1 `uc 1 C1SYNC 1 0 :1:0 
+[s S992 . 1 `uc 1 C1SYNC 1 0 :1:0 
 `uc 1 C1HYS 1 0 :1:1 
 `uc 1 C1SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -302,13 +302,13 @@ channel_FVR 31
 `uc 1 C1ON 1 0 :1:7 
 ]
 "2175
-[u S983 . 1 `S974 1 . 1 0 ]
-[v _CM1CON0bits CM1CON0bits `VES983  1 e 1 @273 ]
+[u S1001 . 1 `S992 1 . 1 0 ]
+[v _CM1CON0bits CM1CON0bits `VES1001  1 e 1 @273 ]
 "2215
 [v _CM1CON1 CM1CON1 `VEuc  1 e 1 @274 ]
 "2281
 [v _CM2CON0 CM2CON0 `VEuc  1 e 1 @275 ]
-[s S995 . 1 `uc 1 C2SYNC 1 0 :1:0 
+[s S1013 . 1 `uc 1 C2SYNC 1 0 :1:0 
 `uc 1 C2HYS 1 0 :1:1 
 `uc 1 C2SP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -318,8 +318,8 @@ channel_FVR 31
 `uc 1 C2ON 1 0 :1:7 
 ]
 "2298
-[u S1004 . 1 `S995 1 . 1 0 ]
-[v _CM2CON0bits CM2CON0bits `VES1004  1 e 1 @275 ]
+[u S1022 . 1 `S1013 1 . 1 0 ]
+[v _CM2CON0bits CM2CON0bits `VES1022  1 e 1 @275 ]
 "2338
 [v _CM2CON1 CM2CON1 `VEuc  1 e 1 @276 ]
 [s S174 . 1 `uc 1 MC1OUT 1 0 :1:0 
@@ -445,7 +445,7 @@ channel_FVR 31
 ]
 [u S857 . 1 `S845 1 . 1 0 `S853 1 . 1 0 ]
 [v _T4CONbits T4CONbits `VES857  1 e 1 @1047 ]
-"11 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\globals.c
+"11 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\globals.c
 [v _andar_atual andar_atual `VEuc  1 e 1 0 ]
 "12
 [v _andar_destino andar_destino `VEuc  1 e 1 0 ]
@@ -454,33 +454,33 @@ channel_FVR 31
 "14
 [v _posicao_mm posicao_mm `VEuc  1 e 1 0 ]
 "15
-[v _velocidade_atual velocidade_atual `VEf  1 e 4 0 ]
+[v _velocidade_atual velocidade_atual `VEuc  1 e 1 0 ]
 "16
-[v _temperatura_ponte temperatura_ponte `VEf  1 e 4 0 ]
+[v _temperatura_ponte temperatura_ponte `VEuc  1 e 1 0 ]
 "20
 [v _solicitacoes solicitacoes `VE[4]a  1 e 4 0 ]
-"54 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
+"54 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _IOCBF0_InterruptHandler IOCBF0_InterruptHandler `*.37(v  1 e 2 0 ]
 "55
 [v _IOCBF3_InterruptHandler IOCBF3_InterruptHandler `*.37(v  1 e 2 0 ]
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
-"17 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"17 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _ultima_direcao_aplicada ultima_direcao_aplicada `uc  1 s 1 ultima_direcao_aplicada ]
 "22
 [v _posicao_mm_fina posicao_mm_fina `f  1 s 4 posicao_mm_fina ]
 "34
 [v _ultimo_valor_timer0 ultimo_valor_timer0 `uc  1 s 1 ultimo_valor_timer0 ]
-"10 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
+"11 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"69
+"37
 } 0
-"50 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
+"50 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "64
@@ -490,7 +490,7 @@ channel_FVR 31
 {
 "80
 } 0
-"64 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 {
 "85
@@ -501,7 +501,7 @@ channel_FVR 31
 [v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "134
 } 0
-"64 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
+"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "85
@@ -512,17 +512,17 @@ channel_FVR 31
 [v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "134
 } 0
-"63 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
+"63 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"64 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
+"64 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
 {
 "80
 } 0
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "117
@@ -539,41 +539,41 @@ channel_FVR 31
 [v IOCBF0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "153
 } 0
-"66 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
+"66 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "74
 } 0
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/fvr.c
 [v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
 {
 "62
 } 0
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
 [v _CMP2_Initialize CMP2_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"58 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
+"58 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
 [v _CMP1_Initialize CMP1_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"67 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
+"67 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "83
 } 0
-"69 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"69 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _MOTOR_reset MOTOR_reset `(v  1 e 1 0 ]
 {
 "118
 [v MOTOR_reset@i i `uc  1 a 1 14 ]
 "98
-[v MOTOR_reset@origem_simulada origem_simulada `uc  1 a 1 11 ]
+[v MOTOR_reset@origem_simulada origem_simulada `uc  1 a 1 13 ]
 "121
 } 0
-"89 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
+"89 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
 {
 [v TMR0_WriteTimer@timerVal timerVal `uc  1 p 1 wreg ]
@@ -582,7 +582,7 @@ channel_FVR 31
 [v TMR0_WriteTimer@timerVal timerVal `uc  1 p 1 0 ]
 "93
 } 0
-"131 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"131 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _MOTOR_mover MOTOR_mover `(v  1 e 1 0 ]
 {
 [v MOTOR_mover@destino destino `uc  1 p 1 wreg ]
@@ -600,34 +600,34 @@ channel_FVR 31
 {
 "60
 } 0
-"82 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
+"82 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pwm3.c
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
 "89
 } 0
-"52 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
+"52 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "86
 } 0
-"119 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"119 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
 {
 "129
 } 0
-"219 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"219 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\motor.c
 [v _SENSORES_CalcularVelocidade SENSORES_CalcularVelocidade `(v  1 e 1 0 ]
 {
 "232
-[v SENSORES_CalcularVelocidade@distancia_janela distancia_janela `f  1 a 4 32 ]
+[v SENSORES_CalcularVelocidade@distancia_janela distancia_janela `f  1 a 4 55 ]
 "222
-[v SENSORES_CalcularVelocidade@valor_atual_timer0 valor_atual_timer0 `uc  1 a 1 31 ]
+[v SENSORES_CalcularVelocidade@valor_atual_timer0 valor_atual_timer0 `uc  1 a 1 54 ]
 "226
-[v SENSORES_CalcularVelocidade@delta_pulsos delta_pulsos `uc  1 a 1 30 ]
+[v SENSORES_CalcularVelocidade@delta_pulsos delta_pulsos `uc  1 a 1 53 ]
 "253
 } 0
-"136 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
+"136 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr4.c
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
 "139
@@ -651,10 +651,10 @@ channel_FVR 31
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 9 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 8 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 48 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 47 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 0 ]
+[v ___fltol@f1 f1 `d  1 p 4 39 ]
 "70
 } 0
 "242 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcadd.c
@@ -683,26 +683,26 @@ channel_FVR 31
 "8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1429 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1419 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1434 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1437 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1429 1 fAsBytes 4 0 `S1434 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1437  1 a 4 20 ]
+[s S1424 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1427 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1419 1 fAsBytes 4 0 `S1424 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1427  1 a 4 33 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S1506 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 27 ]
+[s S1496 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1509 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1506 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1509  1 a 2 24 ]
+[u S1499 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1496 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1499  1 a 2 37 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 19 ]
+[v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 18 ]
+[v ___flmul@aexp aexp `uc  1 a 1 31 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 13 ]
+[v ___flmul@sign sign `uc  1 a 1 26 ]
 "8
-[v ___flmul@b b `d  1 p 4 0 ]
-[v ___flmul@a a `d  1 p 4 4 ]
+[v ___flmul@b b `d  1 p 4 13 ]
+[v ___flmul@a a `d  1 p 4 17 ]
 "205
 } 0
 "4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul8_16.c
@@ -746,14 +746,14 @@ channel_FVR 31
 [v ___fldiv@b b `d  1 p 4 4 ]
 "185
 } 0
-"80 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
+"80 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr0.c
 [v _TMR0_ReadTimer TMR0_ReadTimer `(uc  1 e 1 0 ]
 {
 "82
 [v TMR0_ReadTimer@readVal readVal `uc  1 a 1 0 ]
 "87
 } 0
-"119 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
+"119 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/tmr2.c
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
 {
 "129
@@ -763,7 +763,7 @@ channel_FVR 31
 {
 "139
 } 0
-"119 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
+"119 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
 {
 "131
@@ -788,12 +788,12 @@ channel_FVR 31
 {
 "161
 } 0
-"85 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
+"85 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp2.c
 [v _CMP2_ISR CMP2_ISR `(v  1 e 1 0 ]
 {
 "89
 } 0
-"85 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
+"85 D:\GABRIEL\Documents\Atividades\Embarcada\Trabalho-final-Eletronica-Embarcada\Trabalho_final.X\mcc_generated_files/cmp1.c
 [v _CMP1_ISR CMP1_ISR `(v  1 e 1 0 ]
 {
 "89

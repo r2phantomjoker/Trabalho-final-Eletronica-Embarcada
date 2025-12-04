@@ -40,10 +40,10 @@ void main(void) {
         // A. COMUNICAÇÃO BLUETOOTH
         if(EUSART_is_rx_ready()) {
             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) { 
-                int o = buffer_origem - '0';
-                int d = buffer_destino - '0';
-                if (o >= 0 && o <= 3) solicitacoes[o] = true;
-                if (d >= 0 && d <= 3) solicitacoes[d] = true;
+                int origem = buffer_origem - '0';
+                int destino = buffer_destino - '0';
+                if (origem >= 0 && origem <= 3) solicitacoes[origem] = true;
+                if (destino >= 0 && destino <= 3) solicitacoes[destino] = true;
             }
         }
 

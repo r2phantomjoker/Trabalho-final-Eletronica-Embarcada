@@ -1,10 +1,10 @@
 # 1 "motor.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 295 "<built-in>" 3
+# 285 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "motor.c" 2
 
@@ -16,19 +16,19 @@
 
 # 1 "./motor.h" 1
 # 11 "./motor.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 133 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef unsigned short uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef short intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 164 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
@@ -51,7 +51,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 194 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -80,9 +80,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 235 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
+# 27 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
 
 typedef int8_t int_fast8_t;
 
@@ -114,13 +114,13 @@ typedef uint24_t uint_fast24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/stdint.h" 1 3
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/stdint.h" 1 3
 typedef int16_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
+# 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
 # 12 "./motor.h" 2
 
 
@@ -128,49 +128,41 @@ typedef uint32_t uint_fast32_t;
 
 
 
-void MOTOR_parar(void);
-
-
-
-
-
-
-void MOTOR_reset(void);
-# 34 "./motor.h"
-void MOTOR_mover(uint8_t destino, uint8_t atual);
-
-
-
-
-
-
-
 void SENSORES_CalcularVelocidade(void);
+
+
+void Controle_Subir(void);
+
+void Controle_Descer(void);
+
+void Controle_Parar(void);
+
+void Verificar_Sensores(void);
 # 9 "motor.c" 2
 # 1 "./globals.h" 1
 # 14 "./globals.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/xc8debug.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/xc8debug.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 2 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/features.h" 1 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef long int wchar_t;
-# 128 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 128 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef unsigned size_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
 
 int atoi (const char *);
 long atol (const char *);
@@ -196,7 +188,7 @@ unsigned long long strtoull (const char *restrict, char **restrict, int);
 unsigned long __strtoxl(const char * s, char ** endptr, int base, char is_signed);
 
 unsigned long long __strtoxll(const char * s, char ** endptr, int base, char is_signed);
-# 55 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 3
+# 55 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
 int rand (void);
 void srand (unsigned);
 
@@ -242,7 +234,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/xc8debug.h" 2 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/xc8debug.h" 2 3
 
 
 
@@ -252,8 +244,8 @@ uldiv_t uldiv (unsigned long, unsigned long);
 
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/builtins.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/builtins.h" 1 3
 
 
 
@@ -262,7 +254,7 @@ extern void __builtin_software_breakpoint(void);
 
 #pragma intrinsic(__nop)
 extern void __nop(void);
-# 19 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/builtins.h" 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/builtins.h" 3
 #pragma intrinsic(_delay)
 extern __attribute__((nonreentrant)) void _delay(uint32_t);
 #pragma intrinsic(_delaywdt)
@@ -270,7 +262,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
 
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(uint8_t);
-# 25 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 
 
 
@@ -279,15 +271,15 @@ extern __attribute__((nonreentrant)) void _delay3(uint8_t);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/htc.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/htc.h" 1 3
 
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
-# 8 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/htc.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
+# 8 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/htc.h" 2 3
 # 6 "C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\\pic\\include/pic.h" 2 3
 
 
@@ -300,7 +292,7 @@ extern __attribute__((nonreentrant)) void _delay3(uint8_t);
 # 389 "C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\\pic\\include/pic_chip_select.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\\pic\\include\\proc/pic16f1827.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\\pic\\include\\proc/pic16f1827.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/__at.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/__at.h" 1 3
 # 45 "C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\\pic\\include\\proc/pic16f1827.h" 2 3
 
 
@@ -4374,8 +4366,8 @@ __attribute__((__unsupported__("The " "FLASH_WRITE" " macro function is no longe
 __attribute__((__unsupported__("The " "FLASH_ERASE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_erase(unsigned short addr);
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/eeprom_routines.h" 1 3
-# 114 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/eeprom_routines.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/eeprom_routines.h" 1 3
+# 114 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/eeprom_routines.h" 3
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 # 84 "C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\\pic\\include/pic.h" 2 3
@@ -4383,10 +4375,10 @@ extern unsigned char eeprom_read(unsigned char addr);
 extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
-# 29 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 15 "./globals.h" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
 # 17 "./globals.h" 2
 # 82 "./globals.h"
 extern volatile uint8_t andar_atual;
@@ -4422,6 +4414,16 @@ extern volatile uint8_t velocidade_atual;
 extern volatile uint8_t temperatura_ponte;
 # 123 "./globals.h"
 extern volatile _Bool solicitacoes[4];
+
+typedef enum {
+    ESTADO_PARADO,
+    ESTADO_SUBINDO,
+    ESTADO_DESCENDO,
+    ESTADO_ESPERA_PORTA,
+    ESTADO_REVERSAO
+} EstadoElevador;
+
+extern volatile EstadoElevador estado_atual;
 # 10 "motor.c" 2
 # 1 "./mcc_generated_files/mcc.h" 1
 # 50 "./mcc_generated_files/mcc.h"
@@ -4451,31 +4453,31 @@ void IOCBF3_DefaultInterruptHandler(void);
 # 52 "./mcc_generated_files/mcc.h" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/conio.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/conio.h" 1 3
 
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef void * va_list[1];
 
 
 
 
 typedef void * __isoc_va_list[1];
-# 143 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 143 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef short ssize_t;
-# 255 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 255 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef long long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+# 409 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
 typedef union _G_fpos64_t {
  char __opaque[16];
  double __align;
@@ -4610,7 +4612,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/conio.h" 2 3
+# 8 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/conio.h" 2 3
 # 55 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
 # 56 "./mcc_generated_files/mcc.h" 2
@@ -4803,7 +4805,7 @@ static uint16_t total_pulsos = 0;
 
 
 static uint8_t ultimo_valor_timer0 = 0;
-# 180 "motor.c"
+# 34 "motor.c"
 void SENSORES_CalcularVelocidade(void){
 
 
@@ -4845,4 +4847,48 @@ void SENSORES_CalcularVelocidade(void){
 
     uint32_t calculo_velocidade = (uint32_t)delta * 837;
     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
+}
+
+
+void Controle_Subir() {
+    LATAbits.LATA7 = 1;
+    PWM3_LoadDutyValue(410);
+    estado_motor = 1;
+}
+
+void Controle_Descer() {
+    LATAbits.LATA7 = 0;
+    PWM3_LoadDutyValue(410);
+    estado_motor = 2;
+}
+
+void Controle_Parar() {
+    PWM3_LoadDutyValue(0);
+    estado_motor = 0;
+}
+
+
+
+void Verificar_Sensores() {
+
+
+    if (PORTBbits.RB0 == 0) andar_atual = 0;
+    if (PORTBbits.RB3 == 0) andar_atual = 1;
+
+    if (CM1CON0bits.C1OUT == 1) andar_atual = 2;
+    if (CM2CON0bits.C2OUT == 1) andar_atual = 3;
+
+
+
+    if (PORTBbits.RB0 == 0 && estado_motor == 2) {
+        Controle_Parar();
+        estado_atual = ESTADO_PARADO;
+        posicao_mm = 0;
+    }
+
+    if (CM2CON0bits.C2OUT == 1 && estado_motor == 1) {
+        Controle_Parar();
+        estado_atual = ESTADO_PARADO;
+        posicao_mm = 180;
+    }
 }

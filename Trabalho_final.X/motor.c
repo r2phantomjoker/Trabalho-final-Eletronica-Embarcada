@@ -25,152 +25,6 @@ static uint8_t ultimo_valor_timer0 = 0;
 
 #define TEMPO_TMR4_MS    100  // Timer 4 roda a cada 100ms
 
-// ÁREA DESATIVADA (CÓDIGO MORTO)
-// Mantido aqui para referência, mas comentado para o compilador ignorar.
-
-/* INÍCIO DO BLOCO COMENTADO
-
-static uint8_t ultima_direcao_aplicada = DIRECAO_SUBIR;
-static float posicao_mm_fina = 0.0;            
-static uint16_t pulsos_para_velocidade = 0;
-
-// Esta função foi substituída por Controle_Parar() no main.c
-void MOTOR_parar(void){
-    estado_motor = MOTOR_PARADO;
-}
-
-// Esta função foi substituída pela lógica de "Homing" no main.c
-void MOTOR_reset(void){
-    
-    // 1. DETECÇÃO INICIAL DE POSIÇÃO
-    // Verifica os sensores físicos para estimar onde o elevador ligou.
-    // S1/S2 são Active Low (0). S3/S4 são Active High (1) via Comparador.
-    
-    if(SENSOR_S1 == 0){
-        andar_atual = 0;
-    }
-    else if (SENSOR_S2 == 0){
-        andar_atual = 1;
-    }
-    else if(SENSOR_S3 == 1){
-        andar_atual = 2;
-    }
-    else if(SENSOR_S4 == 1){ 
-        andar_atual = 3;
-    }
-    else {
-        // Caso nenhum sensor esteja ativado (Elevador entre andares)
-        andar_atual = 255; 
-    }
-   
-    // 2. MOVIMENTAÇÃO PARA O TÉRREO
-    if(andar_atual != 0){
-        andar_destino = 0;
-        
-        // Se estiver "perdido" (255), simulamos que estamos no topo (4) para garantir que a lógica decida DESCER. uint8_t origem_simulada = (andar_atual == 255) ? 4 : andar_atual;
-        
-        MOTOR_mover(andar_destino, origem_simulada);
-    }
-    
-    // 3. RESET DE VARIÁVEIS
-    MOTOR_parar();
-    andar_atual = 0;
-    posicao_mm = 0;
-    andar_destino = 0;
-    estado_motor = MOTOR_PARADO;
-    andar_destino = 0;
-    
-    // Zera o hardware do Timer 0 também para começar limpo
-    TMR0_WriteTimer(0);
-    ultimo_valor_timer0 = 0;
-    
-    // Limpa a fila de chamadas
-    for(uint8_t i=0; i<4; i++) {
-        solicitacoes[i] = false;
-    }
-}
-
-// Esta função causava travamento no envio do Bluetooth (loop while).
-// A lógica dela foi quebrada e levada para a Máquina de Estados no main.c.
-void MOTOR_mover (uint8_t destino, uint8_t atual)
-{
-    // 1. VALIDAÇÕES DE SEGURANÇA (BOUNDS CHECK)
-    if (atual > 3 && atual != 255) { // Proteção contra valores corrompidos
-        MOTOR_parar(); return;
-    }
-    if (destino == atual){ // O elevador está no andar do destino
-        MOTOR_parar(); return;
-    }
-   
-    // 2. DECISÃO DE DIREÇÃO
-    // Apenas decide a intenção, NÃO aplica no pino ainda.
-    uint8_t nova_direcao;
-
-    if(destino > atual){
-        nova_direcao = DIRECAO_SUBIR;
-    }
-    else {
-        nova_direcao = DIRECAO_DESCER;
-    }
-   
-    // 3. PROTEÇÃO DE HARDWARE (PONTE H)
-    // Regra do Roteiro: Esperar 500ms se inverter o sentido em movimento.
-    if ((estado_motor != MOTOR_PARADO) && (nova_direcao != ultima_direcao_aplicada)) {
-        MOTOR_parar();      
-        __delay_ms(500); // Delay comum é seguro agora (TMR0 conta no fundo)
-    }
-   
-    // 4. APLICAÇÃO NO HARDWARE
-    // Agora é seguro mudar o pino DIR.
-    if(nova_direcao == DIRECAO_SUBIR){
-        DIR = DIRECAO_SUBIR;
-        estado_motor = MOTOR_SUBINDO;
-    }
-    else {
-        DIR = DIRECAO_DESCER;
-        estado_motor = MOTOR_DESCENDO;
-    }
-   
-    ultima_direcao_aplicada = nova_direcao;
-   
-    // 5. LOOP DE MOVIMENTO (BLOQUEANTE)
-    // Mantém o motor ligado até chegar no destino final.
-    while(atual != destino){
-       
-        PWM3_LoadDutyValue(MOTOR_ON); // Liga o motor (~60%)
-       
-        // Loop de Espera: Aguarda até ALGUM sensor ser acionado
-        // S1/S2 = 1 (Desativado), S3/S4 = 0 (Desativado)
-        while( (SENSOR_S1 == 1) && (SENSOR_S2 == 1) && 
-               (SENSOR_S3 == 0) && (SENSOR_S4 == 0) ) 
-        {
-           
-            // Proteção de Fim de Curso:
-            // Se estiver descendo e bater no S1, sai do loop imediatamente.
-            if (DIR == DIRECAO_DESCER && SENSOR_S1 == 0) break;
-            
-            // Se estiver subindo e bater no S4, sai do loop imediatamente.
-            if (DIR == DIRECAO_SUBIR && SENSOR_S4 == 1) break;
-        }
-       
-        // Sensor detectado! Para o motor para atualizar posição.
-        MOTOR_parar();
-        
-        // Atualiza a variável 'atual' matematicamente para o próximo passo
-        if(DIR == DIRECAO_DESCER) atual--;
-        else if (DIR == DIRECAO_SUBIR) atual++;
-       
-        __delay_ms(100);
-    }
-   
-    // Chegou no destino final
-    MOTOR_parar();
-    andar_atual = atual; // Sincroniza a variável global
-}
-
-FIM DO BLOCO COMENTADO 
-*/
-
 // CÁLCULO DE FÍSICA (VELOCIDADE E POSIÇÃO) - CÓDIGO ATIVO E OTIMIZADO
 
 /**
@@ -218,4 +72,48 @@ void SENSORES_CalcularVelocidade(void){
     // Truque matemático: (delta * 837) / 100 dá a velocidade já na escala mm/s.
     uint32_t calculo_velocidade = (uint32_t)delta * MICRONS_POR_PULSO;
     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
+}
+
+// 1. FUNÇÕES DE CONTROLE DE MOVIMENTO
+void Controle_Subir() {
+    DIR = DIRECAO_SUBIR;           
+    PWM3_LoadDutyValue(MOTOR_ON);
+    estado_motor = MOTOR_SUBINDO;
+}
+
+void Controle_Descer() {
+    DIR = DIRECAO_DESCER;          
+    PWM3_LoadDutyValue(MOTOR_ON);  
+    estado_motor = MOTOR_DESCENDO;
+}
+
+void Controle_Parar() {
+    PWM3_LoadDutyValue(MOTOR_OFF); 
+    estado_motor = MOTOR_PARADO;
+}
+
+// 2. LEITURA DE SENSORES E SEGURANÇA
+
+void Verificar_Sensores() {
+    // Atualiza andar atual
+    // S1/S2: Digitais (Pull-up - Ativo em 0)
+    if (SENSOR_S1 == 0) andar_atual = 0;
+    if (SENSOR_S2 == 0) andar_atual = 1;
+    // S3/S4: Analógicos (Comparador - Ativo em 1)
+    if (SENSOR_S3 == 1) andar_atual = 2; 
+    if (SENSOR_S4 == 1) andar_atual = 3; 
+
+    // SEGURANÇA EXTREMA (Fim de Curso)
+    // Se bater no chão descendo - PARA
+    if (SENSOR_S1 == 0 && estado_motor == MOTOR_DESCENDO) {
+        Controle_Parar();
+        estado_atual = ESTADO_PARADO;
+        posicao_mm = 0; // Recalibra
+    }
+    // Se bater no teto subindo - PARA
+    if (SENSOR_S4 == 1 && estado_motor == MOTOR_SUBINDO) {
+        Controle_Parar();
+        estado_atual = ESTADO_PARADO;
+        posicao_mm = 180; // Recalibra
+    }
 }

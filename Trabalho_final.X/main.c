@@ -12,65 +12,14 @@
 // Quando tiver a matriz, lembrar de descomentar:
 // #include "max7219.h"
 
-// ESTADOS DO SISTEMA
-typedef enum {
-    ESTADO_PARADO,
-    ESTADO_SUBINDO,
-    ESTADO_DESCENDO,
-    ESTADO_ESPERA_PORTA,
-    ESTADO_REVERSAO
-} EstadoElevador;
 
-EstadoElevador estado_atual = ESTADO_PARADO;
 
 // VARIÁVEIS DE CONTROLE
 uint16_t contador_telemetria = 0;
 uint16_t contador_espera = 0;
 char buffer_origem, buffer_destino;
 
-// 1. FUNÇÕES DE CONTROLE DE MOVIMENTO
-void Controle_Subir() {
-    DIR = DIRECAO_SUBIR;           
-    PWM3_LoadDutyValue(MOTOR_ON);
-    estado_motor = MOTOR_SUBINDO;
-}
 
-void Controle_Descer() {
-    DIR = DIRECAO_DESCER;          
-    PWM3_LoadDutyValue(MOTOR_ON);  
-    estado_motor = MOTOR_DESCENDO;
-}
-
-void Controle_Parar() {
-    PWM3_LoadDutyValue(MOTOR_OFF); 
-    estado_motor = MOTOR_PARADO;
-}
-
-// 2. LEITURA DE SENSORES E SEGURANÇA
-
-void Verificar_Sensores() {
-    // Atualiza andar atual
-    // S1/S2: Digitais (Pull-up - Ativo em 0)
-    if (SENSOR_S1 == 0) andar_atual = 0;
-    if (SENSOR_S2 == 0) andar_atual = 1;
-    // S3/S4: Analógicos (Comparador - Ativo em 1)
-    if (SENSOR_S3 == 1) andar_atual = 2; 
-    if (SENSOR_S4 == 1) andar_atual = 3; 
-
-    // SEGURANÇA EXTREMA (Fim de Curso)
-    // Se bater no chão descendo - PARA
-    if (SENSOR_S1 == 0 && estado_motor == MOTOR_DESCENDO) {
-        Controle_Parar();
-        estado_atual = ESTADO_PARADO;
-        posicao_mm = 0; // Recalibra
-    }
-    // Se bater no teto subindo - PARA
-    if (SENSOR_S4 == 1 && estado_motor == MOTOR_SUBINDO) {
-        Controle_Parar();
-        estado_atual = ESTADO_PARADO;
-        posicao_mm = 180; // Recalibra
-    }
-}
 
 // 3. ALGORITMO DE OTIMIZAÇÃO
 int Buscar_Proxima_Parada() {
@@ -132,7 +81,7 @@ void main(void) {
             case ESTADO_PARADO: {
                 int alvo = Buscar_Proxima_Parada();
                 if (alvo != -1) {
-                    andar_destino = alvo;
+                    andar_destino = (uint8_t)alvo;
                     if (andar_destino > andar_atual) {
                         Controle_Subir();
                         estado_atual = ESTADO_SUBINDO;
@@ -167,7 +116,7 @@ void main(void) {
                 else {
                     int novo_alvo = Buscar_Proxima_Parada();
                     if (novo_alvo != -1) {
-                        andar_destino = novo_alvo; // Aceita a carona
+                        andar_destino = (uint8_t)novo_alvo; // Aceita a carona
                     }
                 }
                 break;

@@ -1,4 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"23 globals.c
+[; ;globals.c: 23: volatile EstadoElevador estado_atual = ESTADO_PARADO;
+[c E2497 0 1 2 3 4 .. ]
+[n E2497 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -519,4 +523,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `a
 -> -> 0 `i `a
 ..
+]
+"23
+[; ;globals.c: 23: volatile EstadoElevador estado_atual = ESTADO_PARADO;
+[v _estado_atual `VE2497 ~T0 @X0 1 e ]
+[i _estado_atual
+. `E2497 0
 ]

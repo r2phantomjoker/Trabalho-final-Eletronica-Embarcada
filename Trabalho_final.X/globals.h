@@ -122,4 +122,14 @@ extern volatile uint8_t temperatura_ponte;
  */
 extern volatile bool solicitacoes[4];
 
+typedef enum {
+    ESTADO_PARADO,
+    ESTADO_SUBINDO,
+    ESTADO_DESCENDO,
+    ESTADO_ESPERA_PORTA,
+    ESTADO_REVERSAO
+} EstadoElevador;
+
+extern volatile EstadoElevador estado_atual;
+
 #endif /* GLOBALS_H */

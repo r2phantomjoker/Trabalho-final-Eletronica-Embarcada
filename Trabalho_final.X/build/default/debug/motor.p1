@@ -11,6 +11,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 "106
 [; ;./globals.h: 106: extern volatile uint8_t velocidade_atual;
 [v _velocidade_atual `Vuc ~T0 @X0 0 e ]
+"2045 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2045:     struct {
+[s S110 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S110 . LATA0 LATA1 LATA2 LATA3 LATA4 . LATA6 LATA7 ]
+"2044
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2044: typedef union {
+[u S109 `S110 1 ]
+[n S109 . . ]
+"2056
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2056: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
+[v _LATAbits `VS109 ~T0 @X0 0 e@268 ]
+"124 ./mcc_generated_files/pwm3.h
+[; ;./mcc_generated_files/pwm3.h: 124: void PWM3_LoadDutyValue(uint16_t dutyValue);
+[v _PWM3_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
+"497 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 497:     struct {
+[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S36 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"496
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 496: typedef union {
+[u S35 `S36 1 ]
+[n S35 . . ]
+"508
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 508: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
+"82 ./globals.h
+[; ;./globals.h: 82: extern volatile uint8_t andar_atual;
+[v _andar_atual `Vuc ~T0 @X0 0 e ]
+"2164 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2164:     struct {
+[s S114 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S114 . C1SYNC C1HYS C1SP . C1POL C1OE C1OUT C1ON ]
+"2163
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2163: typedef union {
+[u S113 `S114 1 ]
+[n S113 . . ]
+"2175
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2175: extern volatile CM1CON0bits_t CM1CON0bits __attribute__((address(0x111)));
+[v _CM1CON0bits `VS113 ~T0 @X0 0 e@273 ]
+"2287
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2287:     struct {
+[s S119 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S119 . C2SYNC C2HYS C2SP . C2POL C2OE C2OUT C2ON ]
+"2286
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2286: typedef union {
+[u S118 `S119 1 ]
+[n S118 . . ]
+"2298
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2298: extern volatile CM2CON0bits_t CM2CON0bits __attribute__((address(0x113)));
+[v _CM2CON0bits `VS118 ~T0 @X0 0 e@275 ]
+"110 motor.c
+[; ;motor.c: 110:         estado_atual = ESTADO_PARADO;
+[c E2502 0 1 2 3 4 .. ]
+[n E2502 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
+"133 ./globals.h
+[; ;./globals.h: 133: extern volatile EstadoElevador estado_atual;
+[v _estado_atual `VE2502 ~T0 @X0 0 e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -497,74 +554,192 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _ultimo_valor_timer0
 -> -> 0 `i `uc
 ]
-"180
-[; ;motor.c: 180: void SENSORES_CalcularVelocidade(void){
+"34
+[; ;motor.c: 34: void SENSORES_CalcularVelocidade(void){
 [v _SENSORES_CalcularVelocidade `(v ~T0 @X0 1 ef ]
 {
 [e :U _SENSORES_CalcularVelocidade ]
 [f ]
-"184
-[; ;motor.c: 184:     uint8_t valor_atual = TMR0_ReadTimer();
+"38
+[; ;motor.c: 38:     uint8_t valor_atual = TMR0_ReadTimer();
 [v _valor_atual `uc ~T0 @X0 1 a ]
 [e = _valor_atual ( _TMR0_ReadTimer ..  ]
-"188
-[; ;motor.c: 188:     uint8_t delta = valor_atual - ultimo_valor_timer0;
+"42
+[; ;motor.c: 42:     uint8_t delta = valor_atual - ultimo_valor_timer0;
 [v _delta `uc ~T0 @X0 1 a ]
 [e = _delta -> - -> _valor_atual `i -> _ultimo_valor_timer0 `i `uc ]
-"191
-[; ;motor.c: 191:     ultimo_valor_timer0 = valor_atual;
+"45
+[; ;motor.c: 45:     ultimo_valor_timer0 = valor_atual;
 [e = _ultimo_valor_timer0 _valor_atual ]
-"195
-[; ;motor.c: 195:     if (estado_motor == 1) {
+"49
+[; ;motor.c: 49:     if (estado_motor == 1) {
 [e $ ! == -> _estado_motor `i -> 1 `i 360  ]
 {
-"196
-[; ;motor.c: 196:         total_pulsos += delta;
+"50
+[; ;motor.c: 50:         total_pulsos += delta;
 [e =+ _total_pulsos -> _delta `us ]
-"199
-[; ;motor.c: 199:         if(total_pulsos > 220) total_pulsos = 220;
+"53
+[; ;motor.c: 53:         if(total_pulsos > 220) total_pulsos = 220;
 [e $ ! > -> _total_pulsos `ui -> -> 220 `i `ui 361  ]
 [e = _total_pulsos -> -> 220 `i `us ]
 [e :U 361 ]
-"200
-[; ;motor.c: 200:     }
+"54
+[; ;motor.c: 54:     }
 }
 [e $U 362  ]
-"202
-[; ;motor.c: 202:     else if (estado_motor == 2) {
+"56
+[; ;motor.c: 56:     else if (estado_motor == 2) {
 [e :U 360 ]
 [e $ ! == -> _estado_motor `i -> 2 `i 363  ]
 {
-"204
-[; ;motor.c: 204:         if(delta > total_pulsos) total_pulsos = 0;
+"58
+[; ;motor.c: 58:         if(delta > total_pulsos) total_pulsos = 0;
 [e $ ! > -> _delta `ui -> _total_pulsos `ui 364  ]
 [e = _total_pulsos -> -> 0 `i `us ]
 [e $U 365  ]
-"205
-[; ;motor.c: 205:         else total_pulsos -= delta;
+"59
+[; ;motor.c: 59:         else total_pulsos -= delta;
 [e :U 364 ]
 [e =- _total_pulsos -> _delta `us ]
 [e :U 365 ]
-"206
-[; ;motor.c: 206:     }
+"60
+[; ;motor.c: 60:     }
 }
 [e :U 363 ]
 [e :U 362 ]
-"213
-[; ;motor.c: 213:     uint32_t calculo_posicao = (uint32_t)total_pulsos * 837;
+"67
+[; ;motor.c: 67:     uint32_t calculo_posicao = (uint32_t)total_pulsos * 837;
 [v _calculo_posicao `ul ~T0 @X0 1 a ]
 [e = _calculo_posicao * -> _total_pulsos `ul -> -> -> 837 `i `l `ul ]
-"214
-[; ;motor.c: 214:     posicao_mm = (uint8_t)(calculo_posicao / 1000);
+"68
+[; ;motor.c: 68:     posicao_mm = (uint8_t)(calculo_posicao / 1000);
 [e = _posicao_mm -> / _calculo_posicao -> -> -> 1000 `i `l `ul `uc ]
-"219
-[; ;motor.c: 219:     uint32_t calculo_velocidade = (uint32_t)delta * 837;
+"73
+[; ;motor.c: 73:     uint32_t calculo_velocidade = (uint32_t)delta * 837;
 [v _calculo_velocidade `ul ~T0 @X0 1 a ]
 [e = _calculo_velocidade * -> _delta `ul -> -> -> 837 `i `l `ul ]
-"220
-[; ;motor.c: 220:     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
+"74
+[; ;motor.c: 74:     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
 [e = _velocidade_atual -> / _calculo_velocidade -> -> -> 100 `i `l `ul `uc ]
-"221
-[; ;motor.c: 221: }
+"75
+[; ;motor.c: 75: }
 [e :UE 359 ]
+}
+"78
+[; ;motor.c: 78: void Controle_Subir() {
+[v _Controle_Subir `(v ~T0 @X0 1 ef ]
+{
+[e :U _Controle_Subir ]
+[f ]
+"79
+[; ;motor.c: 79:     LATAbits.LATA7 = 1;
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+"80
+[; ;motor.c: 80:     PWM3_LoadDutyValue(410);
+[e ( _PWM3_LoadDutyValue (1 -> -> 410 `i `us ]
+"81
+[; ;motor.c: 81:     estado_motor = 1;
+[e = _estado_motor -> -> 1 `i `uc ]
+"82
+[; ;motor.c: 82: }
+[e :UE 366 ]
+}
+"84
+[; ;motor.c: 84: void Controle_Descer() {
+[v _Controle_Descer `(v ~T0 @X0 1 ef ]
+{
+[e :U _Controle_Descer ]
+[f ]
+"85
+[; ;motor.c: 85:     LATAbits.LATA7 = 0;
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+"86
+[; ;motor.c: 86:     PWM3_LoadDutyValue(410);
+[e ( _PWM3_LoadDutyValue (1 -> -> 410 `i `us ]
+"87
+[; ;motor.c: 87:     estado_motor = 2;
+[e = _estado_motor -> -> 2 `i `uc ]
+"88
+[; ;motor.c: 88: }
+[e :UE 367 ]
+}
+"90
+[; ;motor.c: 90: void Controle_Parar() {
+[v _Controle_Parar `(v ~T0 @X0 1 ef ]
+{
+[e :U _Controle_Parar ]
+[f ]
+"91
+[; ;motor.c: 91:     PWM3_LoadDutyValue(0);
+[e ( _PWM3_LoadDutyValue (1 -> -> 0 `i `us ]
+"92
+[; ;motor.c: 92:     estado_motor = 0;
+[e = _estado_motor -> -> 0 `i `uc ]
+"93
+[; ;motor.c: 93: }
+[e :UE 368 ]
+}
+"97
+[; ;motor.c: 97: void Verificar_Sensores() {
+[v _Verificar_Sensores `(v ~T0 @X0 1 ef ]
+{
+[e :U _Verificar_Sensores ]
+[f ]
+"100
+[; ;motor.c: 100:     if (PORTBbits.RB0 == 0) andar_atual = 0;
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 370  ]
+[e = _andar_atual -> -> 0 `i `uc ]
+[e :U 370 ]
+"101
+[; ;motor.c: 101:     if (PORTBbits.RB3 == 0) andar_atual = 1;
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 371  ]
+[e = _andar_atual -> -> 1 `i `uc ]
+[e :U 371 ]
+"103
+[; ;motor.c: 103:     if (CM1CON0bits.C1OUT == 1) andar_atual = 2;
+[e $ ! == -> . . _CM1CON0bits 0 6 `i -> 1 `i 372  ]
+[e = _andar_atual -> -> 2 `i `uc ]
+[e :U 372 ]
+"104
+[; ;motor.c: 104:     if (CM2CON0bits.C2OUT == 1) andar_atual = 3;
+[e $ ! == -> . . _CM2CON0bits 0 6 `i -> 1 `i 373  ]
+[e = _andar_atual -> -> 3 `i `uc ]
+[e :U 373 ]
+"108
+[; ;motor.c: 108:     if (PORTBbits.RB0 == 0 && estado_motor == 2) {
+[e $ ! && == -> . . _PORTBbits 0 0 `i -> 0 `i == -> _estado_motor `i -> 2 `i 374  ]
+{
+"109
+[; ;motor.c: 109:         Controle_Parar();
+[e ( _Controle_Parar ..  ]
+"110
+[; ;motor.c: 110:         estado_atual = ESTADO_PARADO;
+[e = _estado_atual . `E2502 0 ]
+"111
+[; ;motor.c: 111:         posicao_mm = 0;
+[e = _posicao_mm -> -> 0 `i `uc ]
+"112
+[; ;motor.c: 112:     }
+}
+[e :U 374 ]
+"114
+[; ;motor.c: 114:     if (CM2CON0bits.C2OUT == 1 && estado_motor == 1) {
+[e $ ! && == -> . . _CM2CON0bits 0 6 `i -> 1 `i == -> _estado_motor `i -> 1 `i 375  ]
+{
+"115
+[; ;motor.c: 115:         Controle_Parar();
+[e ( _Controle_Parar ..  ]
+"116
+[; ;motor.c: 116:         estado_atual = ESTADO_PARADO;
+[e = _estado_atual . `E2502 0 ]
+"117
+[; ;motor.c: 117:         posicao_mm = 180;
+[e = _posicao_mm -> -> 180 `i `uc ]
+"118
+[; ;motor.c: 118:     }
+}
+[e :U 375 ]
+"119
+[; ;motor.c: 119: }
+[e :UE 369 ]
 }

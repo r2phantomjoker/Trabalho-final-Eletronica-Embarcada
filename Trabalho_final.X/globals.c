@@ -18,3 +18,6 @@ volatile uint8_t temperatura_ponte = 0; // 0.0*10 °C
 // Vetor de Solicitações (Botões apertados)
 // [0]=Térreo, [1]=1ºAndar, [2]=2ºAndar, [3]=3ºAndar
 volatile bool solicitacoes[4] = {false, false, false, false};
+
+// Estado da Máquina de Estados
+volatile EstadoElevador estado_atual = ESTADO_PARADO;

@@ -1,12 +1,12 @@
 /**
- * @file comms.h
+ * @file comm.h
  * @author Gabriel Celestino
  * @brief Cabeçalho da comunicação e  interface.
  * @date Created on November 30, 2025
  */
 
-#ifndef COMMS_H
-#define	COMMS_H
+#ifndef COMM_H
+#define	COMM_H
 
 #include <stdint.h>
 
@@ -16,7 +16,7 @@
  * Retorna 1 caso último caractere recebido seja diferente de <CR>.
  * @note Os dados não recebem tratamento aqui.
  */
-int UART_RecebeAndar(char* Origem, char* Destino);
+int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 
 /*
  * @brief Acessa as variaveis globais e transmite pela UART
@@ -24,5 +24,5 @@ int UART_RecebeAndar(char* Origem, char* Destino);
  */
 void UART_EnviaDados(void);
 
-#endif	/* COMMS_H */
+#endif	/* COMM_H */
 

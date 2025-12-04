@@ -1,4 +1,5 @@
-#include "globals.h"              
+#include "comm.h"
+#include "globals.h"    
 #include "mcc_generated_files/mcc.h"
 
 #define CR      13  //define o valor de CR na ascii

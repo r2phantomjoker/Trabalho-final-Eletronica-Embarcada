@@ -1,39 +1,28 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"79 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 79: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-[v F2839 `(v ~T0 @X0 0 tf ]
-"326 ./mcc_generated_files/tmr4.h
-[; ;./mcc_generated_files/tmr4.h: 326:  void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2839 ]
-"49 ./motor.h
-[; ;./motor.h: 49: void SENSORES_CalcularVelocidade(void);
-[v _SENSORES_CalcularVelocidade `(v ~T0 @X0 0 ef ]
-"357 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 357:     struct {
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
-"367
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 367:     struct {
-[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S32 . . T0IF . T0IE ]
-"356
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 356: typedef union {
-[u S30 `S31 1 `S32 1 ]
-[n S30 . . . ]
-"374
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"28 ./motor.h
-[; ;./motor.h: 28: void MOTOR_reset(void);
-[v _MOTOR_reset `(v ~T0 @X0 0 ef ]
-"19 ./comm.h
-[; ;./comm.h: 19: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
-[v _UART_RecebePedido `(i ~T0 @X0 0 ef2`*uc`*uc ]
-"25
-[; ;./comm.h: 25: void UART_EnviaDados(void);
-[v _UART_EnviaDados `(v ~T0 @X0 0 ef ]
+"328 ./mcc_generated_files/eusart.h
+[; ;./mcc_generated_files/eusart.h: 328: uint8_t EUSART_Read(void);
+[v _EUSART_Read `(uc ~T0 @X0 0 ef ]
+"348
+[; ;./mcc_generated_files/eusart.h: 348: void EUSART_Write(uint8_t txData);
+[v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
+"82 ./globals.h
+[; ;./globals.h: 82: extern volatile uint8_t andar_atual;
+[v _andar_atual `Vuc ~T0 @X0 0 e ]
+"88
+[; ;./globals.h: 88: extern volatile uint8_t andar_destino;
+[v _andar_destino `Vuc ~T0 @X0 0 e ]
+"94
+[; ;./globals.h: 94: extern volatile uint8_t estado_motor;
+[v _estado_motor `Vuc ~T0 @X0 0 e ]
+"100
+[; ;./globals.h: 100: extern volatile uint8_t posicao_mm;
+[v _posicao_mm `Vuc ~T0 @X0 0 e ]
+"106
+[; ;./globals.h: 106: extern volatile uint8_t velocidade_atual;
+[v _velocidade_atual `Vuc ~T0 @X0 0 e ]
+"112
+[; ;./globals.h: 112: extern volatile uint8_t temperatura_ponte;
+[v _temperatura_ponte `Vuc ~T0 @X0 0 e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -508,57 +497,102 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6748
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 6748: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"11 main.c
-[; ;main.c: 11: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"12
-[; ;main.c: 12: {
+"7 comm.c
+[; ;comm.c: 7: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido){
+[v _UART_RecebePedido `(i ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[e :U _main ]
+[e :U _UART_RecebePedido ]
+[v _OrigemPedido `*uc ~T0 @X0 1 r1 ]
+[v _DestinoPedido `*uc ~T0 @X0 1 r2 ]
 [f ]
-"14
-[; ;main.c: 14:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"18
-[; ;main.c: 18:     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
-[e ( _TMR4_SetInterruptHandler (1 &U _SENSORES_CalcularVelocidade ]
-"21
-[; ;main.c: 21:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"22
-[; ;main.c: 22:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"29
-[; ;main.c: 29:     MOTOR_reset();
-[e ( _MOTOR_reset ..  ]
-"32
-[; ;main.c: 32:     char Origem = 0;
-[v _Origem `uc ~T0 @X0 1 a ]
-[e = _Origem -> -> 0 `i `uc ]
-"33
-[; ;main.c: 33:     char Destino = 0;
-[v _Destino `uc ~T0 @X0 1 a ]
-[e = _Destino -> -> 0 `i `uc ]
-"34
-[; ;main.c: 34:     while (1)
-[e :U 361 ]
-"35
-[; ;main.c: 35:     {
+"8
+[; ;comm.c: 8:     if(EUSART_Read() == '$'){
+[e $ ! == -> ( _EUSART_Read ..  `ui -> 36 `ui 360  ]
 {
-"36
-[; ;main.c: 36:        UART_RecebePedido(&Origem, &Destino);
-[e ( _UART_RecebePedido (2 , &U _Origem &U _Destino ]
-"37
-[; ;main.c: 37:        UART_EnviaDados();
-[e ( _UART_EnviaDados ..  ]
-"38
-[; ;main.c: 38:     }
+"9
+[; ;comm.c: 9:     *OrigemPedido = EUSART_Read();
+[e = *U _OrigemPedido -> ( _EUSART_Read ..  `uc ]
+"10
+[; ;comm.c: 10:     *DestinoPedido = EUSART_Read();
+[e = *U _DestinoPedido -> ( _EUSART_Read ..  `uc ]
+"11
+[; ;comm.c: 11:     if(EUSART_Read() == 13)
+[e $ ! == -> ( _EUSART_Read ..  `i -> 13 `i 361  ]
+"12
+[; ;comm.c: 12:         return 0;
+[e ) -> 0 `i ]
+[e $UE 359  ]
+[e :U 361 ]
+"13
+[; ;comm.c: 13:     }
 }
 [e :U 360 ]
-[e $U 361  ]
-[e :U 362 ]
-"39
-[; ;main.c: 39: }
+"14
+[; ;comm.c: 14:     return 1;
+[e ) -> 1 `i ]
+[e $UE 359  ]
+"19
+[; ;comm.c: 19: }
 [e :UE 359 ]
+}
+"21
+[; ;comm.c: 21: void UART_EnviaDados(void){
+[v _UART_EnviaDados `(v ~T0 @X0 1 ef ]
+{
+[e :U _UART_EnviaDados ]
+[f ]
+"22
+[; ;comm.c: 22:     EUSART_Write('$');
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+"23
+[; ;comm.c: 23:     EUSART_Write('0' + andar_atual);
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> _andar_atual `ui `uc ]
+"24
+[; ;comm.c: 24:     EUSART_Write('0' + andar_destino);
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> _andar_destino `ui `uc ]
+"25
+[; ;comm.c: 25:     EUSART_Write('0' + estado_motor);
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> _estado_motor `ui `uc ]
+"27
+[; ;comm.c: 27:     EUSART_Write('0' + (posicao_mm/100));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _posicao_mm `i -> 100 `i `ui `uc ]
+"28
+[; ;comm.c: 28:     EUSART_Write('0' + ((posicao_mm%100)/10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _posicao_mm `i -> 100 `i -> 10 `i `ui `uc ]
+"29
+[; ;comm.c: 29:     EUSART_Write('0' + ((posicao_mm%100)%10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _posicao_mm `i -> 100 `i -> 10 `i `ui `uc ]
+"31
+[; ;comm.c: 31:     EUSART_Write('0' + (velocidade_atual/100));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _velocidade_atual `i -> 100 `i `ui `uc ]
+"32
+[; ;comm.c: 32:     EUSART_Write('0' + ((velocidade_atual%100)/10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _velocidade_atual `i -> 100 `i -> 10 `i `ui `uc ]
+"33
+[; ;comm.c: 33:     EUSART_Write('.');
+[e ( _EUSART_Write (1 -> -> 46 `ui `uc ]
+"34
+[; ;comm.c: 34:     EUSART_Write('0' + ((velocidade_atual%100)%10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _velocidade_atual `i -> 100 `i -> 10 `i `ui `uc ]
+"36
+[; ;comm.c: 36:     EUSART_Write('0' + (temperatura_ponte/100));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _temperatura_ponte `i -> 100 `i `ui `uc ]
+"37
+[; ;comm.c: 37:     EUSART_Write('0' + ((temperatura_ponte%100)/10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _temperatura_ponte `i -> 100 `i -> 10 `i `ui `uc ]
+"38
+[; ;comm.c: 38:     EUSART_Write('.');
+[e ( _EUSART_Write (1 -> -> 46 `ui `uc ]
+"39
+[; ;comm.c: 39:     EUSART_Write('0' + ((temperatura_ponte%100)%10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _temperatura_ponte `i -> 100 `i -> 10 `i `ui `uc ]
+"41
+[; ;comm.c: 41:     EUSART_Write(13);
+[e ( _EUSART_Write (1 -> -> 13 `i `uc ]
+"42
+[; ;comm.c: 42:     return;
+[e $UE 362  ]
+"43
+[; ;comm.c: 43: }
+[e :UE 362 ]
 }

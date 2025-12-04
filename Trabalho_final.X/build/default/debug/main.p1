@@ -757,7 +757,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != _alvo -U -> 1 `i 390  ]
 {
 "84
-[; ;main.c: 84:                     andar_destino = alvo;
+[; ;main.c: 84:                     andar_destino = (uint8_t)alvo;
 [e = _andar_destino -> _alvo `uc ]
 "85
 [; ;main.c: 85:                     if (andar_destino > andar_atual) {
@@ -862,7 +862,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != _novo_alvo -U -> 1 `i 401  ]
 {
 "119
-[; ;main.c: 119:                         andar_destino = novo_alvo;
+[; ;main.c: 119:                         andar_destino = (uint8_t)novo_alvo;
 [e = _andar_destino -> _novo_alvo `uc ]
 "120
 [; ;main.c: 120:                     }

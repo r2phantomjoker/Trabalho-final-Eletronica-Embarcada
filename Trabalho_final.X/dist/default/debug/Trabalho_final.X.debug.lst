@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.00 build 20241204225717 
-                                                                                               Thu Dec 04 17:59:18 2025
+                                                                                               Thu Dec 04 18:07:34 2025
 
 Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1 
      1                           	processor	16F1827
@@ -3773,7 +3773,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   3759     010A                     u2650:
   3760     010A                     l3278:
   3761                           
-  3762                           ;main.c: 84:                     andar_destino = alvo;
+  3762                           ;main.c: 84:                     andar_destino = (uint8_t)alvo;
   3763     010A  0844               	movf	main@alvo^(0+128),w
   3764     010B  0020               	movlb	0	; select bank0
   3765     010C  00CF               	movwf	_andar_destino	;volatile
@@ -3911,7 +3911,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   3897     0160                     u2700:
   3898     0160                     l3314:
   3899                           
-  3900                           ;main.c: 119:                         andar_destino = novo_alvo;
+  3900                           ;main.c: 119:                         andar_destino = (uint8_t)novo_alvo;
   3901     0160  083E               	movf	main@novo_alvo^(0+128),w
   3902     0161  0020               	movlb	0	; select bank0
   3903     0162  00CF               	movwf	_andar_destino	;volatile
@@ -9796,7 +9796,7 @@ DATA                 0      0     129      0.0%
 
 
 Microchip Technology PIC Macro Assembler V3.00 build 20241204225717 
-Symbol Table                                                                                   Thu Dec 04 17:59:18 2025
+Symbol Table                                                                                   Thu Dec 04 18:07:34 2025
 
                 ?_EUSART_SetRxInterruptHandler 002E                                ?_Controle_Subir 0070  
              __end_of_TMR2_SetInterruptHandler 0F59               ??_IOCBF3_DefaultInterruptHandler 0070  

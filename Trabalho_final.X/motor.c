@@ -117,3 +117,28 @@ void Verificar_Sensores() {
         posicao_mm = 180; // Recalibra
     }
 }
+
+// 3. ALGORITMO DE OTIMIZAÇÃO
+int Buscar_Proxima_Parada() {
+    // 1. Se parado, atende qualquer um
+    if (estado_atual == ESTADO_PARADO) {
+        for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
+        return -1;
+    }
+    // 2. Se subindo, prioriza quem está ACIMA
+    if (estado_atual == ESTADO_SUBINDO) {
+        for (int i = andar_atual + 1; i <= 3; i++) {
+            if (solicitacoes[i]) return i;
+        }
+    }
+    // 3. Se descendo, prioriza quem está ABAIXO
+    if (estado_atual == ESTADO_DESCENDO) {
+        for (int i = andar_atual - 1; i >= 0; i--) {
+            if (solicitacoes[i]) return i;
+        }
+    }
+    // 4. Se não achou no sentido, varre tudo
+    for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
+    
+    return -1;
+}

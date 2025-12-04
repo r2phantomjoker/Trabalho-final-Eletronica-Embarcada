@@ -4859,7 +4859,7 @@ void main(void) {
             case ESTADO_PARADO: {
                 int alvo = Buscar_Proxima_Parada();
                 if (alvo != -1) {
-                    andar_destino = alvo;
+                    andar_destino = (uint8_t)alvo;
                     if (andar_destino > andar_atual) {
                         Controle_Subir();
                         estado_atual = ESTADO_SUBINDO;
@@ -4894,7 +4894,7 @@ void main(void) {
                 else {
                     int novo_alvo = Buscar_Proxima_Parada();
                     if (novo_alvo != -1) {
-                        andar_destino = novo_alvo;
+                        andar_destino = (uint8_t)novo_alvo;
                     }
                 }
                 break;

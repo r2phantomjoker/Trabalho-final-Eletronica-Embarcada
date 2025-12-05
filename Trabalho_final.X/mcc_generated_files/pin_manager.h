@@ -89,6 +89,20 @@
 #define RA1_SetAnalogMode()         do { ANSELAbits.ANSA1 = 1; } while(0)
 #define RA1_SetDigitalMode()        do { ANSELAbits.ANSA1 = 0; } while(0)
 
+// get/set channel_AN2 aliases
+#define channel_AN2_TRIS                 TRISAbits.TRISA2
+#define channel_AN2_LAT                  LATAbits.LATA2
+#define channel_AN2_PORT                 PORTAbits.RA2
+#define channel_AN2_ANS                  ANSELAbits.ANSA2
+#define channel_AN2_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define channel_AN2_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define channel_AN2_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define channel_AN2_GetValue()           PORTAbits.RA2
+#define channel_AN2_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define channel_AN2_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define channel_AN2_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
+#define channel_AN2_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
+
 // get/set RA3 procedures
 #define RA3_SetHigh()            do { LATAbits.LATA3 = 1; } while(0)
 #define RA3_SetLow()             do { LATAbits.LATA3 = 0; } while(0)

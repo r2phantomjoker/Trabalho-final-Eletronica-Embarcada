@@ -63,4 +63,6 @@ void MatrizLed (void){
     data[1] = data[1] + (solicitacoes[2])*32;
     data[1] = data[1] + (solicitacoes[3])*16;
     SPI1_ExchangeBlock(data, 2); 
+    
+    CS_SetHigh();
 }

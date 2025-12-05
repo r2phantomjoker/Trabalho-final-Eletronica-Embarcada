@@ -120,30 +120,46 @@ int UART_RecebePedido(char* origem_pedido, char* destino_pedido){
 }
 
 void UART_EnviaDados(void){
+    
+    // 1. Cabeçalho
     EUSART_Write('$');
+
+    // 2. Andar Atual (A)
     EUSART_Write('0' + andar_atual);
+    EUSART_Write(',');  // Separador
+
+    // 3. Andar Destino (D)
     EUSART_Write('0' + andar_destino);
+    EUSART_Write(',');  // Separador
+
+    // 4. Estado Motor (M)
     EUSART_Write('0' + estado_motor);
-//    EUSART_Write(posicao_mm);
-//    EUSART_Write(velocidade_atual);
-//    EUSART_Write(temperatura_ponte);
-    
-    EUSART_Write('0' + (posicao_mm/100));
-    EUSART_Write('0' + ((posicao_mm%100)/10));
-    EUSART_Write('0' + ((posicao_mm%100)%10));
-    
-    EUSART_Write('0' + (velocidade_atual/100));
-    EUSART_Write('0' + ((velocidade_atual%100)/10));
-    EUSART_Write('.');
-    EUSART_Write('0' + ((velocidade_atual%100)%10));
-    
-    EUSART_Write('0' + (temperatura_ponte/100));
-    EUSART_Write('0' + ((temperatura_ponte%100)/10));
-    EUSART_Write('.');
-    EUSART_Write('0' + ((temperatura_ponte%100)%10));
-    
-    EUSART_Write(CR);
-    return;
+    EUSART_Write(',');  // Separador
+
+    // 5. Posição (HHH) - Ex: 035
+    // Divide por 100 para pegar centena, etc.
+    EUSART_Write('0' + (posicao_mm / 100));
+    EUSART_Write('0' + ((posicao_mm % 100) / 10));
+    EUSART_Write('0' + (posicao_mm % 10));
+    EUSART_Write(',');  // Separador
+
+    // 6. Velocidade (VV.V) - Ex: 12.5
+    EUSART_Write('0' + (velocidade_atual / 100));
+    EUSART_Write('0' + ((velocidade_atual % 100) / 10));
+    EUSART_Write('.');  // Ponto decimal
+    EUSART_Write('0' + (velocidade_atual % 10));
+    EUSART_Write(',');  // Separador
+
+    // 7. Temperatura (TT.T) - Ex: 25.0
+    EUSART_Write('0' + (temperatura_ponte / 100));
+    EUSART_Write('0' + ((temperatura_ponte % 100) / 10));
+    EUSART_Write('.');  // Ponto decimal
+    EUSART_Write('0' + (temperatura_ponte % 10));
+    // NOTA: Não coloque vírgula após o último dado!
+
+    // 8. Finalizador de Linha (CR - Carriage Return)
+    EUSART_Write(13); 
+
 }
 
 // ==========================================

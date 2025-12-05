@@ -73,14 +73,17 @@ void SENSORES_CalcularVelocidade(void){
     uint32_t calculo_velocidade = (uint32_t)delta * MICRONS_POR_PULSO;
     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
     
-    uint16_t leitura_adc = ADC_GetConversion(channel_AN2);
-
-    // Fazemos o cast para uint32_t ANTES de multiplicar para evitar overflow de 16 bits
-    // 1023 * 999 = 1.021.977 (cabe em uint32_t, mas não em uint16_t)
-    uint32_t calc_temp = (uint32_t)leitura_adc * 999;
+    uint16_t leitura_adc = 0;
+    
+    for(int i = 0;  i < 10; i++){
+        leitura_adc = leitura_adc + ADC_GetConversion(channel_AN2);
+        _delay(100);
+    }
+    
+    leitura_adc = leitura_adc/10;
     
     // Agora dividimos e guardamos no resultado final
-    temperatura_ponte = (uint16_t)(calc_temp / 1023);
+    temperatura_ponte = (uint16_t)(leitura_adc);
     
 }
 

@@ -4348,25 +4348,25 @@ extern __bank0 __bit __timeout;
 # 1 "mcc_generated_files/device_config.h" 1
 # 51 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 225 "mcc_generated_files/pin_manager.h"
+# 239 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 237 "mcc_generated_files/pin_manager.h"
+# 251 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 250 "mcc_generated_files/pin_manager.h"
+# 264 "mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 273 "mcc_generated_files/pin_manager.h"
+# 287 "mcc_generated_files/pin_manager.h"
 void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 297 "mcc_generated_files/pin_manager.h"
+# 311 "mcc_generated_files/pin_manager.h"
 extern void (*IOCBF0_InterruptHandler)(void);
-# 321 "mcc_generated_files/pin_manager.h"
+# 335 "mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 334 "mcc_generated_files/pin_manager.h"
+# 348 "mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 357 "mcc_generated_files/pin_manager.h"
+# 371 "mcc_generated_files/pin_manager.h"
 void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 381 "mcc_generated_files/pin_manager.h"
+# 395 "mcc_generated_files/pin_manager.h"
 extern void (*IOCBF3_InterruptHandler)(void);
-# 405 "mcc_generated_files/pin_manager.h"
+# 419 "mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 52 "mcc_generated_files/mcc.h" 2
 
@@ -4572,6 +4572,14 @@ extern void (*TMR4_InterruptHandler)(void);
 # 362 "mcc_generated_files/tmr4.h"
 void TMR4_DefaultInterruptHandler(void);
 # 58 "mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/cmp2.h" 1
+# 92 "mcc_generated_files/cmp2.h"
+void CMP2_Initialize(void);
+# 132 "mcc_generated_files/cmp2.h"
+_Bool CMP2_GetOutputStatus(void);
+# 148 "mcc_generated_files/cmp2.h"
+void CMP2_ISR(void);
+# 59 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/tmr2.h" 1
 # 103 "mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4593,14 +4601,6 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 362 "mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
-# 59 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/cmp2.h" 1
-# 92 "mcc_generated_files/cmp2.h"
-void CMP2_Initialize(void);
-# 132 "mcc_generated_files/cmp2.h"
-_Bool CMP2_GetOutputStatus(void);
-# 148 "mcc_generated_files/cmp2.h"
-void CMP2_ISR(void);
 # 60 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/cmp1.h" 1
 # 92 "mcc_generated_files/cmp1.h"
@@ -4649,23 +4649,24 @@ typedef struct
 # 95 "mcc_generated_files/adc.h"
 typedef enum
 {
+    channel_AN2 = 0x2,
     channel_Temp = 0x1D,
     channel_DAC = 0x1E,
     channel_FVR = 0x1F
 } adc_channel_t;
-# 135 "mcc_generated_files/adc.h"
+# 136 "mcc_generated_files/adc.h"
 void ADC_Initialize(void);
-# 165 "mcc_generated_files/adc.h"
+# 166 "mcc_generated_files/adc.h"
 void ADC_SelectChannel(adc_channel_t channel);
-# 192 "mcc_generated_files/adc.h"
+# 193 "mcc_generated_files/adc.h"
 void ADC_StartConversion(void);
-# 224 "mcc_generated_files/adc.h"
+# 225 "mcc_generated_files/adc.h"
 _Bool ADC_IsConversionDone(void);
-# 257 "mcc_generated_files/adc.h"
+# 258 "mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversionResult(void);
-# 287 "mcc_generated_files/adc.h"
+# 288 "mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 315 "mcc_generated_files/adc.h"
+# 316 "mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
 # 65 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/eusart.h" 1

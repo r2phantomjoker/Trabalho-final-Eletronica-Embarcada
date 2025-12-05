@@ -620,7 +620,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="CMP1" name="validateSignal"/>
-         <value>2x</value>
+         <value>1x</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CMP1" registerAlias="CMCON0" settingAlias="CHYS" alias="disabled"/>
@@ -812,7 +812,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="CMP2" name="validateSignal"/>
-         <value>2x</value>
+         <value>1x</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CMP2" registerAlias="CMCON0" settingAlias="CHYS" alias="disabled"/>
@@ -1336,11 +1336,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FVR" name="adfvrVoltage"/>
-         <value>2.048 V</value>
+         <value>1.024 V</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FVR" name="cdafvrVoltage"/>
-         <value>2.048 V</value>
+         <value>1.024 V</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="FVR" registerAlias="FVRCON" settingAlias="ADFVR" alias="1x"/>
@@ -1408,15 +1408,15 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="FVR" registerAlias="FVRCON"/>
-         <value>138</value>
+         <value>133</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="FVR" registerAlias="FVRCON" settingAlias="ADFVR"/>
-         <value>2x</value>
+         <value>1x</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="FVR" registerAlias="FVRCON" settingAlias="CDAFVR"/>
-         <value>2x</value>
+         <value>1x</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="FVR" registerAlias="FVRCON" settingAlias="FVREN"/>
@@ -4790,7 +4790,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\fvr.c</file>
-         <hash>548f7387028546a77ba54d908ed16de0042991e7b8c41a9e9eb3ad5c877da9de</hash>
+         <hash>78324177fc0784bde61eab54813cae14a25d7a451dcab9075478abf7ae0718b9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\fvr.h</file>
@@ -4810,7 +4810,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>e91301c3ce2c924ef768fe08bb8b71a11d2f68e767e086e5bcee6f1d6f735376</hash>
+         <hash>df0f5f87c256a9a720ffac175ace83095538cfa63b75d7e8443e18cd6f881eec</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>

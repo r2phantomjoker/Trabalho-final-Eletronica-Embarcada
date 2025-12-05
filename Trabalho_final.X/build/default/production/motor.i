@@ -4657,6 +4657,14 @@ extern void (*TMR4_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr4.h"
 void TMR4_DefaultInterruptHandler(void);
 # 58 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/cmp2.h" 1
+# 92 "./mcc_generated_files/cmp2.h"
+void CMP2_Initialize(void);
+# 132 "./mcc_generated_files/cmp2.h"
+_Bool CMP2_GetOutputStatus(void);
+# 148 "./mcc_generated_files/cmp2.h"
+void CMP2_ISR(void);
+# 59 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 103 "./mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4678,14 +4686,6 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
-# 59 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/cmp2.h" 1
-# 92 "./mcc_generated_files/cmp2.h"
-void CMP2_Initialize(void);
-# 132 "./mcc_generated_files/cmp2.h"
-_Bool CMP2_GetOutputStatus(void);
-# 148 "./mcc_generated_files/cmp2.h"
-void CMP2_ISR(void);
 # 60 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/cmp1.h" 1
 # 92 "./mcc_generated_files/cmp1.h"
@@ -4868,14 +4868,17 @@ void SENSORES_CalcularVelocidade(void){
     uint32_t calculo_velocidade = (uint32_t)delta * 837;
     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
 
-    uint16_t leitura_adc = ADC_GetConversion(channel_AN2);
+    uint16_t leitura_adc = 0;
+
+    for(int i = 0; i < 10; i++){
+        leitura_adc = leitura_adc + ADC_GetConversion(channel_AN2);
+        _delay(100);
+    }
+
+    leitura_adc = leitura_adc/10;
 
 
-
-    uint32_t calc_temp = (uint32_t)leitura_adc * 999;
-
-
-    temperatura_ponte = (uint16_t)(calc_temp / 1023);
+    temperatura_ponte = (uint16_t)(leitura_adc);
 
 }
 

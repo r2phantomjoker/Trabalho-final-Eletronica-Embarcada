@@ -508,10 +508,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "16
-[; ;globals.c: 16: volatile uint8_t temperatura_ponte = 0;
-[v _temperatura_ponte `Vuc ~T0 @X0 1 e ]
+[; ;globals.c: 16: volatile uint16_t temperatura_ponte = 0;
+[v _temperatura_ponte `Vus ~T0 @X0 1 e ]
 [i _temperatura_ponte
--> -> 0 `i `uc
+-> -> 0 `i `us
 ]
 "20
 [; ;globals.c: 20: volatile _Bool solicitacoes[4] = {0, 0, 0, 0};

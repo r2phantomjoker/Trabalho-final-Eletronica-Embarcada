@@ -4358,7 +4358,7 @@ _Bool FVR_IsOutputReady(void);
 void FVR_Initialize(void)
 {
 
-    FVRCON = 0x8A;
+    FVRCON = 0x85;
 }
 
 _Bool FVR_IsOutputReady(void)

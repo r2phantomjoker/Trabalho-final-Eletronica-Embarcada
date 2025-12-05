@@ -4667,6 +4667,14 @@ extern void (*TMR4_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr4.h"
 void TMR4_DefaultInterruptHandler(void);
 # 58 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/cmp2.h" 1
+# 92 "./mcc_generated_files/cmp2.h"
+void CMP2_Initialize(void);
+# 132 "./mcc_generated_files/cmp2.h"
+_Bool CMP2_GetOutputStatus(void);
+# 148 "./mcc_generated_files/cmp2.h"
+void CMP2_ISR(void);
+# 59 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 103 "./mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4688,14 +4696,6 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
-# 59 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/cmp2.h" 1
-# 92 "./mcc_generated_files/cmp2.h"
-void CMP2_Initialize(void);
-# 132 "./mcc_generated_files/cmp2.h"
-_Bool CMP2_GetOutputStatus(void);
-# 148 "./mcc_generated_files/cmp2.h"
-void CMP2_ISR(void);
 # 60 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/cmp1.h" 1
 # 92 "./mcc_generated_files/cmp1.h"
@@ -4931,30 +4931,46 @@ int UART_RecebePedido(char* origem_pedido, char* destino_pedido){
 }
 
 void UART_EnviaDados(void){
+
+
     EUSART_Write('$');
+
+
     EUSART_Write('0' + andar_atual);
+    EUSART_Write(',');
+
+
     EUSART_Write('0' + andar_destino);
+    EUSART_Write(',');
+
+
     EUSART_Write('0' + estado_motor);
+    EUSART_Write(',');
 
 
 
+    EUSART_Write('0' + (posicao_mm / 100));
+    EUSART_Write('0' + ((posicao_mm % 100) / 10));
+    EUSART_Write('0' + (posicao_mm % 10));
+    EUSART_Write(',');
 
-    EUSART_Write('0' + (posicao_mm/100));
-    EUSART_Write('0' + ((posicao_mm%100)/10));
-    EUSART_Write('0' + ((posicao_mm%100)%10));
 
-    EUSART_Write('0' + (velocidade_atual/100));
-    EUSART_Write('0' + ((velocidade_atual%100)/10));
+    EUSART_Write('0' + (velocidade_atual / 100));
+    EUSART_Write('0' + ((velocidade_atual % 100) / 10));
     EUSART_Write('.');
-    EUSART_Write('0' + ((velocidade_atual%100)%10));
+    EUSART_Write('0' + (velocidade_atual % 10));
+    EUSART_Write(',');
 
-    EUSART_Write('0' + (temperatura_ponte/100));
-    EUSART_Write('0' + ((temperatura_ponte%100)/10));
+
+    EUSART_Write('0' + (temperatura_ponte / 100));
+    EUSART_Write('0' + ((temperatura_ponte % 100) / 10));
     EUSART_Write('.');
-    EUSART_Write('0' + ((temperatura_ponte%100)%10));
+    EUSART_Write('0' + (temperatura_ponte % 10));
+
+
 
     EUSART_Write(13);
-    return;
+
 }
 
 

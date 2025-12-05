@@ -4382,8 +4382,8 @@ extern volatile uint8_t velocidade_atual;
 
 
 
-extern volatile uint8_t temperatura_ponte;
-# 130 "./globals.h"
+extern volatile uint16_t temperatura_ponte;
+# 131 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {
@@ -4405,7 +4405,7 @@ volatile uint8_t andar_destino = 0;
 volatile uint8_t estado_motor = 0;
 volatile uint8_t posicao_mm = 0;
 volatile uint8_t velocidade_atual = 0;
-volatile uint8_t temperatura_ponte = 0;
+volatile uint16_t temperatura_ponte = 0;
 
 
 

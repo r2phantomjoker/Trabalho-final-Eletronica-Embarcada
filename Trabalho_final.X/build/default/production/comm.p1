@@ -46,8 +46,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./globals.h: 113: extern volatile uint8_t velocidade_atual;
 [v _velocidade_atual `Vuc ~T0 @X0 0 e ]
 "119
-[; ;./globals.h: 119: extern volatile uint8_t temperatura_ponte;
-[v _temperatura_ponte `Vuc ~T0 @X0 0 e ]
+[; ;./globals.h: 119: extern volatile uint16_t temperatura_ponte;
+[v _temperatura_ponte `Vus ~T0 @X0 0 e ]
 "1282 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1282:     struct {
 [s S75 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -59,15 +59,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1293
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1293: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x091)));
 [v _PIE1bits `VS74 ~T0 @X0 0 e@145 ]
-"186 comm.c
-[; ;comm.c: 186:     uint8_t base_seta = estado_atual * 4;
+"189 comm.c
+[; ;comm.c: 189:     uint8_t base_seta = estado_atual * 4;
 [c E2506 0 1 2 3 4 .. ]
 [n E2506 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"141 ./globals.h
-[; ;./globals.h: 141: extern volatile EstadoElevador estado_atual;
+"142 ./globals.h
+[; ;./globals.h: 142: extern volatile EstadoElevador estado_atual;
 [v _estado_atual `VE2506 ~T0 @X0 0 e ]
-"130
-[; ;./globals.h: 130: extern volatile _Bool solicitacoes[4];
+"131
+[; ;./globals.h: 131: extern volatile _Bool solicitacoes[4];
 [v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
@@ -723,86 +723,86 @@ Version 4.0 HI-TECH Software Intermediate Code
 "126
 [; ;comm.c: 126:     EUSART_Write('0' + estado_motor);
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> _estado_motor `ui `uc ]
-"128
-[; ;comm.c: 128:     EUSART_Write('0' + (posicao_mm/100));
+"131
+[; ;comm.c: 131:     EUSART_Write('0' + (posicao_mm/100));
 [e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _posicao_mm `i -> 100 `i `ui `uc ]
-"129
-[; ;comm.c: 129:     EUSART_Write('0' + ((posicao_mm%100)/10));
-[e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _posicao_mm `i -> 100 `i -> 10 `i `ui `uc ]
-"130
-[; ;comm.c: 130:     EUSART_Write('0' + ((posicao_mm%100)%10));
-[e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _posicao_mm `i -> 100 `i -> 10 `i `ui `uc ]
 "132
-[; ;comm.c: 132:     EUSART_Write('0' + (velocidade_atual/100));
-[e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _velocidade_atual `i -> 100 `i `ui `uc ]
+[; ;comm.c: 132:     EUSART_Write('0' + ((posicao_mm%100)/10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _posicao_mm `i -> 100 `i -> 10 `i `ui `uc ]
 "133
-[; ;comm.c: 133:     EUSART_Write('0' + ((velocidade_atual%100)/10));
-[e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _velocidade_atual `i -> 100 `i -> 10 `i `ui `uc ]
-"134
-[; ;comm.c: 134:     EUSART_Write('.');
-[e ( _EUSART_Write (1 -> -> 46 `ui `uc ]
+[; ;comm.c: 133:     EUSART_Write('0' + ((posicao_mm%100)%10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _posicao_mm `i -> 100 `i -> 10 `i `ui `uc ]
 "135
-[; ;comm.c: 135:     EUSART_Write('0' + ((velocidade_atual%100)%10));
-[e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _velocidade_atual `i -> 100 `i -> 10 `i `ui `uc ]
+[; ;comm.c: 135:     EUSART_Write('0' + (velocidade_atual/100));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _velocidade_atual `i -> 100 `i `ui `uc ]
+"136
+[; ;comm.c: 136:     EUSART_Write('0' + ((velocidade_atual%100)/10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _velocidade_atual `i -> 100 `i -> 10 `i `ui `uc ]
 "137
-[; ;comm.c: 137:     EUSART_Write('0' + (temperatura_ponte/100));
-[e ( _EUSART_Write (1 -> + -> 48 `ui -> / -> _temperatura_ponte `i -> 100 `i `ui `uc ]
-"138
-[; ;comm.c: 138:     EUSART_Write('0' + ((temperatura_ponte%100)/10));
-[e ( _EUSART_Write (1 -> + -> 48 `ui -> / % -> _temperatura_ponte `i -> 100 `i -> 10 `i `ui `uc ]
-"139
-[; ;comm.c: 139:     EUSART_Write('.');
+[; ;comm.c: 137:     EUSART_Write('.');
 [e ( _EUSART_Write (1 -> -> 46 `ui `uc ]
+"138
+[; ;comm.c: 138:     EUSART_Write('0' + ((velocidade_atual%100)%10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _velocidade_atual `i -> 100 `i -> 10 `i `ui `uc ]
 "140
-[; ;comm.c: 140:     EUSART_Write('0' + ((temperatura_ponte%100)%10));
-[e ( _EUSART_Write (1 -> + -> 48 `ui -> % % -> _temperatura_ponte `i -> 100 `i -> 10 `i `ui `uc ]
+[; ;comm.c: 140:     EUSART_Write('0' + (temperatura_ponte/100));
+[e ( _EUSART_Write (1 -> + -> 48 `ui / -> _temperatura_ponte `ui -> -> 100 `i `ui `uc ]
+"141
+[; ;comm.c: 141:     EUSART_Write('0' + ((temperatura_ponte%100)/10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui / % -> _temperatura_ponte `ui -> -> 100 `i `ui -> -> 10 `i `ui `uc ]
 "142
-[; ;comm.c: 142:     EUSART_Write(13);
-[e ( _EUSART_Write (1 -> -> 13 `i `uc ]
+[; ;comm.c: 142:     EUSART_Write('.');
+[e ( _EUSART_Write (1 -> -> 46 `ui `uc ]
 "143
-[; ;comm.c: 143:     return;
+[; ;comm.c: 143:     EUSART_Write('0' + ((temperatura_ponte%100)%10));
+[e ( _EUSART_Write (1 -> + -> 48 `ui % % -> _temperatura_ponte `ui -> -> 100 `i `ui -> -> 10 `i `ui `uc ]
+"145
+[; ;comm.c: 145:     EUSART_Write(13);
+[e ( _EUSART_Write (1 -> -> 13 `i `uc ]
+"146
+[; ;comm.c: 146:     return;
 [e $UE 369  ]
-"144
-[; ;comm.c: 144: }
+"147
+[; ;comm.c: 147: }
 [e :UE 369 ]
 }
-"150
-[; ;comm.c: 150: void MatrizInicializa(void){
+"153
+[; ;comm.c: 153: void MatrizInicializa(void){
 [v _MatrizInicializa `(v ~T0 @X0 1 ef ]
 {
 [e :U _MatrizInicializa ]
 [f ]
-"152
-[; ;comm.c: 152:     PIE1bits.SSP1IE = 0;
+"155
+[; ;comm.c: 155:     PIE1bits.SSP1IE = 0;
 [e = . . _PIE1bits 0 3 -> -> 0 `i `uc ]
-"154
-[; ;comm.c: 154:     LATBbits.LATB1 = 1;
+"157
+[; ;comm.c: 157:     LATBbits.LATB1 = 1;
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-"159
-[; ;comm.c: 159:     uint8_t i = 0;
+"162
+[; ;comm.c: 162:     uint8_t i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"160
-[; ;comm.c: 160:     while(i < 12) {
+"163
+[; ;comm.c: 163:     while(i < 12) {
 [e $U 371  ]
 [e :U 372 ]
 {
-"161
-[; ;comm.c: 161:         MAX7219_Write(matrix_conf[i], matrix_conf[i+1]);
+"164
+[; ;comm.c: 164:         MAX7219_Write(matrix_conf[i], matrix_conf[i+1]);
 [e ( _MAX7219_Write (2 , *U + &U _matrix_conf * -> _i `ux -> -> # *U &U _matrix_conf `ui `ux *U + &U _matrix_conf * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _matrix_conf `ui `ux ]
-"162
-[; ;comm.c: 162:         i += 2;
+"165
+[; ;comm.c: 165:         i += 2;
 [e =+ _i -> -> 2 `i `uc ]
-"163
-[; ;comm.c: 163:     }
+"166
+[; ;comm.c: 166:     }
 }
 [e :U 371 ]
-"160
-[; ;comm.c: 160:     while(i < 12) {
+"163
+[; ;comm.c: 163:     while(i < 12) {
 [e $ < -> _i `i -> 12 `i 372  ]
 [e :U 373 ]
-"166
-[; ;comm.c: 166:     for(uint8_t row=1; row<=8; row++){
+"169
+[; ;comm.c: 169:     for(uint8_t row=1; row<=8; row++){
 {
 [v _row `uc ~T0 @X0 1 a ]
 [e = _row -> -> 1 `i `uc ]
@@ -810,50 +810,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 375  ]
 [e :U 374 ]
 {
-"167
-[; ;comm.c: 167:         MAX7219_Write(row, 0x00);
+"170
+[; ;comm.c: 170:         MAX7219_Write(row, 0x00);
 [e ( _MAX7219_Write (2 , _row -> -> 0 `i `uc ]
-"168
-[; ;comm.c: 168:     }
+"171
+[; ;comm.c: 171:     }
 }
 [e ++ _row -> -> 1 `i `uc ]
 [e $ <= -> _row `i -> 8 `i 374  ]
 [e :U 375 ]
 }
-"169
-[; ;comm.c: 169: }
+"172
+[; ;comm.c: 172: }
 [e :UE 370 ]
 }
-"172
-[; ;comm.c: 172: int Uniaomatrix (void){
+"175
+[; ;comm.c: 175: int Uniaomatrix (void){
 [v _Uniaomatrix `(i ~T0 @X0 1 ef ]
 {
 [e :U _Uniaomatrix ]
 [f ]
-"174
-[; ;comm.c: 174: }
+"177
+[; ;comm.c: 177: }
 [e :UE 377 ]
 }
-"177
-[; ;comm.c: 177: void MatrizLed (void){
+"180
+[; ;comm.c: 180: void MatrizLed (void){
 [v _MatrizLed `(v ~T0 @X0 1 ef ]
 {
 [e :U _MatrizLed ]
 [f ]
-"184
-[; ;comm.c: 184:     uint8_t buffer_percurso = 0;
+"187
+[; ;comm.c: 187:     uint8_t buffer_percurso = 0;
 [v _buffer_percurso `uc ~T0 @X0 1 a ]
 [e = _buffer_percurso -> -> 0 `i `uc ]
-"185
-[; ;comm.c: 185:     uint8_t base_andar = andar_atual * 4;
+"188
+[; ;comm.c: 188:     uint8_t base_andar = andar_atual * 4;
 [v _base_andar `uc ~T0 @X0 1 a ]
 [e = _base_andar -> * -> _andar_atual `i -> 4 `i `uc ]
-"186
-[; ;comm.c: 186:     uint8_t base_seta = estado_atual * 4;
+"189
+[; ;comm.c: 189:     uint8_t base_seta = estado_atual * 4;
 [v _base_seta `uc ~T0 @X0 1 a ]
 [e = _base_seta -> * -> _estado_atual `ui -> -> 4 `i `ui `uc ]
-"189
-[; ;comm.c: 189:     for(uint8_t i=0; i<4; i++){
+"192
+[; ;comm.c: 192:     for(uint8_t i=0; i<4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -861,18 +861,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 380  ]
 [e :U 379 ]
 {
-"191
-[; ;comm.c: 191:         MAX7219_Write(i+1, LUT_Andar[base_andar + i]);
+"194
+[; ;comm.c: 194:         MAX7219_Write(i+1, LUT_Andar[base_andar + i]);
 [e ( _MAX7219_Write (2 , -> + -> _i `i -> 1 `i `uc *U + &U _LUT_Andar * -> -> + -> _base_andar `i -> _i `i `ui `ux -> -> # *U &U _LUT_Andar `ui `ux ]
-"192
-[; ;comm.c: 192:     }
+"195
+[; ;comm.c: 195:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 4 `i 379  ]
 [e :U 380 ]
 }
-"197
-[; ;comm.c: 197:     for(uint8_t i=0; i<4; i++){
+"200
+[; ;comm.c: 200:     for(uint8_t i=0; i<4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -880,21 +880,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 383  ]
 [e :U 382 ]
 {
-"199
-[; ;comm.c: 199:         MAX7219_Write(i+5, LUT_dir[base_seta + i]);
+"202
+[; ;comm.c: 202:         MAX7219_Write(i+5, LUT_dir[base_seta + i]);
 [e ( _MAX7219_Write (2 , -> + -> _i `i -> 5 `i `uc *U + &U _LUT_dir * -> -> + -> _base_seta `i -> _i `i `ui `ux -> -> # *U &U _LUT_dir `ui `ux ]
-"200
-[; ;comm.c: 200:     }
+"203
+[; ;comm.c: 203:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 4 `i 382  ]
 [e :U 383 ]
 }
-"202
-[; ;comm.c: 202:     buffer_percurso = LUT_dir[base_seta + 3];
+"205
+[; ;comm.c: 205:     buffer_percurso = LUT_dir[base_seta + 3];
 [e = _buffer_percurso *U + &U _LUT_dir * -> -> + -> _base_seta `i -> 3 `i `ui `ux -> -> # *U &U _LUT_dir `ui `ux ]
-"203
-[; ;comm.c: 203:         for (uint8_t i=0; i<4; i++){
+"206
+[; ;comm.c: 206:         for (uint8_t i=0; i<4; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -902,28 +902,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 386  ]
 [e :U 385 ]
 {
-"204
-[; ;comm.c: 204:             if(solicitacoes[i]){
+"207
+[; ;comm.c: 207:             if(solicitacoes[i]){
 [e $ ! != -> *U + &U _solicitacoes * -> _i `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 388  ]
 {
-"205
-[; ;comm.c: 205:                 buffer_percurso += LUT_percurso[i] ;
+"208
+[; ;comm.c: 208:                 buffer_percurso += LUT_percurso[i] ;
 [e =+ _buffer_percurso -> *U + &U _LUT_percurso * -> _i `ux -> -> # *U &U _LUT_percurso `ui `ux `uc ]
-"206
-[; ;comm.c: 206:             }
+"209
+[; ;comm.c: 209:             }
 }
 [e :U 388 ]
-"207
-[; ;comm.c: 207:         }
+"210
+[; ;comm.c: 210:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 4 `i 385  ]
 [e :U 386 ]
 }
-"208
-[; ;comm.c: 208:     MAX7219_Write(8, buffer_percurso);
+"211
+[; ;comm.c: 211:     MAX7219_Write(8, buffer_percurso);
 [e ( _MAX7219_Write (2 , -> -> 8 `i `uc _buffer_percurso ]
-"213
-[; ;comm.c: 213: }
+"216
+[; ;comm.c: 216: }
 [e :UE 378 ]
 }

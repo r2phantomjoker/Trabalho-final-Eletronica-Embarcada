@@ -12,7 +12,6 @@
 
 
 
-
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
@@ -4351,25 +4350,25 @@ extern __bank0 __bit __timeout;
 # 1 "./mcc_generated_files/device_config.h" 1
 # 51 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 225 "./mcc_generated_files/pin_manager.h"
+# 239 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 237 "./mcc_generated_files/pin_manager.h"
+# 251 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 250 "./mcc_generated_files/pin_manager.h"
+# 264 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 273 "./mcc_generated_files/pin_manager.h"
+# 287 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 297 "./mcc_generated_files/pin_manager.h"
+# 311 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF0_InterruptHandler)(void);
-# 321 "./mcc_generated_files/pin_manager.h"
+# 335 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 334 "./mcc_generated_files/pin_manager.h"
+# 348 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 357 "./mcc_generated_files/pin_manager.h"
+# 371 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 381 "./mcc_generated_files/pin_manager.h"
+# 395 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF3_InterruptHandler)(void);
-# 405 "./mcc_generated_files/pin_manager.h"
+# 419 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 52 "./mcc_generated_files/mcc.h" 2
 
@@ -4653,23 +4652,24 @@ typedef struct
 # 95 "./mcc_generated_files/adc.h"
 typedef enum
 {
+    channel_AN2 = 0x2,
     channel_Temp = 0x1D,
     channel_DAC = 0x1E,
     channel_FVR = 0x1F
 } adc_channel_t;
-# 135 "./mcc_generated_files/adc.h"
+# 136 "./mcc_generated_files/adc.h"
 void ADC_Initialize(void);
-# 165 "./mcc_generated_files/adc.h"
+# 166 "./mcc_generated_files/adc.h"
 void ADC_SelectChannel(adc_channel_t channel);
-# 192 "./mcc_generated_files/adc.h"
+# 193 "./mcc_generated_files/adc.h"
 void ADC_StartConversion(void);
-# 224 "./mcc_generated_files/adc.h"
+# 225 "./mcc_generated_files/adc.h"
 _Bool ADC_IsConversionDone(void);
-# 257 "./mcc_generated_files/adc.h"
+# 258 "./mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversionResult(void);
-# 287 "./mcc_generated_files/adc.h"
+# 288 "./mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 315 "./mcc_generated_files/adc.h"
+# 316 "./mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
 # 65 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/eusart.h" 1
@@ -4732,7 +4732,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 105 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 8 "main.c" 2
+# 7 "main.c" 2
 # 1 "./globals.h" 1
 # 89 "./globals.h"
 extern volatile uint8_t andar_atual;
@@ -4765,8 +4765,8 @@ extern volatile uint8_t velocidade_atual;
 
 
 
-extern volatile uint8_t temperatura_ponte;
-# 130 "./globals.h"
+extern volatile uint16_t temperatura_ponte;
+# 131 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {
@@ -4779,7 +4779,7 @@ typedef enum {
 
 
 extern volatile EstadoElevador estado_atual;
-# 9 "main.c" 2
+# 8 "main.c" 2
 # 1 "./comm.h" 1
 # 17 "./comm.h"
 extern const uint8_t LUT_Andar[];
@@ -4807,7 +4807,7 @@ void MatrizLed (void);
 
 
 void MatrizInicializa(void);
-# 10 "main.c" 2
+# 9 "main.c" 2
 # 1 "./motor.h" 1
 # 18 "./motor.h"
 void SENSORES_CalcularVelocidade(void);
@@ -4822,12 +4822,11 @@ void Controle_Parar(void);
 void Verificar_Sensores(void);
 
 int Buscar_Proxima_Parada(void);
-# 11 "main.c" 2
+# 10 "main.c" 2
 
 
-
-
-
+_Bool chamadas_subida[4] = {0, 0, 0, 0};
+_Bool chamadas_descida[4] = {0, 0, 0, 0};
 
 
 uint16_t contador_telemetria = 0;
@@ -4836,21 +4835,41 @@ char buffer_origem, buffer_destino;
 
 
 
+_Bool Existe_Chamada_Acima(uint8_t andar_ref) {
+    for (int i = andar_ref + 1; i <= 3; i++) {
+        if (chamadas_subida[i] || chamadas_descida[i]) return 1;
+    }
+    return 0;
+}
+
+_Bool Existe_Chamada_Abaixo(uint8_t andar_ref) {
+    for (int i = 0; i < andar_ref; i++) {
+        if (chamadas_subida[i] || chamadas_descida[i]) return 1;
+    }
+    return 0;
+}
+
+void Limpar_Chamada_Atual() {
+    if (estado_atual == ESTADO_SUBINDO || estado_atual == ESTADO_PARADO) {
+        chamadas_subida[andar_atual] = 0;
+    }
+    if (estado_atual == ESTADO_DESCENDO || estado_atual == ESTADO_PARADO) {
+        chamadas_descida[andar_atual] = 0;
+    }
+
+    if (andar_atual == 3) chamadas_subida[3] = 0;
+    if (andar_atual == 0) chamadas_descida[0] = 0;
+}
+
+
 void main(void) {
     SYSTEM_Initialize();
 
 
     ANSELB = 0x00;
-
-
     TRISBbits.TRISB1 = 0;
     LATBbits.LATB1 = 1;
-
-
-
     INTCONbits.IOCIE = 0;
-
-
     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
 
     (INTCONbits.GIE = 1);
@@ -4861,18 +4880,25 @@ void main(void) {
     SSP1CON1bits.SSPEN = 1;
 
     Controle_Parar();
-
-
-
     MatrizInicializa();
+
     while (1) {
 
         if(EUSART_is_rx_ready()) {
             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
                 int origem = buffer_origem - '0';
                 int destino = buffer_destino - '0';
-                if (origem >= 0 && origem <= 3) solicitacoes[origem] = 1;
-                if (destino >= 0 && destino <= 3) solicitacoes[destino] = 1;
+
+                if (origem >= 0 && origem <= 3 && destino >= 0 && destino <= 3) {
+                    if (origem < destino) {
+                        chamadas_subida[origem] = 1;
+                        chamadas_subida[destino] = 1;
+                    }
+                    else if (origem > destino) {
+                        chamadas_descida[origem] = 1;
+                        chamadas_descida[destino] = 1;
+                    }
+                }
             }
         }
 
@@ -4881,45 +4907,66 @@ void main(void) {
 
 
         switch (estado_atual) {
-            case ESTADO_PARADO: {
-                int alvo = Buscar_Proxima_Parada();
-                if (alvo != -1) {
-                    andar_destino = (uint8_t)alvo;
-                    if (andar_destino > andar_atual) {
-                        Controle_Subir();
-                        estado_atual = ESTADO_SUBINDO;
-                    } else if (andar_destino < andar_atual) {
-                        Controle_Descer();
-                        estado_atual = ESTADO_DESCENDO;
-                    } else {
-
-                        solicitacoes[alvo] = 0;
-                        estado_atual = ESTADO_ESPERA_PORTA;
-                        contador_espera = 0;
-                    }
-                } else {
-
-                    if (andar_atual != 0) solicitacoes[0] = 1;
-                }
-                break;
-            }
-
-            case ESTADO_SUBINDO:
-            case ESTADO_DESCENDO:
-
-
-
-                if (andar_atual == andar_destino) {
-                    Controle_Parar();
-                    solicitacoes[andar_atual] = 0;
+            case ESTADO_PARADO:
+                if (chamadas_subida[andar_atual]) {
+                    Limpar_Chamada_Atual();
                     estado_atual = ESTADO_ESPERA_PORTA;
                     contador_espera = 0;
                 }
+                else if (chamadas_descida[andar_atual]) {
+                    Limpar_Chamada_Atual();
+                    estado_atual = ESTADO_ESPERA_PORTA;
+                    contador_espera = 0;
+                }
+                else if (Existe_Chamada_Acima(andar_atual)) {
+                    Controle_Subir();
+                    estado_atual = ESTADO_SUBINDO;
+                }
+                else if (Existe_Chamada_Abaixo(andar_atual)) {
+                    Controle_Descer();
+                    estado_atual = ESTADO_DESCENDO;
+                }
+                else if (andar_atual != 0) {
+                    chamadas_descida[0] = 1;
+                }
+                break;
 
-                else {
-                    int novo_alvo = Buscar_Proxima_Parada();
-                    if (novo_alvo != -1) {
-                        andar_destino = (uint8_t)novo_alvo;
+            case ESTADO_SUBINDO:
+                if (chamadas_subida[andar_atual]) {
+                    Controle_Parar();
+                    Limpar_Chamada_Atual();
+                    estado_atual = ESTADO_ESPERA_PORTA;
+                    contador_espera = 0;
+                }
+                else if (!Existe_Chamada_Acima(andar_atual)) {
+                    if (chamadas_descida[andar_atual]) {
+                        Controle_Parar();
+                        Limpar_Chamada_Atual();
+                        estado_atual = ESTADO_ESPERA_PORTA;
+                        contador_espera = 0;
+                    } else {
+                        Controle_Parar();
+                        estado_atual = ESTADO_PARADO;
+                    }
+                }
+                break;
+
+            case ESTADO_DESCENDO:
+                if (chamadas_descida[andar_atual]) {
+                    Controle_Parar();
+                    Limpar_Chamada_Atual();
+                    estado_atual = ESTADO_ESPERA_PORTA;
+                    contador_espera = 0;
+                }
+                else if (!Existe_Chamada_Abaixo(andar_atual)) {
+                    if (chamadas_subida[andar_atual]) {
+                         Controle_Parar();
+                         Limpar_Chamada_Atual();
+                         estado_atual = ESTADO_ESPERA_PORTA;
+                         contador_espera = 0;
+                    } else {
+                        Controle_Parar();
+                        estado_atual = ESTADO_PARADO;
                     }
                 }
                 break;
@@ -4927,15 +4974,8 @@ void main(void) {
             case ESTADO_ESPERA_PORTA:
                 contador_espera++;
                 if (contador_espera >= 200) {
-                    int proximo = Buscar_Proxima_Parada();
-                    if (proximo != -1) {
-
-
-                        estado_atual = ESTADO_REVERSAO;
-                        contador_espera = 0;
-                    } else {
-                        estado_atual = ESTADO_PARADO;
-                    }
+                    estado_atual = ESTADO_REVERSAO;
+                    contador_espera = 0;
                 }
                 break;
 
@@ -4952,6 +4992,12 @@ void main(void) {
         if (contador_telemetria >= 30) {
             UART_EnviaDados();
 
+
+
+
+            for(int i=0; i<4; i++) {
+                solicitacoes[i] = chamadas_subida[i] || chamadas_descida[i];
+            }
 
             MatrizLed();
             contador_telemetria = 0;

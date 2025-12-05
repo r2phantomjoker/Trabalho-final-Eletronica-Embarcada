@@ -116,7 +116,8 @@ extern volatile uint8_t velocidade_atual;
  * @brief 'Temperatura (TT.T)': Temperatura monitorada na Ponte H.
  * Unidade: Graus Celsius (°C).
  */
-extern volatile uint8_t temperatura_ponte;
+extern volatile uint16_t temperatura_ponte;
+
 
 // ==========================================
 // VARIÁVEIS DE LÓGICA INTERNA

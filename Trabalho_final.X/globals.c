@@ -13,7 +13,7 @@ volatile uint8_t andar_destino = 0;     // Sem destino inicial
 volatile uint8_t estado_motor = MOTOR_PARADO; 
 volatile uint8_t posicao_mm = 0;        // 0 mm (Térreo)
 volatile uint8_t velocidade_atual = 0;  // 0.0*10 mm/s
-volatile uint8_t temperatura_ponte = 0; // 0.0*10 °C
+volatile uint16_t temperatura_ponte = 0; // 0.0*10 °C
 
 // Vetor de Solicitações (Botões apertados)
 // [0]=Térreo, [1]=1ºAndar, [2]=2ºAndar, [3]=3ºAndar

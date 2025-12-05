@@ -1,5 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2510 `(v ~T0 @X0 0 tf ]
+[v F2511 `(v ~T0 @X0 0 tf ]
 "1967 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1967: extern volatile unsigned char ADCON1 __attribute__((address(0x09E)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@158 ]
@@ -14,8 +14,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
 "85 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 85: void ADC_SelectChannel(adc_channel_t channel)
-[c E2495 29 30 31 .. ]
-[n E2495 . channel_Temp channel_DAC channel_FVR  ]
+[c E2495 2 29 30 31 .. ]
+[n E2495 . channel_AN2 channel_Temp channel_DAC channel_FVR  ]
 "1893 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 1893:     struct {
 [s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -515,7 +515,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 0FEFh ;# ">
 "61 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 61: void (*ADC_InterruptHandler)(void);
-[v _ADC_InterruptHandler `*F2510 ~T0 @X0 1 e ]
+[v _ADC_InterruptHandler `*F2511 ~T0 @X0 1 e ]
 "67
 [; ;mcc_generated_files/adc.c: 67: void ADC_Initialize(void)
 [v _ADC_Initialize `(v ~T0 @X0 1 ef ]

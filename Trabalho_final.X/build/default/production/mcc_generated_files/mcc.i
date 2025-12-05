@@ -4346,25 +4346,25 @@ extern __bank0 __bit __timeout;
 # 1 "mcc_generated_files/device_config.h" 1
 # 51 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 239 "mcc_generated_files/pin_manager.h"
+# 225 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 251 "mcc_generated_files/pin_manager.h"
+# 237 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 264 "mcc_generated_files/pin_manager.h"
+# 250 "mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 287 "mcc_generated_files/pin_manager.h"
+# 273 "mcc_generated_files/pin_manager.h"
 void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 311 "mcc_generated_files/pin_manager.h"
+# 297 "mcc_generated_files/pin_manager.h"
 extern void (*IOCBF0_InterruptHandler)(void);
-# 335 "mcc_generated_files/pin_manager.h"
+# 321 "mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 348 "mcc_generated_files/pin_manager.h"
+# 334 "mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 371 "mcc_generated_files/pin_manager.h"
+# 357 "mcc_generated_files/pin_manager.h"
 void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 395 "mcc_generated_files/pin_manager.h"
+# 381 "mcc_generated_files/pin_manager.h"
 extern void (*IOCBF3_InterruptHandler)(void);
-# 419 "mcc_generated_files/pin_manager.h"
+# 405 "mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 52 "mcc_generated_files/mcc.h" 2
 
@@ -4737,8 +4737,8 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     WDT_Initialize();
-    FVR_Initialize();
     CMP2_Initialize();
+    FVR_Initialize();
     TMR4_Initialize();
     TMR2_Initialize();
     TMR0_Initialize();

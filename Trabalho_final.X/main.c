@@ -23,7 +23,14 @@ char buffer_origem, buffer_destino;
 // LOOP PRINCIPAL
 void main(void) {
     SYSTEM_Initialize(); // Inicializa drivers do MCC
-
+    
+    // 1. Matar qualquer configuração analógica na PORTB (CRUCIAL para o SCK funcionar)
+    ANSELB = 0x00;  // Transforma TODOS os pinos B em Digitais. 
+                    // Isso resolve o problema do RB4/SCK travar.
+    
+    TRISBbits.TRISB1 = 0;  // CS como Saída
+    LATBbits.LATB1 = 1;    // CS começa alto (desativado)
+    
     // PROTEÇÃO DE HARDWARE
     // Desliga interrupção IOC dos sensores para evitar conflito com Polling
     INTCONbits.IOCIE = 0; 
@@ -33,10 +40,16 @@ void main(void) {
 
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
+    
+    // 4. Resetar o Módulo SPI para limpar erros passados
+    SSP1CON1bits.SSPEN = 0;  // Desliga SPI
+    SSP1CON1bits.SSPEN = 1;  // Liga SPI novamente "limpo"
 
     Controle_Parar(); 
     
-//    MatrizInicializa();
+    // --- INICIALIZAÇÃO DA MATRIZ ---
+    // Agora chamamos a função que está em comm.c
+    MatrizInicializa();
     while (1) {
         // A. COMUNICAÇÃO BLUETOOTH
         if(EUSART_is_rx_ready()) {
@@ -123,7 +136,9 @@ void main(void) {
         contador_telemetria++;
         if (contador_telemetria >= 30) { 
             UART_EnviaDados();
-            //MatrizLed();
+            // --- ATUALIZAÇÃO DA MATRIZ ---
+            // Atualiza o desenho a cada ciclo de telemetria
+            MatrizLed();
             contador_telemetria = 0; 
         }
 

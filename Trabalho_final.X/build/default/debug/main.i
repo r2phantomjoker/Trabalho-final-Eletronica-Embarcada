@@ -4734,7 +4734,7 @@ void OSCILLATOR_Initialize(void);
 void WDT_Initialize(void);
 # 8 "main.c" 2
 # 1 "./globals.h" 1
-# 82 "./globals.h"
+# 89 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4766,7 +4766,7 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint8_t temperatura_ponte;
-# 123 "./globals.h"
+# 130 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {
@@ -4781,55 +4781,10 @@ typedef enum {
 extern volatile EstadoElevador estado_atual;
 # 9 "main.c" 2
 # 1 "./comm.h" 1
-# 13 "./comm.h"
-const uint8_t LUT_Andar[]= {
-    0b00000000,
-    0b10000010,
-    0b11111111,
-    0b10000000,
-
-    0b11000010,
-    0b10100001,
-    0b10010001,
-    0b10001110,
-
-    0b01000010,
-    0b10000001,
-    0b10001001,
-    0b01110110,
-
-    0b00000111,
-    0b00000100,
-    0b00000100,
-    0b11111111
-};
-
-const uint8_t LUT_dir[] = {
-    0b00000000,
-    0b00000000,
-    0b00000000,
-    0b00000000,
-
-    0b00000000,
-    0b00000010,
-    0b00000001,
-    0b00000010,
-
-    0b00000000,
-    0b00000010,
-    0b00000100,
-    0b00000010
-};
-
-const uint8_t matrix_conf[] = {
-    0x09,0x00,
-    0x0A,0x00,
-    0x0B,0x07,
-    0x0C,0x01,
-    0x0F,0x01,
-    0x0F,0x00,
-};
-
+# 17 "./comm.h"
+extern const uint8_t LUT_Andar[];
+extern const uint8_t LUT_dir[];
+extern const uint8_t matrix_conf[];
 
 
 
@@ -4841,13 +4796,15 @@ int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 
 
 
-
 void UART_EnviaDados(void);
 
 
 
 
 void MatrizLed (void);
+
+
+
 
 void MatrizInicializa(void);
 # 10 "main.c" 2
@@ -4883,6 +4840,13 @@ void main(void) {
     SYSTEM_Initialize();
 
 
+    ANSELB = 0x00;
+
+
+    TRISBbits.TRISB1 = 0;
+    LATBbits.LATB1 = 1;
+
+
 
     INTCONbits.IOCIE = 0;
 
@@ -4892,7 +4856,13 @@ void main(void) {
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
 
+
+    SSP1CON1bits.SSPEN = 0;
+    SSP1CON1bits.SSPEN = 1;
+
     Controle_Parar();
+
+
 
     MatrizInicializa();
     while (1) {
@@ -4981,6 +4951,8 @@ void main(void) {
         contador_telemetria++;
         if (contador_telemetria >= 30) {
             UART_EnviaDados();
+
+
             MatrizLed();
             contador_telemetria = 0;
         }

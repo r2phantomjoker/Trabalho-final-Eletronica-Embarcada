@@ -4382,7 +4382,7 @@ extern __bank0 __bit __timeout;
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
 # 17 "./globals.h" 2
-# 82 "./globals.h"
+# 89 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4414,7 +4414,7 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint8_t temperatura_ponte;
-# 123 "./globals.h"
+# 130 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {

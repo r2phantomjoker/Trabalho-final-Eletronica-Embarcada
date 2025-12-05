@@ -4384,13 +4384,13 @@ void PIN_MANAGER_Initialize(void)
 
 
     TRISA = 0x37;
-    TRISB = 0xED;
+    TRISB = 0xEF;
 
 
 
 
-    ANSELB = 0xC0;
-    ANSELA = 0x0F;
+    ANSELB = 0x80;
+    ANSELA = 0x0B;
 
 
 

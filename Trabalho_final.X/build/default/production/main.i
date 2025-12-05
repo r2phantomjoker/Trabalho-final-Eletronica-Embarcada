@@ -4351,25 +4351,25 @@ extern __bank0 __bit __timeout;
 # 1 "./mcc_generated_files/device_config.h" 1
 # 51 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 239 "./mcc_generated_files/pin_manager.h"
+# 225 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 251 "./mcc_generated_files/pin_manager.h"
+# 237 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 264 "./mcc_generated_files/pin_manager.h"
+# 250 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 287 "./mcc_generated_files/pin_manager.h"
+# 273 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 311 "./mcc_generated_files/pin_manager.h"
+# 297 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF0_InterruptHandler)(void);
-# 335 "./mcc_generated_files/pin_manager.h"
+# 321 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 348 "./mcc_generated_files/pin_manager.h"
+# 334 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 371 "./mcc_generated_files/pin_manager.h"
+# 357 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 395 "./mcc_generated_files/pin_manager.h"
+# 381 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF3_InterruptHandler)(void);
-# 419 "./mcc_generated_files/pin_manager.h"
+# 405 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 52 "./mcc_generated_files/mcc.h" 2
 
@@ -4734,7 +4734,7 @@ void OSCILLATOR_Initialize(void);
 void WDT_Initialize(void);
 # 8 "main.c" 2
 # 1 "./globals.h" 1
-# 82 "./globals.h"
+# 89 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4766,7 +4766,7 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint8_t temperatura_ponte;
-# 123 "./globals.h"
+# 130 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {
@@ -4781,55 +4781,10 @@ typedef enum {
 extern volatile EstadoElevador estado_atual;
 # 9 "main.c" 2
 # 1 "./comm.h" 1
-# 13 "./comm.h"
-const uint8_t LUT_Andar[]= {
-    0b00000000,
-    0b10000010,
-    0b11111111,
-    0b10000000,
-
-    0b11000010,
-    0b10100001,
-    0b10010001,
-    0b10001110,
-
-    0b01000010,
-    0b10000001,
-    0b10001001,
-    0b01110110,
-
-    0b00000111,
-    0b00000100,
-    0b00000100,
-    0b11111111
-};
-
-const uint8_t LUT_dir[] = {
-    0b00000000,
-    0b00000000,
-    0b00000000,
-    0b00000000,
-
-    0b00000000,
-    0b00000010,
-    0b00000001,
-    0b00000010,
-
-    0b00000000,
-    0b00000010,
-    0b00000100,
-    0b00000010
-};
-
-const uint8_t matrix_conf[] = {
-    0x09,0x00,
-    0x0A,0x00,
-    0x0B,0x07,
-    0x0C,0x01,
-    0x0F,0x01,
-    0x0F,0x00,
-};
-
+# 17 "./comm.h"
+extern const uint8_t LUT_Andar[];
+extern const uint8_t LUT_dir[];
+extern const uint8_t matrix_conf[];
 
 
 
@@ -4841,13 +4796,15 @@ int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 
 
 
-
 void UART_EnviaDados(void);
 
 
 
 
 void MatrizLed (void);
+
+
+
 
 void MatrizInicializa(void);
 # 10 "main.c" 2
@@ -4883,6 +4840,13 @@ void main(void) {
     SYSTEM_Initialize();
 
 
+    ANSELB = 0x00;
+
+
+    TRISBbits.TRISB1 = 0;
+    LATBbits.LATB1 = 1;
+
+
 
     INTCONbits.IOCIE = 0;
 
@@ -4892,9 +4856,15 @@ void main(void) {
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
 
+
+    SSP1CON1bits.SSPEN = 0;
+    SSP1CON1bits.SSPEN = 1;
+
     Controle_Parar();
 
 
+
+    MatrizInicializa();
     while (1) {
 
         if(EUSART_is_rx_ready()) {
@@ -4982,6 +4952,8 @@ void main(void) {
         if (contador_telemetria >= 30) {
             UART_EnviaDados();
 
+
+            MatrizLed();
             contador_telemetria = 0;
         }
 

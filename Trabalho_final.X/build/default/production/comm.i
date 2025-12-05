@@ -7,6 +7,11 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "comm.c" 2
+
+
+
+
+
 # 1 "./comm.h" 1
 # 11 "./comm.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
@@ -116,54 +121,13 @@ typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
 # 12 "./comm.h" 2
 
-const uint8_t LUT_Andar[]= {
-    0b00000000,
-    0b10000010,
-    0b11111111,
-    0b10000000,
 
-    0b11000010,
-    0b10100001,
-    0b10010001,
-    0b10001110,
 
-    0b01000010,
-    0b10000001,
-    0b10001001,
-    0b01110110,
 
-    0b00000111,
-    0b00000100,
-    0b00000100,
-    0b11111111
-};
 
-const uint8_t LUT_dir[] = {
-    0b00000000,
-    0b00000000,
-    0b00000000,
-    0b00000000,
-
-    0b00000000,
-    0b00000010,
-    0b00000001,
-    0b00000010,
-
-    0b00000000,
-    0b00000010,
-    0b00000100,
-    0b00000010
-};
-
-const uint8_t matrix_conf[] = {
-    0x09,0x00,
-    0x0A,0x00,
-    0x0B,0x07,
-    0x0C,0x01,
-    0x0F,0x01,
-    0x0F,0x00,
-};
-
+extern const uint8_t LUT_Andar[];
+extern const uint8_t LUT_dir[];
+extern const uint8_t matrix_conf[];
 
 
 
@@ -175,7 +139,6 @@ int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 
 
 
-
 void UART_EnviaDados(void);
 
 
@@ -183,8 +146,11 @@ void UART_EnviaDados(void);
 
 void MatrizLed (void);
 
+
+
+
 void MatrizInicializa(void);
-# 2 "comm.c" 2
+# 7 "comm.c" 2
 # 1 "./globals.h" 1
 # 14 "./globals.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
@@ -4426,7 +4392,7 @@ extern __bank0 __bit __timeout;
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
 # 17 "./globals.h" 2
-# 82 "./globals.h"
+# 89 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4458,7 +4424,7 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint8_t temperatura_ponte;
-# 123 "./globals.h"
+# 130 "./globals.h"
 extern volatile _Bool solicitacoes[4];
 
 typedef enum {
@@ -4471,31 +4437,31 @@ typedef enum {
 
 
 extern volatile EstadoElevador estado_atual;
-# 3 "comm.c" 2
+# 8 "comm.c" 2
 # 1 "./mcc_generated_files/mcc.h" 1
 # 50 "./mcc_generated_files/mcc.h"
 # 1 "./mcc_generated_files/device_config.h" 1
 # 51 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 239 "./mcc_generated_files/pin_manager.h"
+# 225 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 251 "./mcc_generated_files/pin_manager.h"
+# 237 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 264 "./mcc_generated_files/pin_manager.h"
+# 250 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 287 "./mcc_generated_files/pin_manager.h"
+# 273 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 311 "./mcc_generated_files/pin_manager.h"
+# 297 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF0_InterruptHandler)(void);
-# 335 "./mcc_generated_files/pin_manager.h"
+# 321 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 348 "./mcc_generated_files/pin_manager.h"
+# 334 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 371 "./mcc_generated_files/pin_manager.h"
+# 357 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 395 "./mcc_generated_files/pin_manager.h"
+# 381 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF3_InterruptHandler)(void);
-# 419 "./mcc_generated_files/pin_manager.h"
+# 405 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 52 "./mcc_generated_files/mcc.h" 2
 
@@ -4857,19 +4823,93 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 105 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 4 "comm.c" 2
+# 9 "comm.c" 2
+
+
+
+
+
+
+
+
+const uint8_t LUT_Andar[]= {
+    0b00000000,
+    0b10000010,
+    0b11111111,
+    0b10000000,
+
+    0b11000010,
+    0b10100001,
+    0b10010001,
+    0b10001110,
+
+    0b01000010,
+    0b10000001,
+    0b10001001,
+    0b01110110,
+
+    0b00000111,
+    0b00000100,
+    0b00000100,
+    0b11111111
+};
+
+const uint8_t LUT_dir[] = {
+    0b00000000,
+    0b00000000,
+    0b00000000,
+    0b00000000,
+
+    0b00000000,
+    0b00000010,
+    0b00000001,
+    0b00000010,
+
+    0b00000000,
+    0b00000010,
+    0b00000100,
+    0b00000010
+};
+
+const uint8_t matrix_conf[] = {
+    0x09,0x00,
+    0x0A,0x00,
+    0x0B,0x07,
+    0x0C,0x01,
+    0x0F,0x01,
+    0x0F,0x00,
+};
+# 73 "comm.c"
+void MAX7219_Write(uint8_t address, uint8_t data) {
+    LATBbits.LATB1 = 0;
+
+
+    SSP1BUF = address;
+    while(!PIR1bits.SSP1IF);
+    PIR1bits.SSP1IF = 0;
+
+
+    SSP1BUF = data;
+    while(!PIR1bits.SSP1IF);
+    PIR1bits.SSP1IF = 0;
+
+    LATBbits.LATB1 = 1;
+}
+
+
+
 
 
 
 int UART_RecebePedido(char* origem_pedido, char* destino_pedido){
     if(EUSART_Read() == '$'){
-    *origem_pedido = EUSART_Read();
-    *destino_pedido = EUSART_Read();
-    if(EUSART_Read() == 13)
-        return 0;
+        *origem_pedido = EUSART_Read();
+        *destino_pedido = EUSART_Read();
+
+        if(EUSART_Read() == 13)
+            return 0;
     }
     return 1;
-
 }
 
 void UART_EnviaDados(void){
@@ -4896,57 +4936,57 @@ void UART_EnviaDados(void){
     return;
 }
 
-void MatrizLed (void){
-    uint8_t data[2];
-    uint8_t dig_andar = (andar_atual)<<2;
-    uint8_t pos_LUT_dir = estado_atual<<2;
-    do { LATAbits.LATA2 = 0; } while(0);
-    for(uint8_t i=1;i<5;i++){
-        data[0] = i;
-        data[1] = LUT_Andar[dig_andar];
-        SPI1_ExchangeBlock(data, 2);
 
-        dig_andar++;
-    }
-    for(uint8_t i=1;i<4;i++){
-        data[0] = i;
-        data[1] = LUT_dir[pos_LUT_dir];
-        SPI1_ExchangeBlock(data, 2);
 
-        pos_LUT_dir++;
-    }
-    data[0] = 4;
-    data[1] = pos_LUT_dir;
-    data[1] = data[1] + (solicitacoes[0])*128;
-    data[1] = data[1] + (solicitacoes[1])*64;
-    data[1] = data[1] + (solicitacoes[2])*32;
-    data[1] = data[1] + (solicitacoes[3])*16;
 
-    SPI1_WriteBlock(data, 2);
-
-    do { LATAbits.LATA2 = 1; } while(0);
-}
 
 void MatrizInicializa(void){
-    uint8_t data[2];
-    uint8_t k=0;
-    do { LATAbits.LATA2 = 0; } while(0);
-    for(uint8_t i=1;i<5;i++){
-        data[0] = i;
-        data[1] = 0;
-        SPI1_ExchangeBlock(data, 2);
+
+    PIE1bits.SSP1IE = 0;
+
+    LATBbits.LATB1 = 1;
+
+
+
+
+    uint8_t i = 0;
+    while(i < 12) {
+        MAX7219_Write(matrix_conf[i], matrix_conf[i+1]);
+        i += 2;
     }
-    for(uint8_t i=0;i<6;i++){
-        for(uint8_t j=0;j<4;j=j+2){
-            data[j]= matrix_conf[k];
-            data[j+1]= matrix_conf[k+1];
-        }
-        k=k+2;
-        do { LATAbits.LATA2 = 0; } while(0);
-        SPI1_ExchangeBlock(data, 2);
-        if(i==4){
-            _delay((unsigned long)((800)*(8000000/4000.0)));
-        }
+
+
+    for(uint8_t row=1; row<=8; row++){
+        MAX7219_Write(row, 0x00);
     }
-    do { LATAbits.LATA2 = 1; } while(0);
+}
+
+void MatrizLed (void){
+
+
+
+
+
+
+
+    uint8_t base_andar = andar_atual * 4;
+    uint8_t base_seta = estado_atual * 4;
+
+
+    for(uint8_t i=0; i<4; i++){
+
+        MAX7219_Write(i+1, LUT_Andar[base_andar + i]);
+    }
+
+
+
+    for(uint8_t i=0; i<4; i++){
+
+        MAX7219_Write(i+5, LUT_dir[base_seta + i]);
+    }
+
+
+
+
+
 }

@@ -25,6 +25,13 @@
 #define MOTOR_SUBINDO   1   ///< Movimento ascendente (Direção = 1)
 #define MOTOR_DESCENDO  2   ///< Movimento descendente (Direção = 0)
 
+
+// Define o pino como nível ALTO (5V/3.3V)
+#define CS_SetHigh()    LATBbits.LATB1 = 1
+
+// Define o pino como nível BAIXO (0V/GND)
+#define CS_SetLow()     LATBbits.LATB1 = 0
+
 // ==========================================
 // MAPEAMENTO DE HARDWARE (Sensores de Andar)
 // ==========================================

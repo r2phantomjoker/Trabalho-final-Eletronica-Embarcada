@@ -2424,7 +2424,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RB1"/>
-         <value>output</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RB2"/>
@@ -4806,7 +4806,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.c</file>
-         <hash>8e2ca172dda3eee4d520cc133cd558e87206629008624fafebbedadb184e02cd</hash>
+         <hash>86df01e813e86f391cce5a4a18d4985c6cad7c7e368a4990d23d6941518a4024</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
@@ -4814,11 +4814,11 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>8aa33d3e660cdd5c20970f4212856ed37113639bbb0cce81e6602bc5ee76a918</hash>
+         <hash>58f4566ce5e2dcb2d1a60db0975777c36c10623e73d399b9843057b37d0dbb11</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
-         <hash>df709b83034d97fb04d04399b7634b49f87f53ba4920e073823a6fa49106a62a</hash>
+         <hash>6544fd5867547b542f5688d3646b09770693a154a8f4a07ce0206c6f5d7a0a02</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pwm3.c</file>

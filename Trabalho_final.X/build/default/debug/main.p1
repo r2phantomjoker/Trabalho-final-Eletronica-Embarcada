@@ -1,20 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"27 main.c
-[; ;main.c: 27:     if (estado_atual == ESTADO_PARADO) {
-[c E2953 0 1 2 3 4 .. ]
-[n E2953 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"133 ./globals.h
-[; ;./globals.h: 133: extern volatile EstadoElevador estado_atual;
-[v _estado_atual `VE2953 ~T0 @X0 0 e ]
-"123
-[; ;./globals.h: 123: extern volatile _Bool solicitacoes[4];
-[v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
-"82
-[; ;./globals.h: 82: extern volatile uint8_t andar_atual;
-[v _andar_atual `Vuc ~T0 @X0 0 e ]
 [p mainexit ]
-"79 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 79: void SYSTEM_Initialize(void);
+"80 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 80: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "357 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 357:     struct {
@@ -31,10 +18,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-[v F2839 `(v ~T0 @X0 0 tf ]
+[v F2860 `(v ~T0 @X0 0 tf ]
 "326 ./mcc_generated_files/tmr4.h
 [; ;./mcc_generated_files/tmr4.h: 326:  void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2839 ]
+[v _TMR4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2860 ]
 "18 ./motor.h
 [; ;./motor.h: 18: void SENSORES_CalcularVelocidade(void);
 [v _SENSORES_CalcularVelocidade `(v ~T0 @X0 0 ef ]
@@ -44,23 +31,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "213 ./mcc_generated_files/eusart.h
 [; ;./mcc_generated_files/eusart.h: 213: _Bool EUSART_is_rx_ready(void);
 [v _EUSART_is_rx_ready `(a ~T0 @X0 0 ef ]
-"19 ./comm.h
-[; ;./comm.h: 19: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
+"41 ./comm.h
+[; ;./comm.h: 41: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 [v _UART_RecebePedido `(i ~T0 @X0 0 ef2`*uc`*uc ]
+"123 ./globals.h
+[; ;./globals.h: 123: extern volatile _Bool solicitacoes[4];
+[v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
 "27 ./motor.h
 [; ;./motor.h: 27: void Verificar_Sensores(void);
 [v _Verificar_Sensores `(v ~T0 @X0 0 ef ]
+"29
+[; ;./motor.h: 29: int Buscar_Proxima_Parada(void);
+[v _Buscar_Proxima_Parada `(i ~T0 @X0 0 ef ]
 "88 ./globals.h
 [; ;./globals.h: 88: extern volatile uint8_t andar_destino;
 [v _andar_destino `Vuc ~T0 @X0 0 e ]
+"82
+[; ;./globals.h: 82: extern volatile uint8_t andar_atual;
+[v _andar_atual `Vuc ~T0 @X0 0 e ]
 "21 ./motor.h
 [; ;./motor.h: 21: void Controle_Subir(void);
 [v _Controle_Subir `(v ~T0 @X0 0 ef ]
-"23
+"61 main.c
+[; ;main.c: 61:                         estado_atual = ESTADO_SUBINDO;
+[c E2974 0 1 2 3 4 .. ]
+[n E2974 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
+"133 ./globals.h
+[; ;./globals.h: 133: extern volatile EstadoElevador estado_atual;
+[v _estado_atual `VE2974 ~T0 @X0 0 e ]
+"23 ./motor.h
 [; ;./motor.h: 23: void Controle_Descer(void);
 [v _Controle_Descer `(v ~T0 @X0 0 ef ]
-"25 ./comm.h
-[; ;./comm.h: 25: void UART_EnviaDados(void);
+"47 ./comm.h
+[; ;./comm.h: 47: void UART_EnviaDados(void);
 [v _UART_EnviaDados `(v ~T0 @X0 0 ef ]
 [v F202 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
@@ -540,6 +543,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6748
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 6748: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
+"13 ./comm.h
+[; ;./comm.h: 13: const uint8_t LUT_Andar[]= {
+[v _LUT_Andar `Cuc ~T0 @X0 -> 16 `i e ]
+[i _LUT_Andar
+:U ..
+-> -> 0 `i `uc
+-> -> 130 `i `uc
+-> -> 255 `i `uc
+-> -> 128 `i `uc
+-> -> 194 `i `uc
+-> -> 161 `i `uc
+-> -> 145 `i `uc
+-> -> 142 `i `uc
+-> -> 66 `i `uc
+-> -> 129 `i `uc
+-> -> 137 `i `uc
+-> -> 118 `i `uc
+-> -> 7 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 255 `i `uc
+..
+]
 "18 main.c
 [; ;main.c: 18: uint16_t contador_telemetria = 0;
 [v _contador_telemetria `us ~T0 @X0 1 e ]
@@ -556,428 +582,310 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 20: char buffer_origem, buffer_destino;
 [v _buffer_origem `uc ~T0 @X0 1 e ]
 [v _buffer_destino `uc ~T0 @X0 1 e ]
-"25
-[; ;main.c: 25: int Buscar_Proxima_Parada() {
-[v _Buscar_Proxima_Parada `(i ~T0 @X0 1 ef ]
-{
-[e :U _Buscar_Proxima_Parada ]
-[f ]
-"27
-[; ;main.c: 27:     if (estado_atual == ESTADO_PARADO) {
-[e $ ! == -> _estado_atual `ui -> . `E2953 0 `ui 360  ]
-{
-"28
-[; ;main.c: 28:         for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 361  ]
-[e $U 362  ]
-[e :U 361 ]
-[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 364  ]
-[e ) _i ]
-[e $UE 359  ]
-[e :U 364 ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 361  ]
-[e :U 362 ]
-}
-"29
-[; ;main.c: 29:         return -1;
-[e ) -U -> 1 `i ]
-[e $UE 359  ]
-"30
-[; ;main.c: 30:     }
-}
-[e :U 360 ]
-"32
-[; ;main.c: 32:     if (estado_atual == ESTADO_SUBINDO) {
-[e $ ! == -> _estado_atual `ui -> . `E2953 1 `ui 365  ]
-{
-"33
-[; ;main.c: 33:         for (int i = andar_atual + 1; i <= 3; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i + -> _andar_atual `i -> 1 `i ]
-[e $ <= _i -> 3 `i 366  ]
-[e $U 367  ]
-[e :U 366 ]
-{
-"34
-[; ;main.c: 34:             if (solicitacoes[i]) return i;
-[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 369  ]
-[e ) _i ]
-[e $UE 359  ]
-[e :U 369 ]
-"35
-[; ;main.c: 35:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ <= _i -> 3 `i 366  ]
-[e :U 367 ]
-}
-"36
-[; ;main.c: 36:     }
-}
-[e :U 365 ]
-"38
-[; ;main.c: 38:     if (estado_atual == ESTADO_DESCENDO) {
-[e $ ! == -> _estado_atual `ui -> . `E2953 2 `ui 370  ]
-{
-"39
-[; ;main.c: 39:         for (int i = andar_atual - 1; i >= 0; i--) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i - -> _andar_atual `i -> 1 `i ]
-[e $ >= _i -> 0 `i 371  ]
-[e $U 372  ]
-[e :U 371 ]
-{
-"40
-[; ;main.c: 40:             if (solicitacoes[i]) return i;
-[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 374  ]
-[e ) _i ]
-[e $UE 359  ]
-[e :U 374 ]
-"41
-[; ;main.c: 41:         }
-}
-[e -- _i -> 1 `i ]
-[e $ >= _i -> 0 `i 371  ]
-[e :U 372 ]
-}
-"42
-[; ;main.c: 42:     }
-}
-[e :U 370 ]
-"44
-[; ;main.c: 44:     for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 375  ]
-[e $U 376  ]
-[e :U 375 ]
-[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 378  ]
-[e ) _i ]
-[e $UE 359  ]
-[e :U 378 ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 375  ]
-[e :U 376 ]
-}
-"46
-[; ;main.c: 46:     return -1;
-[e ) -U -> 1 `i ]
-[e $UE 359  ]
-"47
-[; ;main.c: 47: }
-[e :UE 359 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"50
-[; ;main.c: 50: void main(void) {
+"24
+[; ;main.c: 24: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"51
-[; ;main.c: 51:     SYSTEM_Initialize();
+"25
+[; ;main.c: 25:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"55
-[; ;main.c: 55:     INTCONbits.IOCIE = 0;
+"29
+[; ;main.c: 29:     INTCONbits.IOCIE = 0;
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"58
-[; ;main.c: 58:     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
+"32
+[; ;main.c: 32:     TMR4_SetInterruptHandler(SENSORES_CalcularVelocidade);
 [e ( _TMR4_SetInterruptHandler (1 &U _SENSORES_CalcularVelocidade ]
-"60
-[; ;main.c: 60:     (INTCONbits.GIE = 1);
+"34
+[; ;main.c: 34:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"61
-[; ;main.c: 61:     (INTCONbits.PEIE = 1);
+"35
+[; ;main.c: 35:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"63
-[; ;main.c: 63:     Controle_Parar();
+"37
+[; ;main.c: 37:     Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"65
-[; ;main.c: 65:     while (1) {
-[e :U 381 ]
+"39
+[; ;main.c: 39:     while (1) {
+[e :U 361 ]
 {
-"67
-[; ;main.c: 67:         if(EUSART_is_rx_ready()) {
-[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 383  ]
+"41
+[; ;main.c: 41:         if(EUSART_is_rx_ready()) {
+[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 363  ]
 {
-"68
-[; ;main.c: 68:             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
-[e $ ! == ( _UART_RecebePedido (2 , &U _buffer_origem &U _buffer_destino -> 0 `i 384  ]
+"42
+[; ;main.c: 42:             if (UART_RecebePedido(&buffer_origem, &buffer_destino) == 0) {
+[e $ ! == ( _UART_RecebePedido (2 , &U _buffer_origem &U _buffer_destino -> 0 `i 364  ]
 {
-"69
-[; ;main.c: 69:                 int o = buffer_origem - '0';
-[v _o `i ~T0 @X0 1 a ]
-[e = _o -> - -> _buffer_origem `ui -> 48 `ui `i ]
-"70
-[; ;main.c: 70:                 int d = buffer_destino - '0';
-[v _d `i ~T0 @X0 1 a ]
-[e = _d -> - -> _buffer_destino `ui -> 48 `ui `i ]
-"71
-[; ;main.c: 71:                 if (o >= 0 && o <= 3) solicitacoes[o] = 1;
-[e $ ! && >= _o -> 0 `i <= _o -> 3 `i 385  ]
-[e = *U + &U _solicitacoes * -> -> _o `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> 1 `i `a ]
-[e :U 385 ]
-"72
-[; ;main.c: 72:                 if (d >= 0 && d <= 3) solicitacoes[d] = 1;
-[e $ ! && >= _d -> 0 `i <= _d -> 3 `i 386  ]
-[e = *U + &U _solicitacoes * -> -> _d `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> 1 `i `a ]
-[e :U 386 ]
-"73
-[; ;main.c: 73:             }
+"43
+[; ;main.c: 43:                 int origem = buffer_origem - '0';
+[v _origem `i ~T0 @X0 1 a ]
+[e = _origem -> - -> _buffer_origem `ui -> 48 `ui `i ]
+"44
+[; ;main.c: 44:                 int destino = buffer_destino - '0';
+[v _destino `i ~T0 @X0 1 a ]
+[e = _destino -> - -> _buffer_destino `ui -> 48 `ui `i ]
+"45
+[; ;main.c: 45:                 if (origem >= 0 && origem <= 3) solicitacoes[origem] = 1;
+[e $ ! && >= _origem -> 0 `i <= _origem -> 3 `i 365  ]
+[e = *U + &U _solicitacoes * -> -> _origem `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> 1 `i `a ]
+[e :U 365 ]
+"46
+[; ;main.c: 46:                 if (destino >= 0 && destino <= 3) solicitacoes[destino] = 1;
+[e $ ! && >= _destino -> 0 `i <= _destino -> 3 `i 366  ]
+[e = *U + &U _solicitacoes * -> -> _destino `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> 1 `i `a ]
+[e :U 366 ]
+"47
+[; ;main.c: 47:             }
 }
-[e :U 384 ]
-"74
-[; ;main.c: 74:         }
+[e :U 364 ]
+"48
+[; ;main.c: 48:         }
 }
-[e :U 383 ]
-"77
-[; ;main.c: 77:         Verificar_Sensores();
+[e :U 363 ]
+"51
+[; ;main.c: 51:         Verificar_Sensores();
 [e ( _Verificar_Sensores ..  ]
-"80
-[; ;main.c: 80:         switch (estado_atual) {
-[e $U 388  ]
+"54
+[; ;main.c: 54:         switch (estado_atual) {
+[e $U 368  ]
 {
-"81
-[; ;main.c: 81:             case ESTADO_PARADO: {
-[e :U 389 ]
+"55
+[; ;main.c: 55:             case ESTADO_PARADO: {
+[e :U 369 ]
 {
-"82
-[; ;main.c: 82:                 int alvo = Buscar_Proxima_Parada();
+"56
+[; ;main.c: 56:                 int alvo = Buscar_Proxima_Parada();
 [v _alvo `i ~T0 @X0 1 a ]
 [e = _alvo ( _Buscar_Proxima_Parada ..  ]
+"57
+[; ;main.c: 57:                 if (alvo != -1) {
+[e $ ! != _alvo -U -> 1 `i 370  ]
+{
+"58
+[; ;main.c: 58:                     andar_destino = (uint8_t)alvo;
+[e = _andar_destino -> _alvo `uc ]
+"59
+[; ;main.c: 59:                     if (andar_destino > andar_atual) {
+[e $ ! > -> _andar_destino `i -> _andar_atual `i 371  ]
+{
+"60
+[; ;main.c: 60:                         Controle_Subir();
+[e ( _Controle_Subir ..  ]
+"61
+[; ;main.c: 61:                         estado_atual = ESTADO_SUBINDO;
+[e = _estado_atual . `E2974 1 ]
+"62
+[; ;main.c: 62:                     } else if (andar_destino < andar_atual) {
+}
+[e $U 372  ]
+[e :U 371 ]
+[e $ ! < -> _andar_destino `i -> _andar_atual `i 373  ]
+{
+"63
+[; ;main.c: 63:                         Controle_Descer();
+[e ( _Controle_Descer ..  ]
+"64
+[; ;main.c: 64:                         estado_atual = ESTADO_DESCENDO;
+[e = _estado_atual . `E2974 2 ]
+"65
+[; ;main.c: 65:                     } else {
+}
+[e $U 374  ]
+[e :U 373 ]
+{
+"67
+[; ;main.c: 67:                         solicitacoes[alvo] = 0;
+[e = *U + &U _solicitacoes * -> -> _alvo `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> 0 `i `a ]
+"68
+[; ;main.c: 68:                         estado_atual = ESTADO_ESPERA_PORTA;
+[e = _estado_atual . `E2974 3 ]
+"69
+[; ;main.c: 69:                         contador_espera = 0;
+[e = _contador_espera -> -> 0 `i `us ]
+"70
+[; ;main.c: 70:                     }
+}
+[e :U 374 ]
+[e :U 372 ]
+"71
+[; ;main.c: 71:                 } else {
+}
+[e $U 375  ]
+[e :U 370 ]
+{
+"73
+[; ;main.c: 73:                     if (andar_atual != 0) solicitacoes[0] = 1;
+[e $ ! != -> _andar_atual `i -> 0 `i 376  ]
+[e = *U + &U _solicitacoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> 1 `i `a ]
+[e :U 376 ]
+"74
+[; ;main.c: 74:                 }
+}
+[e :U 375 ]
+"75
+[; ;main.c: 75:                 break;
+[e $U 367  ]
+"76
+[; ;main.c: 76:             }
+}
+"78
+[; ;main.c: 78:             case ESTADO_SUBINDO:
+[e :U 377 ]
+"79
+[; ;main.c: 79:             case ESTADO_DESCENDO:
+[e :U 378 ]
 "83
-[; ;main.c: 83:                 if (alvo != -1) {
-[e $ ! != _alvo -U -> 1 `i 390  ]
+[; ;main.c: 83:                 if (andar_atual == andar_destino) {
+[e $ ! == -> _andar_atual `i -> _andar_destino `i 379  ]
 {
 "84
-[; ;main.c: 84:                     andar_destino = (uint8_t)alvo;
-[e = _andar_destino -> _alvo `uc ]
-"85
-[; ;main.c: 85:                     if (andar_destino > andar_atual) {
-[e $ ! > -> _andar_destino `i -> _andar_atual `i 391  ]
-{
-"86
-[; ;main.c: 86:                         Controle_Subir();
-[e ( _Controle_Subir ..  ]
-"87
-[; ;main.c: 87:                         estado_atual = ESTADO_SUBINDO;
-[e = _estado_atual . `E2953 1 ]
-"88
-[; ;main.c: 88:                     } else if (andar_destino < andar_atual) {
-}
-[e $U 392  ]
-[e :U 391 ]
-[e $ ! < -> _andar_destino `i -> _andar_atual `i 393  ]
-{
-"89
-[; ;main.c: 89:                         Controle_Descer();
-[e ( _Controle_Descer ..  ]
-"90
-[; ;main.c: 90:                         estado_atual = ESTADO_DESCENDO;
-[e = _estado_atual . `E2953 2 ]
-"91
-[; ;main.c: 91:                     } else {
-}
-[e $U 394  ]
-[e :U 393 ]
-{
-"93
-[; ;main.c: 93:                         solicitacoes[alvo] = 0;
-[e = *U + &U _solicitacoes * -> -> _alvo `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> 0 `i `a ]
-"94
-[; ;main.c: 94:                         estado_atual = ESTADO_ESPERA_PORTA;
-[e = _estado_atual . `E2953 3 ]
-"95
-[; ;main.c: 95:                         contador_espera = 0;
-[e = _contador_espera -> -> 0 `i `us ]
-"96
-[; ;main.c: 96:                     }
-}
-[e :U 394 ]
-[e :U 392 ]
-"97
-[; ;main.c: 97:                 } else {
-}
-[e $U 395  ]
-[e :U 390 ]
-{
-"99
-[; ;main.c: 99:                     if (andar_atual != 0) solicitacoes[0] = 1;
-[e $ ! != -> _andar_atual `i -> 0 `i 396  ]
-[e = *U + &U _solicitacoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _solicitacoes `ui `ux -> -> 1 `i `a ]
-[e :U 396 ]
-"100
-[; ;main.c: 100:                 }
-}
-[e :U 395 ]
-"101
-[; ;main.c: 101:                 break;
-[e $U 387  ]
-"102
-[; ;main.c: 102:             }
-}
-"104
-[; ;main.c: 104:             case ESTADO_SUBINDO:
-[e :U 397 ]
-"105
-[; ;main.c: 105:             case ESTADO_DESCENDO:
-[e :U 398 ]
-"109
-[; ;main.c: 109:                 if (andar_atual == andar_destino) {
-[e $ ! == -> _andar_atual `i -> _andar_destino `i 399  ]
-{
-"110
-[; ;main.c: 110:                     Controle_Parar();
+[; ;main.c: 84:                     Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"111
-[; ;main.c: 111:                     solicitacoes[andar_atual] = 0;
+"85
+[; ;main.c: 85:                     solicitacoes[andar_atual] = 0;
 [e = *U + &U _solicitacoes * -> _andar_atual `ux -> -> # *U &U _solicitacoes `ui `ux -> -> 0 `i `a ]
-"112
-[; ;main.c: 112:                     estado_atual = ESTADO_ESPERA_PORTA;
-[e = _estado_atual . `E2953 3 ]
-"113
-[; ;main.c: 113:                     contador_espera = 0;
+"86
+[; ;main.c: 86:                     estado_atual = ESTADO_ESPERA_PORTA;
+[e = _estado_atual . `E2974 3 ]
+"87
+[; ;main.c: 87:                     contador_espera = 0;
 [e = _contador_espera -> -> 0 `i `us ]
-"114
-[; ;main.c: 114:                 }
+"88
+[; ;main.c: 88:                 }
 }
-[e $U 400  ]
-"116
-[; ;main.c: 116:                 else {
-[e :U 399 ]
+[e $U 380  ]
+"90
+[; ;main.c: 90:                 else {
+[e :U 379 ]
 {
-"117
-[; ;main.c: 117:                     int novo_alvo = Buscar_Proxima_Parada();
+"91
+[; ;main.c: 91:                     int novo_alvo = Buscar_Proxima_Parada();
 [v _novo_alvo `i ~T0 @X0 1 a ]
 [e = _novo_alvo ( _Buscar_Proxima_Parada ..  ]
-"118
-[; ;main.c: 118:                     if (novo_alvo != -1) {
-[e $ ! != _novo_alvo -U -> 1 `i 401  ]
+"92
+[; ;main.c: 92:                     if (novo_alvo != -1) {
+[e $ ! != _novo_alvo -U -> 1 `i 381  ]
 {
-"119
-[; ;main.c: 119:                         andar_destino = (uint8_t)novo_alvo;
+"93
+[; ;main.c: 93:                         andar_destino = (uint8_t)novo_alvo;
 [e = _andar_destino -> _novo_alvo `uc ]
-"120
-[; ;main.c: 120:                     }
+"94
+[; ;main.c: 94:                     }
 }
-[e :U 401 ]
-"121
-[; ;main.c: 121:                 }
-}
-[e :U 400 ]
-"122
-[; ;main.c: 122:                 break;
-[e $U 387  ]
-"124
-[; ;main.c: 124:             case ESTADO_ESPERA_PORTA:
-[e :U 402 ]
-"125
-[; ;main.c: 125:                 contador_espera++;
-[e ++ _contador_espera -> -> 1 `i `us ]
-"126
-[; ;main.c: 126:                 if (contador_espera >= 200) {
-[e $ ! >= -> _contador_espera `ui -> -> 200 `i `ui 403  ]
-{
-"127
-[; ;main.c: 127:                     int proximo = Buscar_Proxima_Parada();
-[v _proximo `i ~T0 @X0 1 a ]
-[e = _proximo ( _Buscar_Proxima_Parada ..  ]
-"128
-[; ;main.c: 128:                     if (proximo != -1) {
-[e $ ! != _proximo -U -> 1 `i 404  ]
-{
-"131
-[; ;main.c: 131:                         estado_atual = ESTADO_REVERSAO;
-[e = _estado_atual . `E2953 4 ]
-"132
-[; ;main.c: 132:                         contador_espera = 0;
-[e = _contador_espera -> -> 0 `i `us ]
-"133
-[; ;main.c: 133:                     } else {
-}
-[e $U 405  ]
-[e :U 404 ]
-{
-"134
-[; ;main.c: 134:                         estado_atual = ESTADO_PARADO;
-[e = _estado_atual . `E2953 0 ]
-"135
-[; ;main.c: 135:                     }
-}
-[e :U 405 ]
-"136
-[; ;main.c: 136:                 }
-}
-[e :U 403 ]
-"137
-[; ;main.c: 137:                 break;
-[e $U 387  ]
-"139
-[; ;main.c: 139:             case ESTADO_REVERSAO:
-[e :U 406 ]
-"140
-[; ;main.c: 140:                 contador_espera++;
-[e ++ _contador_espera -> -> 1 `i `us ]
-"141
-[; ;main.c: 141:                 if (contador_espera >= 50) {
-[e $ ! >= -> _contador_espera `ui -> -> 50 `i `ui 407  ]
-{
-"142
-[; ;main.c: 142:                     estado_atual = ESTADO_PARADO;
-[e = _estado_atual . `E2953 0 ]
-"143
-[; ;main.c: 143:                 }
-}
-[e :U 407 ]
-"144
-[; ;main.c: 144:                 break;
-[e $U 387  ]
-"145
-[; ;main.c: 145:         }
-}
-[e $U 387  ]
-[e :U 388 ]
-[e [\ -> _estado_atual `ui , $ -> . `E2953 0 `ui 389
- , $ -> . `E2953 1 `ui 397
- , $ -> . `E2953 2 `ui 398
- , $ -> . `E2953 3 `ui 402
- , $ -> . `E2953 4 `ui 406
- 387 ]
-[e :U 387 ]
-"148
-[; ;main.c: 148:         contador_telemetria++;
-[e ++ _contador_telemetria -> -> 1 `i `us ]
-"149
-[; ;main.c: 149:         if (contador_telemetria >= 30) {
-[e $ ! >= -> _contador_telemetria `ui -> -> 30 `i `ui 408  ]
-{
-"150
-[; ;main.c: 150:             UART_EnviaDados();
-[e ( _UART_EnviaDados ..  ]
-"152
-[; ;main.c: 152:             contador_telemetria = 0;
-[e = _contador_telemetria -> -> 0 `i `us ]
-"153
-[; ;main.c: 153:         }
-}
-[e :U 408 ]
-"155
-[; ;main.c: 155:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"156
-[; ;main.c: 156:     }
+[e :U 381 ]
+"95
+[; ;main.c: 95:                 }
 }
 [e :U 380 ]
-[e $U 381  ]
+"96
+[; ;main.c: 96:                 break;
+[e $U 367  ]
+"98
+[; ;main.c: 98:             case ESTADO_ESPERA_PORTA:
 [e :U 382 ]
-"157
-[; ;main.c: 157: }
-[e :UE 379 ]
+"99
+[; ;main.c: 99:                 contador_espera++;
+[e ++ _contador_espera -> -> 1 `i `us ]
+"100
+[; ;main.c: 100:                 if (contador_espera >= 200) {
+[e $ ! >= -> _contador_espera `ui -> -> 200 `i `ui 383  ]
+{
+"101
+[; ;main.c: 101:                     int proximo = Buscar_Proxima_Parada();
+[v _proximo `i ~T0 @X0 1 a ]
+[e = _proximo ( _Buscar_Proxima_Parada ..  ]
+"102
+[; ;main.c: 102:                     if (proximo != -1) {
+[e $ ! != _proximo -U -> 1 `i 384  ]
+{
+"105
+[; ;main.c: 105:                         estado_atual = ESTADO_REVERSAO;
+[e = _estado_atual . `E2974 4 ]
+"106
+[; ;main.c: 106:                         contador_espera = 0;
+[e = _contador_espera -> -> 0 `i `us ]
+"107
+[; ;main.c: 107:                     } else {
+}
+[e $U 385  ]
+[e :U 384 ]
+{
+"108
+[; ;main.c: 108:                         estado_atual = ESTADO_PARADO;
+[e = _estado_atual . `E2974 0 ]
+"109
+[; ;main.c: 109:                     }
+}
+[e :U 385 ]
+"110
+[; ;main.c: 110:                 }
+}
+[e :U 383 ]
+"111
+[; ;main.c: 111:                 break;
+[e $U 367  ]
+"113
+[; ;main.c: 113:             case ESTADO_REVERSAO:
+[e :U 386 ]
+"114
+[; ;main.c: 114:                 contador_espera++;
+[e ++ _contador_espera -> -> 1 `i `us ]
+"115
+[; ;main.c: 115:                 if (contador_espera >= 50) {
+[e $ ! >= -> _contador_espera `ui -> -> 50 `i `ui 387  ]
+{
+"116
+[; ;main.c: 116:                     estado_atual = ESTADO_PARADO;
+[e = _estado_atual . `E2974 0 ]
+"117
+[; ;main.c: 117:                 }
+}
+[e :U 387 ]
+"118
+[; ;main.c: 118:                 break;
+[e $U 367  ]
+"119
+[; ;main.c: 119:         }
+}
+[e $U 367  ]
+[e :U 368 ]
+[e [\ -> _estado_atual `ui , $ -> . `E2974 0 `ui 369
+ , $ -> . `E2974 1 `ui 377
+ , $ -> . `E2974 2 `ui 378
+ , $ -> . `E2974 3 `ui 382
+ , $ -> . `E2974 4 `ui 386
+ 367 ]
+[e :U 367 ]
+"122
+[; ;main.c: 122:         contador_telemetria++;
+[e ++ _contador_telemetria -> -> 1 `i `us ]
+"123
+[; ;main.c: 123:         if (contador_telemetria >= 30) {
+[e $ ! >= -> _contador_telemetria `ui -> -> 30 `i `ui 388  ]
+{
+"124
+[; ;main.c: 124:             UART_EnviaDados();
+[e ( _UART_EnviaDados ..  ]
+"126
+[; ;main.c: 126:             contador_telemetria = 0;
+[e = _contador_telemetria -> -> 0 `i `us ]
+"127
+[; ;main.c: 127:         }
+}
+[e :U 388 ]
+"129
+[; ;main.c: 129:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"130
+[; ;main.c: 130:     }
+}
+[e :U 360 ]
+[e $U 361  ]
+[e :U 362 ]
+"131
+[; ;main.c: 131: }
+[e :UE 359 ]
 }

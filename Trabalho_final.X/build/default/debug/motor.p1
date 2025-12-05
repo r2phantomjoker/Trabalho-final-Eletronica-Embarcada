@@ -63,11 +63,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _CM2CON0bits `VS118 ~T0 @X0 0 e@275 ]
 "110 motor.c
 [; ;motor.c: 110:         estado_atual = ESTADO_PARADO;
-[c E2502 0 1 2 3 4 .. ]
-[n E2502 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
+[c E2503 0 1 2 3 4 .. ]
+[n E2503 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
 "133 ./globals.h
 [; ;./globals.h: 133: extern volatile EstadoElevador estado_atual;
-[v _estado_atual `VE2502 ~T0 @X0 0 e ]
+[v _estado_atual `VE2503 ~T0 @X0 0 e ]
+"123
+[; ;./globals.h: 123: extern volatile _Bool solicitacoes[4];
+[v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -714,7 +717,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _Controle_Parar ..  ]
 "110
 [; ;motor.c: 110:         estado_atual = ESTADO_PARADO;
-[e = _estado_atual . `E2502 0 ]
+[e = _estado_atual . `E2503 0 ]
 "111
 [; ;motor.c: 111:         posicao_mm = 0;
 [e = _posicao_mm -> -> 0 `i `uc ]
@@ -731,7 +734,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _Controle_Parar ..  ]
 "116
 [; ;motor.c: 116:         estado_atual = ESTADO_PARADO;
-[e = _estado_atual . `E2502 0 ]
+[e = _estado_atual . `E2503 0 ]
 "117
 [; ;motor.c: 117:         posicao_mm = 180;
 [e = _posicao_mm -> -> 180 `i `uc ]
@@ -742,4 +745,122 @@ Version 4.0 HI-TECH Software Intermediate Code
 "119
 [; ;motor.c: 119: }
 [e :UE 369 ]
+}
+"122
+[; ;motor.c: 122: int Buscar_Proxima_Parada() {
+[v _Buscar_Proxima_Parada `(i ~T0 @X0 1 ef ]
+{
+[e :U _Buscar_Proxima_Parada ]
+[f ]
+"124
+[; ;motor.c: 124:     if (estado_atual == ESTADO_PARADO) {
+[e $ ! == -> _estado_atual `ui -> . `E2503 0 `ui 377  ]
+{
+"125
+[; ;motor.c: 125:         for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 378  ]
+[e $U 379  ]
+[e :U 378 ]
+[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 381  ]
+[e ) _i ]
+[e $UE 376  ]
+[e :U 381 ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 378  ]
+[e :U 379 ]
+}
+"126
+[; ;motor.c: 126:         return -1;
+[e ) -U -> 1 `i ]
+[e $UE 376  ]
+"127
+[; ;motor.c: 127:     }
+}
+[e :U 377 ]
+"129
+[; ;motor.c: 129:     if (estado_atual == ESTADO_SUBINDO) {
+[e $ ! == -> _estado_atual `ui -> . `E2503 1 `ui 382  ]
+{
+"130
+[; ;motor.c: 130:         for (int i = andar_atual + 1; i <= 3; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i + -> _andar_atual `i -> 1 `i ]
+[e $ <= _i -> 3 `i 383  ]
+[e $U 384  ]
+[e :U 383 ]
+{
+"131
+[; ;motor.c: 131:             if (solicitacoes[i]) return i;
+[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 386  ]
+[e ) _i ]
+[e $UE 376  ]
+[e :U 386 ]
+"132
+[; ;motor.c: 132:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ <= _i -> 3 `i 383  ]
+[e :U 384 ]
+}
+"133
+[; ;motor.c: 133:     }
+}
+[e :U 382 ]
+"135
+[; ;motor.c: 135:     if (estado_atual == ESTADO_DESCENDO) {
+[e $ ! == -> _estado_atual `ui -> . `E2503 2 `ui 387  ]
+{
+"136
+[; ;motor.c: 136:         for (int i = andar_atual - 1; i >= 0; i--) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i - -> _andar_atual `i -> 1 `i ]
+[e $ >= _i -> 0 `i 388  ]
+[e $U 389  ]
+[e :U 388 ]
+{
+"137
+[; ;motor.c: 137:             if (solicitacoes[i]) return i;
+[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 391  ]
+[e ) _i ]
+[e $UE 376  ]
+[e :U 391 ]
+"138
+[; ;motor.c: 138:         }
+}
+[e -- _i -> 1 `i ]
+[e $ >= _i -> 0 `i 388  ]
+[e :U 389 ]
+}
+"139
+[; ;motor.c: 139:     }
+}
+[e :U 387 ]
+"141
+[; ;motor.c: 141:     for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 392  ]
+[e $U 393  ]
+[e :U 392 ]
+[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 395  ]
+[e ) _i ]
+[e $UE 376  ]
+[e :U 395 ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 392  ]
+[e :U 393 ]
+}
+"143
+[; ;motor.c: 143:     return -1;
+[e ) -U -> 1 `i ]
+[e $UE 376  ]
+"144
+[; ;motor.c: 144: }
+[e :UE 376 ]
 }

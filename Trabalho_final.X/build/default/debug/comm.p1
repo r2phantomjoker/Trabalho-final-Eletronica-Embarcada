@@ -23,6 +23,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "112
 [; ;./globals.h: 112: extern volatile uint8_t temperatura_ponte;
 [v _temperatura_ponte `Vuc ~T0 @X0 0 e ]
+"13 ./comm.h
+[; ;./comm.h: 13: const uint8_t LUT_Andar[]= {
+[v _LUT_Andar `Cuc ~T0 @X0 -> 16 `i e ]
+[i _LUT_Andar
+:U ..
+-> -> 0 `i `uc
+-> -> 130 `i `uc
+-> -> 255 `i `uc
+-> -> 128 `i `uc
+-> -> 194 `i `uc
+-> -> 161 `i `uc
+-> -> 145 `i `uc
+-> -> 142 `i `uc
+-> -> 66 `i `uc
+-> -> 129 `i `uc
+-> -> 137 `i `uc
+-> -> 118 `i `uc
+-> -> 7 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 255 `i `uc
+..
+]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -595,4 +618,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40
 [; ;comm.c: 40: }
 [e :UE 362 ]
+}
+"42
+[; ;comm.c: 42: void MatrizLed (void){
+[v _MatrizLed `(v ~T0 @X0 1 ef ]
+{
+[e :U _MatrizLed ]
+[f ]
+"43
+[; ;comm.c: 43:     uint8_t data[2];
+[v _data `uc ~T0 @X0 -> 2 `i a ]
+"44
+[; ;comm.c: 44:     uint8_t digAndar = (andar_atual)<<2;
+[v _digAndar `uc ~T0 @X0 1 a ]
+[e = _digAndar -> << -> _andar_atual `i -> 2 `i `uc ]
+"45
+[; ;comm.c: 45:     for(uint8_t i=1;i<5;i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 364  ]
+[e $U 365  ]
+[e :U 364 ]
+{
+"46
+[; ;comm.c: 46:         data[0] = i;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux _i ]
+"47
+[; ;comm.c: 47:         data[1] = LUT_Andar[digAndar];
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux *U + &U _LUT_Andar * -> _digAndar `ux -> -> # *U &U _LUT_Andar `ui `ux ]
+"48
+[; ;comm.c: 48:         digAndar++;
+[e ++ _digAndar -> -> 1 `i `uc ]
+"49
+[; ;comm.c: 49:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 364  ]
+[e :U 365 ]
+}
+"50
+[; ;comm.c: 50: }
+[e :UE 363 ]
 }

@@ -38,3 +38,19 @@ void UART_EnviaDados(void){
     EUSART_Write(CR);
     return;
 }
+
+void MatrizLed (void){
+    uint8_t data[2]; 
+    uint8_t digAndar = (andar_atual)<<2;
+    CS_SetLow();
+    for(uint8_t i=1;i<5;i++){
+        data[0] = i;
+        data[1] = LUT_Andar[digAndar];
+        SPI1_ExchangeBlock(data, 2); //Testar com SPI1_WriteBlock
+        digAndar++;
+    }
+    data[0] = 5;
+    data[1] = 0;
+    SPI1_ExchangeBlock(data,2); //Coluna 5 em Branco
+    //Tá faltando a seta e os andares no percurso
+}

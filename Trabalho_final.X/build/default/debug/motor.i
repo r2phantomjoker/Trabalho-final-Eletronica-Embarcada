@@ -138,6 +138,8 @@ void Controle_Descer(void);
 void Controle_Parar(void);
 
 void Verificar_Sensores(void);
+
+int Buscar_Proxima_Parada(void);
 # 9 "motor.c" 2
 # 1 "./globals.h" 1
 # 14 "./globals.h"
@@ -4430,25 +4432,25 @@ extern volatile EstadoElevador estado_atual;
 # 1 "./mcc_generated_files/device_config.h" 1
 # 51 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 188 "./mcc_generated_files/pin_manager.h"
+# 225 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 200 "./mcc_generated_files/pin_manager.h"
+# 237 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 213 "./mcc_generated_files/pin_manager.h"
+# 250 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 236 "./mcc_generated_files/pin_manager.h"
+# 273 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 260 "./mcc_generated_files/pin_manager.h"
-extern void (*IOCBF0_InterruptHandler)(void);
-# 284 "./mcc_generated_files/pin_manager.h"
-void IOCBF0_DefaultInterruptHandler(void);
 # 297 "./mcc_generated_files/pin_manager.h"
+extern void (*IOCBF0_InterruptHandler)(void);
+# 321 "./mcc_generated_files/pin_manager.h"
+void IOCBF0_DefaultInterruptHandler(void);
+# 334 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 320 "./mcc_generated_files/pin_manager.h"
+# 357 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 344 "./mcc_generated_files/pin_manager.h"
+# 381 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF3_InterruptHandler)(void);
-# 368 "./mcc_generated_files/pin_manager.h"
+# 405 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
 # 52 "./mcc_generated_files/mcc.h" 2
 
@@ -4616,6 +4618,22 @@ char *tempnam(const char *, const char *);
 # 55 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
 # 56 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/spi1.h" 1
+# 59 "./mcc_generated_files/spi1.h"
+typedef enum {
+    SPI1_DEFAULT
+} spi1_modes_t;
+
+void SPI1_Initialize(void);
+_Bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration);
+void SPI1_Close(void);
+uint8_t SPI1_ExchangeByte(uint8_t data);
+void SPI1_ExchangeBlock(void *block, size_t blockSize);
+void SPI1_WriteBlock(void *block, size_t blockSize);
+void SPI1_ReadBlock(void *block, size_t blockSize);
+void SPI1_WriteByte(uint8_t byte);
+uint8_t SPI1_ReadByte(void);
+# 57 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr4.h" 1
 # 103 "./mcc_generated_files/tmr4.h"
 void TMR4_Initialize(void);
@@ -4637,7 +4655,15 @@ void TMR4_ISR(void);
 extern void (*TMR4_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr4.h"
 void TMR4_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
+# 58 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/cmp2.h" 1
+# 92 "./mcc_generated_files/cmp2.h"
+void CMP2_Initialize(void);
+# 132 "./mcc_generated_files/cmp2.h"
+_Bool CMP2_GetOutputStatus(void);
+# 148 "./mcc_generated_files/cmp2.h"
+void CMP2_ISR(void);
+# 59 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 103 "./mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4659,15 +4685,7 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
-# 58 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/cmp2.h" 1
-# 92 "./mcc_generated_files/cmp2.h"
-void CMP2_Initialize(void);
-# 132 "./mcc_generated_files/cmp2.h"
-_Bool CMP2_GetOutputStatus(void);
-# 148 "./mcc_generated_files/cmp2.h"
-void CMP2_ISR(void);
-# 59 "./mcc_generated_files/mcc.h" 2
+# 60 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/cmp1.h" 1
 # 92 "./mcc_generated_files/cmp1.h"
 void CMP1_Initialize(void);
@@ -4675,7 +4693,7 @@ void CMP1_Initialize(void);
 _Bool CMP1_GetOutputStatus(void);
 # 148 "./mcc_generated_files/cmp1.h"
 void CMP1_ISR(void);
-# 60 "./mcc_generated_files/mcc.h" 2
+# 61 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr0.h" 1
 # 98 "./mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
@@ -4687,19 +4705,19 @@ void TMR0_WriteTimer(uint8_t timerVal);
 void TMR0_Reload(void);
 # 242 "./mcc_generated_files/tmr0.h"
 _Bool TMR0_HasOverflowOccured(void);
-# 61 "./mcc_generated_files/mcc.h" 2
+# 62 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/fvr.h" 1
 # 93 "./mcc_generated_files/fvr.h"
  void FVR_Initialize(void);
 # 127 "./mcc_generated_files/fvr.h"
 _Bool FVR_IsOutputReady(void);
-# 62 "./mcc_generated_files/mcc.h" 2
+# 63 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pwm3.h" 1
 # 97 "./mcc_generated_files/pwm3.h"
 void PWM3_Initialize(void);
 # 124 "./mcc_generated_files/pwm3.h"
 void PWM3_LoadDutyValue(uint16_t dutyValue);
-# 63 "./mcc_generated_files/mcc.h" 2
+# 64 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/adc.h" 1
 # 72 "./mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
@@ -4733,7 +4751,7 @@ adc_result_t ADC_GetConversionResult(void);
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 315 "./mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 64 "./mcc_generated_files/mcc.h" 2
+# 65 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/eusart.h" 1
 # 75 "./mcc_generated_files/eusart.h"
 typedef union {
@@ -4787,12 +4805,12 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
 # 505 "./mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 65 "./mcc_generated_files/mcc.h" 2
-# 79 "./mcc_generated_files/mcc.h"
+# 66 "./mcc_generated_files/mcc.h" 2
+# 80 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 92 "./mcc_generated_files/mcc.h"
+# 93 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 104 "./mcc_generated_files/mcc.h"
+# 105 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 11 "motor.c" 2
 
@@ -4891,4 +4909,29 @@ void Verificar_Sensores() {
         estado_atual = ESTADO_PARADO;
         posicao_mm = 180;
     }
+}
+
+
+int Buscar_Proxima_Parada() {
+
+    if (estado_atual == ESTADO_PARADO) {
+        for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
+        return -1;
+    }
+
+    if (estado_atual == ESTADO_SUBINDO) {
+        for (int i = andar_atual + 1; i <= 3; i++) {
+            if (solicitacoes[i]) return i;
+        }
+    }
+
+    if (estado_atual == ESTADO_DESCENDO) {
+        for (int i = andar_atual - 1; i >= 0; i--) {
+            if (solicitacoes[i]) return i;
+        }
+    }
+
+    for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
+
+    return -1;
 }

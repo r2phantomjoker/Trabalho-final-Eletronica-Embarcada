@@ -66,13 +66,13 @@ void PIN_MANAGER_Initialize(void)
     /**
     TRISx registers
     */
-    TRISA = 0x77;
-    TRISB = 0xFF;
+    TRISA = 0x37;
+    TRISB = 0xED;
 
     /**
     ANSELx registers
     */
-    ANSELB = 0xF0;
+    ANSELB = 0xC0;
     ANSELA = 0x0F;
 
     /**
@@ -86,8 +86,8 @@ void PIN_MANAGER_Initialize(void)
     /**
     APFCONx registers
     */
-    APFCON0 = 0x00;
-    APFCON1 = 0x00;
+    APFCON0 = 0xC0;
+    APFCON1 = 0x01;
 
     /**
     IOCx registers 

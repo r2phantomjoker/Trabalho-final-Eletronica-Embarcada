@@ -37,10 +37,10 @@ const uint8_t LUT_Andar[]= {
 };
 
 const uint8_t LUT_dir[] = {
-    0b00000000, //Parado
-    0b00000000,
-    0b00000000,
-    0b00000000,
+    0b00000000, //Parado //0
+    0b00000000, //1
+    0b00000000, //2
+    0b00000000, //3
            
     0b00000000, //Subindo
     0b00000010,
@@ -50,7 +50,24 @@ const uint8_t LUT_dir[] = {
     0b00000000, //Descendo
     0b00000010,
     0b00000001,
+    0b00000010,
+    
+    0b00000000, //Esperar porta
+    0b00000010,
+    0b00000010,
+    0b00000010,
+    
+    0b00000000, //Reversão
+    0b00000010,
+    0b00000010,
     0b00000010
+};
+
+const uint8_t LUT_percurso[] ={
+    0b00010000, 
+    0b00100000,
+    0b01000000,
+    0b10000000
 };
 
 const uint8_t matrix_conf[] = {
@@ -151,6 +168,12 @@ void MatrizInicializa(void){
     }
 }
 
+
+int Uniaomatrix (void){
+    
+}
+
+
 void MatrizLed (void){
     // Lógica simplificada:
     // Linhas 1 a 4: Mostram o número do andar (LUT_Andar)
@@ -158,7 +181,7 @@ void MatrizLed (void){
     
     // Recalcula índices para pegar o desenho certo
     // Nota: Supondo que seus desenhos nas LUTs tenham 4 bytes de altura cada
-    
+    uint8_t buffer_percurso = 0;
     uint8_t base_andar = andar_atual * 4;   // 0->0, 1->4, 2->8...
     uint8_t base_seta  = estado_atual * 4;  // 0->0, 1->4...
 
@@ -170,11 +193,19 @@ void MatrizLed (void){
 
     // Desenha a Seta nas linhas 5, 6, 7, 8
     // Nota: Ajustei para usar as linhas de cima da matriz para a seta
+    
     for(uint8_t i=0; i<4; i++){
         // Linha do MAX (5 a 8), Dado da LUT
         MAX7219_Write(i+5, LUT_dir[base_seta + i]); 
     }
     
+    buffer_percurso = LUT_dir[base_seta + 3];
+        for (uint8_t i=0; i<4; i++){
+            if(solicitacoes[i]){
+                buffer_percurso += LUT_percurso[i] ;
+            }
+        }
+    MAX7219_Write(8, buffer_percurso); 
     // OBS: Removi a parte dos "pontinhos" das solicitações na linha 4
     // para simplificar e garantir que o básico funcione primeiro.
     // Se quiser adicionar de volta, tem que fazer uma lógica de "Bitwise OR" (|)

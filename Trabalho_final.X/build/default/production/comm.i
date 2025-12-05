@@ -4868,7 +4868,24 @@ const uint8_t LUT_dir[] = {
     0b00000000,
     0b00000010,
     0b00000001,
+    0b00000010,
+
+    0b00000000,
+    0b00000010,
+    0b00000010,
+    0b00000010,
+
+    0b00000000,
+    0b00000010,
+    0b00000010,
     0b00000010
+};
+
+const uint8_t LUT_percurso[] ={
+    0b00010000,
+    0b00100000,
+    0b01000000,
+    0b10000000
 };
 
 const uint8_t matrix_conf[] = {
@@ -4879,7 +4896,7 @@ const uint8_t matrix_conf[] = {
     0x0F,0x01,
     0x0F,0x00,
 };
-# 73 "comm.c"
+# 90 "comm.c"
 void MAX7219_Write(uint8_t address, uint8_t data) {
     LATBbits.LATB1 = 0;
 
@@ -4961,6 +4978,12 @@ void MatrizInicializa(void){
     }
 }
 
+
+int Uniaomatrix (void){
+
+}
+
+
 void MatrizLed (void){
 
 
@@ -4968,7 +4991,7 @@ void MatrizLed (void){
 
 
 
-
+    uint8_t buffer_percurso = 0;
     uint8_t base_andar = andar_atual * 4;
     uint8_t base_seta = estado_atual * 4;
 
@@ -4980,11 +5003,19 @@ void MatrizLed (void){
 
 
 
+
     for(uint8_t i=0; i<4; i++){
 
         MAX7219_Write(i+5, LUT_dir[base_seta + i]);
     }
 
+    buffer_percurso = LUT_dir[base_seta + 3];
+        for (uint8_t i=0; i<4; i++){
+            if(solicitacoes[i]){
+                buffer_percurso += LUT_percurso[i] ;
+            }
+        }
+    MAX7219_Write(8, buffer_percurso);
 
 
 

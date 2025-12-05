@@ -37,7 +37,7 @@ ESTADO_DESCENDO 2
 ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
-"163 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"186 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [e E2506 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -61,15 +61,15 @@ ESTADO_REVERSAO 4
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"73 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"90 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _MAX7219_Write MAX7219_Write `(v  1 e 1 0 ]
-"94
+"111
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
-"105
+"122
 [v _UART_EnviaDados UART_EnviaDados `(v  1 e 1 0 ]
-"133
+"150
 [v _MatrizInicializa MatrizInicializa `(v  1 e 1 0 ]
-"154
+"177
 [v _MatrizLed MatrizLed `(v  1 e 1 0 ]
 "24 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -612,8 +612,10 @@ ESTADO_REVERSAO 4
 "17 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _LUT_Andar LUT_Andar `DC[16]uc  1 e 16 0 ]
 "39
-[v _LUT_dir LUT_dir `DC[12]uc  1 e 12 0 ]
-"56
+[v _LUT_dir LUT_dir `DC[20]uc  1 e 20 0 ]
+"66
+[v _LUT_percurso LUT_percurso `DC[4]uc  1 e 4 0 ]
+"73
 [v _matrix_conf matrix_conf `DC[12]uc  1 e 12 0 ]
 "11 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\globals.c
 [v _andar_atual andar_atual `VEuc  1 e 1 0 ]
@@ -716,12 +718,12 @@ ESTADO_REVERSAO 4
 {
 "93
 } 0
-"94 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"111 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_RecebePedido UART_RecebePedido `(i  1 e 2 0 ]
 {
 [v UART_RecebePedido@origem_pedido origem_pedido `*.4uc  1 p 1 15 ]
 [v UART_RecebePedido@destino_pedido destino_pedido `*.4uc  1 p 1 16 ]
-"103
+"120
 } 0
 "151 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
@@ -730,10 +732,10 @@ ESTADO_REVERSAO 4
 [v EUSART_Read@readValue readValue `uc  1 a 1 14 ]
 "171
 } 0
-"105 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"122 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _UART_EnviaDados UART_EnviaDados `(v  1 e 1 0 ]
 {
-"127
+"144
 } 0
 "5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -891,36 +893,40 @@ ESTADO_REVERSAO 4
 {
 "83
 } 0
-"154 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
+"177 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\comm.c
 [v _MatrizLed MatrizLed `(v  1 e 1 0 ]
 {
-"173
-[v MatrizLed@i_1644 i `uc  1 a 1 23 ]
-"166
-[v MatrizLed@i i `uc  1 a 1 22 ]
-"163
-[v MatrizLed@base_seta base_seta `uc  1 a 1 21 ]
-"162
+"203
+[v MatrizLed@i_1649 i `uc  1 a 1 25 ]
+"197
+[v MatrizLed@i_1648 i `uc  1 a 1 24 ]
+"189
+[v MatrizLed@i i `uc  1 a 1 23 ]
+"186
+[v MatrizLed@base_seta base_seta `uc  1 a 1 22 ]
+"184
+[v MatrizLed@buffer_percurso buffer_percurso `uc  1 a 1 21 ]
+"185
 [v MatrizLed@base_andar base_andar `uc  1 a 1 20 ]
-"182
+"213
 } 0
-"133
+"150
 [v _MatrizInicializa MatrizInicializa `(v  1 e 1 0 ]
 {
-"149
+"166
 [v MatrizInicializa@row row `uc  1 a 1 17 ]
-"142
+"159
 [v MatrizInicializa@i i `uc  1 a 1 16 ]
-"152
+"169
 } 0
-"73
+"90
 [v _MAX7219_Write MAX7219_Write `(v  1 e 1 0 ]
 {
 [v MAX7219_Write@address address `uc  1 p 1 wreg ]
 [v MAX7219_Write@address address `uc  1 p 1 wreg ]
 [v MAX7219_Write@data data `uc  1 p 1 14 ]
 [v MAX7219_Write@address address `uc  1 p 1 15 ]
-"87
+"104
 } 0
 "137 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]

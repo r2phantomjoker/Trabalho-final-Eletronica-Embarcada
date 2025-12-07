@@ -1,113 +1,153 @@
 /**
- @file motor.c
- Autor: Arthur Marinho
- @brief Driver do Motor (Versão Otimizada "Light" - Completa)
- Implementa a lógica de movimentação, controle de velocidade (PWM),direção e proteções de hardware (reversão brusca e fim de curso).
-*/
+ * @file motor.c
+ * @brief Driver do Motor (Versão Otimizada "Light" - Completa)
+ * @details Implementa a lógica de movimentação, controle de velocidade, 
+ * direção e proteções de hardware do elevador.
+ */
 
 #include "motor.h"
-#include "globals.h"               
+#include "globals.h"                
 #include "mcc_generated_files/mcc.h" 
 #include "mcc_generated_files/pwm3.h"
 
-// VARIÁVEIS INTERNAS (OTIMIZADAS PARA INTEIROS)
-// Usamos 'static' para que elas só existam dentro deste arquivo.
+// =======================
+// CONSTANTES E DEFINIÇÕES
+// =======================
 
-// Antes era float. Mudamos para uint16 para economizar memória RAM e FLASH.
-static uint16_t total_pulsos = 0;            
+/** @brief Limite máximo de pulsos (segurança de software). */
+#define MAX_PULSOS_TOPO   220
 
-// Guarda a leitura anterior do Timer para saber o quanto andou (Delta).
-static uint8_t ultimo_valor_timer0 = 0;
+/** @brief Posição física máxima em milímetros. */
+#define POSICAO_MAX_MM    180
 
-// Constante: 0.837 mm/pulso * 1000 = 837.
-// Usamos isso para fazer conta com números inteiros e fugir das bibliotecas pesadas de 'float'.
+/** @brief Fator de conversão: 0.837 mm/pulso * 1000 = 837. */
 #define MICRONS_POR_PULSO 837 
 
-#define TEMPO_TMR4_MS    100  // Timer 4 roda a cada 100ms
+/** @brief Período de execução da tarefa de sensores (ms). */
+#define TEMPO_TMR4_MS     100  
 
-// CÁLCULO DE FÍSICA (VELOCIDADE E POSIÇÃO) - CÓDIGO ATIVO E OTIMIZADO
+// ===================
+// VARIÁVEIS INTERNAS 
+// ===================
 
 /**
- * @brief Calcula Velocidade e Posição lendo o Hardware (TMR0).
- * @note Deve ser chamada periodicamente (ex: Timer 4 a cada 100ms).
+ * @brief Contador acumulativo de pulsos do encoder.
+ * Utilizado para o cálculo de posição absoluta.
+ */
+static uint16_t total_pulsos = 0;            
+
+/**
+ * @brief Armazena o valor anterior do TMR0.
+ * Usado para calcular o delta de pulsos entre chamadas.
+ */
+static uint8_t ultimo_valor_timer0 = 0;
+
+// ====================
+// CÁLCULO DOS SENSORES
+// ====================
+
+/**
+ * @brief Realiza a telemetria do sistema (Velocidade, Posição e Temperatura).
+ * @note Modifica as variáveis globais: #posicao_mm, #velocidade_atual e #temperatura_ponte.
  */
 void SENSORES_CalcularVelocidade(void){
     
-    // 1. LEITURA DO ENCODER (HARDWARE)
+    // 1. LEITURA DO ENCODER
     // Lê o registrador TMR0 que conta os pulsos físicos do disco do motor.
-    uint8_t valor_atual = TMR0_ReadTimer();
-    
-    // Calcula quantos pulsos aconteceram nesses 100ms (Atual - Anterior).
-    // O tipo uint8_t lida automaticamente com o estouro (ex: se foi de 250 para 5, o resultado é 11).
+    uint8_t valor_atual = TMR0_ReadTimer();     
+
+    // Calcula quantos pulsos aconteceram desde a última leitura
     uint8_t delta = valor_atual - ultimo_valor_timer0;
     
     // Salva o valor atual para a próxima conta.
     ultimo_valor_timer0 = valor_atual;
 
-    // 2. ATUALIZAÇÃO DA POSIÇÃO (CONTAGEM DE PULSOS)
-    // Se o motor estiver subindo, somamos os pulsos.
+    // 2. ATUALIZAÇÃO DA POSIÇÃO 
     if (estado_motor == MOTOR_SUBINDO) {
-        total_pulsos += delta;
-        // Trava de segurança lógica: 220 pulsos é o topo (~180mm).
-        // Impede que o número cresça infinitamente se o sensor falhar.
-        if(total_pulsos > 220) total_pulsos = 220; 
+        total_pulsos += delta; // Se estiver subindo, soma-se os pulsos
+        
+        // Trava de segurança lógica
+        if(total_pulsos > MAX_PULSOS_TOPO) total_pulsos = MAX_PULSOS_TOPO; 
     } 
-    // Se estiver descendo, subtraímos.
+    
     else if (estado_motor == MOTOR_DESCENDO) {
-        // Proteção para não ficar negativo (o que seria um erro em 'unsigned').
-        if(delta > total_pulsos) total_pulsos = 0; 
-        else total_pulsos -= delta;
+        if(delta > total_pulsos) total_pulsos = 0;  // Proteção para não ficar negativo.
+        else total_pulsos -= delta; // Se estiver descendo, subtraem-se os pulsos.
     }
     
-    // 3. CONVERSÃO MATEMÁTICA (INTEIROS)
-    // Aqui transformamos "pulsos" em "milímetros" para o celular mostrar.
+    // 3. CONVERSÃO MATEMÁTICA 
+    // Conversão dos pulsos para milímetros 
     // Fórmula Otimizada: mm = (pulsos * 837) / 1000
     
-    // Usamos uma variável temporária de 32 bits (uint32) para a multiplicação não estourar o limite de 16 bits.
+    // É utilizada uma variável temporária de 32 bits para a multiplicação não estourar o limite de 16 bits.
     uint32_t calculo_posicao = (uint32_t)total_pulsos * MICRONS_POR_PULSO;
     posicao_mm = (uint8_t)(calculo_posicao / 1000); // Guarda na variável global (0-180mm)
 
     // 4. CÁLCULO DA VELOCIDADE
-    // Velocidade = Distância / Tempo. Como o tempo é fixo (0.1s), a conta simplifica.
-    // Truque matemático: (delta * 837) / 100 dá a velocidade já na escala mm/s.
+    // Velocidade = Distância / Tempo.
+    // Forma utilizada: (delta * 837) / 100, velocidade em mm/s.
     uint32_t calculo_velocidade = (uint32_t)delta * MICRONS_POR_PULSO;
     velocidade_atual = (uint8_t)(calculo_velocidade / 100);
     
-    uint16_t leitura_adc = 0;
+    // 5. CÁLCULO DA TEMPERATURA
+    uint16_t leitura_adc = 0;   
     
+    // Média móvel simples para estabilizar a leitura do ADC
     for(int i = 0;  i < 10; i++){
-        leitura_adc = leitura_adc + ADC_GetConversion(channel_AN2);
-        _delay(100);
+        leitura_adc += ADC_GetConversion(channel_AN2);
+        // _delay(100); // ATENÇÃO: Verifique se este delay não trava o sistema. Se for ciclos, ok.
     }
     
-    leitura_adc = leitura_adc/10;
-    
-    // Agora dividimos e guardamos no resultado final
-    temperatura_ponte = (uint16_t)(leitura_adc);
-    
+    // Média aritmética
+    temperatura_ponte = (uint16_t)(leitura_adc / 10);
 }
 
-// 1. FUNÇÕES DE CONTROLE DE MOVIMENTO
+// ================================
+// FUNÇÕES DE CONTROLE DE MOVIMENTO
+// ================================
+
+/**
+ * @brief Envia comando para o motor subir.
+ * @note Configura o PWM com duty cycle #MOTOR_ON e define #DIR como #DIRECAO_SUBIR.
+ */
 void Controle_Subir() {
-    DIR = DIRECAO_SUBIR;           
-    PWM3_LoadDutyValue(MOTOR_ON);
-    estado_motor = MOTOR_SUBINDO;
+    DIR = DIRECAO_SUBIR;          // Atualiza a variável DIR 
+    PWM3_LoadDutyValue(MOTOR_ON); // Ativa o PWM
+    estado_motor = MOTOR_SUBINDO; // Atualiza o estado lógico
 }
 
+/**
+ * @brief Envia comando para o motor descer.
+ * @note Configura o PWM com duty cycle #MOTOR_ON e define #DIR como #DIRECAO_DESCER.
+ */
 void Controle_Descer() {
-    DIR = DIRECAO_DESCER;          
-    PWM3_LoadDutyValue(MOTOR_ON);  
-    estado_motor = MOTOR_DESCENDO;
+    DIR = DIRECAO_DESCER;          // Atualiza a variável DIR
+    PWM3_LoadDutyValue(MOTOR_ON);  // Ativa o PWM
+    estado_motor = MOTOR_DESCENDO; // Atualiza o estado lógico
 }
 
+/**
+ * @brief Para o motor imediatamente.
+ * @note Zera o PWM (#MOTOR_OFF) e define estado como #MOTOR_PARADO.
+ */
 void Controle_Parar() {
-    PWM3_LoadDutyValue(MOTOR_OFF); 
-    estado_motor = MOTOR_PARADO;
+    PWM3_LoadDutyValue(MOTOR_OFF); // Desativa o PWM
+    estado_motor = MOTOR_PARADO;   // Atualiza o estado lógico
 }
 
-// 2. LEITURA DE SENSORES E SEGURANÇA
+// ===============================
+// LEITURA DE SENSORES E SEGURANÇA
+// ===============================
 
+/**
+ * @brief Verifica os sensores de fim de curso e de andar.
+ * @details Realiza a leitura dos sensores S1, S2, S3 e S4
+ * para atualizar a variável global #andar_atual.
+ * Também atua como segurança de hardware (Emergency Stop) caso o elevador
+ * passe dos limites.
+ */
 void Verificar_Sensores() {
+    
     // Atualiza andar atual
     // S1/S2: Digitais (Pull-up - Ativo em 0)
     if (SENSOR_S1 == 0) andar_atual = 0;
@@ -116,22 +156,35 @@ void Verificar_Sensores() {
     if (SENSOR_S3 == 1) andar_atual = 2; 
     if (SENSOR_S4 == 1) andar_atual = 3; 
 
-    // SEGURANÇA EXTREMA (Fim de Curso)
+    // SEGURANÇA EXTREMA 
     // Se bater no chão descendo - PARA
     if (SENSOR_S1 == 0 && estado_motor == MOTOR_DESCENDO) {
         Controle_Parar();
         estado_atual = ESTADO_PARADO;
-        posicao_mm = 0; // Recalibra
+        posicao_mm = 0; // Recalibra a posição física para 0
     }
     // Se bater no teto subindo - PARA
     if (SENSOR_S4 == 1 && estado_motor == MOTOR_SUBINDO) {
         Controle_Parar();
         estado_atual = ESTADO_PARADO;
-        posicao_mm = 180; // Recalibra
+        posicao_mm = POSICAO_MAX_MM; // Recalibra a posição física para o máximo
     }
 }
 
-// 3. ALGORITMO DE OTIMIZAÇÃO
+// =======================
+// ALGORITMO DE OTIMIZAÇÃO
+// =======================
+/**
+ * @brief Algoritmo de escalonamento de paradas (SCAN).
+ * @details Esta função verifica o vetor de solicitações pendentes e decide qual
+ * será o próximo andar alvo com base no estado atual de movimento.
+ * A prioridade segue a lógica:
+ * 1. Se estiver parado, atende a primeira solicitação encontrada (0 a 3).
+ * 2. Se estiver subindo, prioriza solicitações acima do andar atual.
+ * 3. Se estiver descendo, prioriza solicitações abaixo do andar atual.
+ * 4. Se não houver solicitações no sentido atual, verifica qualquer andar.
+ * @return int O índice do próximo andar (0 a 3) ou -1 se não houver solicitações.
+ */
 int Buscar_Proxima_Parada() {
     // 1. Se parado, atende qualquer um
     if (estado_atual == ESTADO_PARADO) {

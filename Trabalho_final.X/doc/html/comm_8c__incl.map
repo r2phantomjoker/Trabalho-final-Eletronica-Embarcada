@@ -1,0 +1,16 @@
+<map id="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/comm.c" name="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/comm.c">
+<area shape="rect" id="Node000001" title="Implementação da comunicação UART e Driver MAX7219 (Corrigido)." alt="" coords="14,5,254,80"/>
+<area shape="rect" id="Node000002" href="$comm_8h.html" title="Cabeçalho da comunicação e interface." alt="" coords="5,136,74,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,83,63,126,59,123,102,78"/>
+<area shape="rect" id="Node000004" href="$globals_8h.html" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="98,136,171,163"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="135,78,137,121,132,120,133,83"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="196,128,337,171"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="181,78,231,118,226,119,180,83"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="14,219,78,245"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="42,161,47,204,41,203,39,165"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="123,163,72,210,69,206,118,164"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="107,219,153,245"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="135,161,134,205,129,202,132,165"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="177,219,251,245"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="148,161,194,208,189,208,146,166"/>
+</map>

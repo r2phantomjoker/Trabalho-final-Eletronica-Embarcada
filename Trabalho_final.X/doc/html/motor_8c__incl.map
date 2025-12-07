@@ -1,0 +1,18 @@
+<map id="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/motor.c" name="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/motor.c">
+<area shape="rect" id="Node000001" title="Driver do Motor (Versão Otimizada &quot;Light&quot; &#45; Completa) Implementa a lógica de movimentação,..." alt="" coords="78,5,315,80"/>
+<area shape="rect" id="Node000002" href="$motor_8h.html" title="Cabeçalho do driver de motor e sensores (Controle e Odometria)." alt="" coords="5,136,71,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,83,71,129,68,125,142,78"/>
+<area shape="rect" id="Node000004" href="$globals_8h.html" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="95,136,168,163"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,78,149,124,145,121,172,82"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="193,128,334,171"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="221,78,245,115,240,115,219,83"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="358,128,499,171"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="279,78,371,121,366,122,278,83"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="12,219,77,245"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="41,161,45,204,40,203,37,165"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="120,163,71,210,67,206,115,163"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="104,219,150,245"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="133,161,131,205,126,202,129,165"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="174,219,248,245"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="145,161,191,208,186,208,143,166"/>
+</map>

@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho_final: Referência do Arquivo C:/Users/User/OneDrive - unb.br/Documentos/GitHub/Trabalho-final-Eletr-nica-Embarcada/Trabalho_final.X/comm.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Trabalho_final
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo C:/Users/User/OneDrive - unb.br/Documentos/GitHub/Trabalho-final-Eletr-nica-Embarcada/Trabalho_final.X/comm.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementação da comunicação UART e Driver MAX7219 (Corrigido).  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="comm_8h_source.html">comm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;mcc_generated_files/mcc.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para comm.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2comm_8c" loading="lazy" alt=""/></div>
+<map name="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2comm_8c" id="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2comm_8c">
+<area shape="rect" title="Implementação da comunicação UART e Driver MAX7219 (Corrigido)." alt="" coords="14,5,254,80"/>
+<area shape="rect" href="comm_8h.html" title="Cabeçalho da comunicação e interface." alt="" coords="5,136,74,163"/>
+<area shape="poly" title=" " alt="" coords="100,83,63,126,59,123,102,78"/>
+<area shape="rect" href="globals_8h.html" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="98,136,171,163"/>
+<area shape="poly" title=" " alt="" coords="135,78,137,121,132,120,133,83"/>
+<area shape="rect" title=" " alt="" coords="196,128,337,171"/>
+<area shape="poly" title=" " alt="" coords="181,78,231,118,226,119,180,83"/>
+<area shape="rect" title=" " alt="" coords="14,219,78,245"/>
+<area shape="poly" title=" " alt="" coords="42,161,47,204,41,203,39,165"/>
+<area shape="poly" title=" " alt="" coords="123,163,72,210,69,206,118,164"/>
+<area shape="rect" title=" " alt="" coords="107,219,153,245"/>
+<area shape="poly" title=" " alt="" coords="135,161,134,205,129,202,132,165"/>
+<area shape="rect" title=" " alt="" coords="177,219,251,245"/>
+<area shape="poly" title=" " alt="" coords="148,161,194,208,189,208,146,166"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a876ce77f3c672c7162658151e648389e" id="r_a876ce77f3c672c7162658151e648389e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a876ce77f3c672c7162658151e648389e">CR</a>&#160;&#160;&#160;13</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ae12aefd2cb5fbd859a9e562e9a6bdd56" id="r_ae12aefd2cb5fbd859a9e562e9a6bdd56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae12aefd2cb5fbd859a9e562e9a6bdd56">MAX7219_Write</a> (uint8_t address, uint8_t data)</td></tr>
+<tr class="memdesc:ae12aefd2cb5fbd859a9e562e9a6bdd56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia um comando de 16 bits para o MAX7219 respeitando o protocolo. Protocolo: CS Low -&gt; Envia Endereço -&gt; Envia Dado -&gt; CS High (Latch).  <br /></td></tr>
+<tr class="memitem:aa8cdd475a5d3f45c5e339b7fa283f892" id="r_aa8cdd475a5d3f45c5e339b7fa283f892"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8cdd475a5d3f45c5e339b7fa283f892">UART_RecebePedido</a> (char *origem_pedido, char *destino_pedido)</td></tr>
+<tr class="memdesc:aa8cdd475a5d3f45c5e339b7fa283f892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recebe e salva os dados da UART no endereço designado. Retorna 0 caso último caractere recebido seja &lt;CR&gt;. Retorna 1 caso último caractere recebido seja diferente de &lt;CR&gt;.  <br /></td></tr>
+<tr class="memitem:a94fb7a7c98b25162c9e6199c412a804e" id="r_a94fb7a7c98b25162c9e6199c412a804e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94fb7a7c98b25162c9e6199c412a804e">UART_EnviaDados</a> (void)</td></tr>
+<tr class="memitem:ad0c0b685abfe911c197b0aa5fe64592d" id="r_ad0c0b685abfe911c197b0aa5fe64592d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0c0b685abfe911c197b0aa5fe64592d">MatrizInicializa</a> (void)</td></tr>
+<tr class="memitem:a7d655def67975f77076e1a0930d7643a" id="r_a7d655def67975f77076e1a0930d7643a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d655def67975f77076e1a0930d7643a">Uniaomatrix</a> (void)</td></tr>
+<tr class="memitem:abd870b2a92dc5133753ca124973513a5" id="r_abd870b2a92dc5133753ca124973513a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd870b2a92dc5133753ca124973513a5">MatrizLed</a> (void)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a214229d4987db98b5ee37e62bc7d7f98" id="r_a214229d4987db98b5ee37e62bc7d7f98"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a214229d4987db98b5ee37e62bc7d7f98">LUT_Andar</a> []</td></tr>
+<tr class="memitem:ad4ee12e05bb1e3163b7136601c31c937" id="r_ad4ee12e05bb1e3163b7136601c31c937"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4ee12e05bb1e3163b7136601c31c937">LUT_dir</a> []</td></tr>
+<tr class="memitem:a636937d8c031732b1c48c0f04a81eed9" id="r_a636937d8c031732b1c48c0f04a81eed9"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a636937d8c031732b1c48c0f04a81eed9">LUT_percurso</a> []</td></tr>
+<tr class="memitem:aad76415d9a719fccd112b9683dae1afb" id="r_aad76415d9a719fccd112b9683dae1afb"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad76415d9a719fccd112b9683dae1afb">matrix_conf</a> []</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implementação da comunicação UART e Driver MAX7219 (Corrigido). </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Definições e macros</h2>
+<a id="a876ce77f3c672c7162658151e648389e" name="a876ce77f3c672c7162658151e648389e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a876ce77f3c672c7162658151e648389e">&#9670;&#160;</a></span>CR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CR&#160;&#160;&#160;13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funções</h2>
+<a id="ad0c0b685abfe911c197b0aa5fe64592d" name="ad0c0b685abfe911c197b0aa5fe64592d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c0b685abfe911c197b0aa5fe64592d">&#9670;&#160;</a></span>MatrizInicializa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MatrizInicializa </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd870b2a92dc5133753ca124973513a5" name="abd870b2a92dc5133753ca124973513a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd870b2a92dc5133753ca124973513a5">&#9670;&#160;</a></span>MatrizLed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MatrizLed </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae12aefd2cb5fbd859a9e562e9a6bdd56" name="ae12aefd2cb5fbd859a9e562e9a6bdd56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae12aefd2cb5fbd859a9e562e9a6bdd56">&#9670;&#160;</a></span>MAX7219_Write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX7219_Write </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>address</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envia um comando de 16 bits para o MAX7219 respeitando o protocolo. Protocolo: CS Low -&gt; Envia Endereço -&gt; Envia Dado -&gt; CS High (Latch). </p>
+
+</div>
+</div>
+<a id="a94fb7a7c98b25162c9e6199c412a804e" name="a94fb7a7c98b25162c9e6199c412a804e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94fb7a7c98b25162c9e6199c412a804e">&#9670;&#160;</a></span>UART_EnviaDados()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UART_EnviaDados </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8cdd475a5d3f45c5e339b7fa283f892" name="aa8cdd475a5d3f45c5e339b7fa283f892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cdd475a5d3f45c5e339b7fa283f892">&#9670;&#160;</a></span>UART_RecebePedido()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UART_RecebePedido </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>origem_pedido</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>destino_pedido</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recebe e salva os dados da UART no endereço designado. Retorna 0 caso último caractere recebido seja &lt;CR&gt;. Retorna 1 caso último caractere recebido seja diferente de &lt;CR&gt;. </p>
+
+</div>
+</div>
+<a id="a7d655def67975f77076e1a0930d7643a" name="a7d655def67975f77076e1a0930d7643a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d655def67975f77076e1a0930d7643a">&#9670;&#160;</a></span>Uniaomatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Uniaomatrix </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variáveis</h2>
+<a id="a214229d4987db98b5ee37e62bc7d7f98" name="a214229d4987db98b5ee37e62bc7d7f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a214229d4987db98b5ee37e62bc7d7f98">&#9670;&#160;</a></span>LUT_Andar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t LUT_Andar[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    0b00000000, </div>
+<div class="line">    0b00000001,</div>
+<div class="line">    0b11111111, </div>
+<div class="line">    0b01000001,</div>
+<div class="line"> </div>
+<div class="line">    0b01110001, </div>
+<div class="line">    0b10001001,</div>
+<div class="line">    0b10000101,</div>
+<div class="line">    0b01000011,</div>
+<div class="line">    </div>
+<div class="line">    0b01101110, </div>
+<div class="line">    0b10010001, </div>
+<div class="line">    0b10000001, </div>
+<div class="line">    0b01000010, </div>
+<div class="line"> </div>
+<div class="line">    0b11111111, </div>
+<div class="line">    0b00010000, </div>
+<div class="line">    0b00010000, </div>
+<div class="line">    0b11110000</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad4ee12e05bb1e3163b7136601c31c937" name="ad4ee12e05bb1e3163b7136601c31c937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ee12e05bb1e3163b7136601c31c937">&#9670;&#160;</a></span>LUT_dir</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t LUT_dir[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    0b00000000, </div>
+<div class="line">    0b00000000, </div>
+<div class="line">    0b00000000, </div>
+<div class="line">    0b00000000, </div>
+<div class="line">           </div>
+<div class="line">    0b00000000, </div>
+<div class="line">    0b00000010,</div>
+<div class="line">    0b00000100,</div>
+<div class="line">    0b00000010,</div>
+<div class="line">    </div>
+<div class="line">    0b00000000, </div>
+<div class="line">    0b00000010,</div>
+<div class="line">    0b00000001,</div>
+<div class="line">    0b00000010,</div>
+<div class="line">    </div>
+<div class="line">    0b00000000, </div>
+<div class="line">    0b00000010,</div>
+<div class="line">    0b00000010,</div>
+<div class="line">    0b00000010,</div>
+<div class="line">    </div>
+<div class="line">    0b00000000, </div>
+<div class="line">    0b00000010,</div>
+<div class="line">    0b00000010,</div>
+<div class="line">    0b00000010</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a636937d8c031732b1c48c0f04a81eed9" name="a636937d8c031732b1c48c0f04a81eed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636937d8c031732b1c48c0f04a81eed9">&#9670;&#160;</a></span>LUT_percurso</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t LUT_percurso[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">={</div>
+<div class="line">    0b00010000, </div>
+<div class="line">    0b00100000,</div>
+<div class="line">    0b01000000,</div>
+<div class="line">    0b10000000</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aad76415d9a719fccd112b9683dae1afb" name="aad76415d9a719fccd112b9683dae1afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad76415d9a719fccd112b9683dae1afb">&#9670;&#160;</a></span>matrix_conf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t matrix_conf[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    0x09,0x00,  </div>
+<div class="line">    0x0A,0x00,  </div>
+<div class="line">    0x0B,0x07,  </div>
+<div class="line">    0x0C,0x01,  </div>
+<div class="line">    0x0F,0x01,  </div>
+<div class="line">    0x0F,0x00,  </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

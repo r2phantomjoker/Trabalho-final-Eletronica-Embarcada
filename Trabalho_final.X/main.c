@@ -12,7 +12,7 @@
 
 /**
  * @file main.c
- * @brief Lógica Avançada: SCAN (Elevador Inteligente) com Display Sincronizado.
+ * @brief Lógica Avançada: SCAN, Elevador Inteligente, com Display Sincronizado.
  */
 
 #include "mcc_generated_files/mcc.h"
@@ -21,7 +21,7 @@
 #include "motor.h"
 
 /**
- * @brief Ponto de entrada do sistema.
+ * @brief Código principal do sistema
  * @details Realiza a inicialização dos periféricos e gerencia o Loop Principal
  * contendo a Máquina de Estados, Leitura de Sensores e Telemetria.
  */
@@ -58,7 +58,7 @@ void main(void) {
     // Inicializa e limpa a matriz de LEDs
     MatrizInicializa();
     
-    // Loop Principal (Super Loop)
+    // Loop Principal 
     while (1) {
         
         // A. COMUNICAÇÃO BLUETOOTH
@@ -180,7 +180,7 @@ void main(void) {
                 }
                 break;
             
-            // Estado 4: Simulação de porta aberta (Tempo de embarque)
+            // Estado 4: Simulação de porta aberta - Tempo de embarque
             case ESTADO_ESPERA_PORTA:
                 contador_espera++;
                 // Temporização: 200 ciclos * 10ms = 2 Segundos
@@ -190,7 +190,7 @@ void main(void) {
                 }
                 break;
             
-            // Estado 5: Reversão de segurança (Dead-time)
+            // Estado 5: Reversão de segurança 
             case ESTADO_REVERSAO:
                 contador_espera++;
                 // Temporização: 50 ciclos * 10ms = 0.5 Segundos
@@ -201,10 +201,10 @@ void main(void) {
                 break;
         }
 
-        // D. TELEMETRIA E INTERFACE (IHM)
+        // D. TELEMETRIA E INTERFACE 
         contador_telemetria++;
 
-        // Verifica se passaram 300ms (Taxa de atualização de 3.3 Hz)
+        // Verifica se passaram 300ms 
         if (contador_telemetria >= 30) { 
             
             // Envia os dados de telemetria via UART
@@ -222,7 +222,7 @@ void main(void) {
             contador_telemetria = 0; 
         }
 
-        // Base de tempo do sistema: 10ms (Amostragem a 100Hz)
+        // Base de tempo do sistema: 10ms 
         __delay_ms(10);
     }
 }

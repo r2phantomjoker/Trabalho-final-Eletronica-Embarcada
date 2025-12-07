@@ -3,7 +3,6 @@
  * @brief Cabeçalho do driver de motor e sensores.
  * @details Este arquivo contém as declarações das funções de controle de
  * movimentação, leitura de sensores e lógica de escalonamento do elevador.
- * @date Created on November 27, 2025
  */
 
 #ifndef MOTOR_H

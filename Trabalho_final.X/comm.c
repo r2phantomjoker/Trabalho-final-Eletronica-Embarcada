@@ -1,6 +1,6 @@
 /**
  * @file comm.c
- * @brief Implementação da comunicação UART e Driver MAX7219 (Corrigido)
+ * @brief Implementação da comunicação UART e Driver MAX7219 
  */
 
 #include "comm.h"
@@ -221,8 +221,4 @@ void MatrizLed (void){
             }
         }
     MAX7219_Write(8, buffer_percurso); 
-    // OBS: Removi a parte dos "pontinhos" das solicitações na linha 4
-    // para simplificar e garantir que o básico funcione primeiro.
-    // Se quiser adicionar de volta, tem que fazer uma lógica de "Bitwise OR" (|)
-    // antes de enviar o comando da linha específica.
 }

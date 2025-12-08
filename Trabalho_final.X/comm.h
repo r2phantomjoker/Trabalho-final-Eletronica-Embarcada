@@ -1,8 +1,6 @@
 /**
  * @file comm.h
- * @author Gabriel Celestino
- * @brief Cabeçalho da comunicação e interface.
- * @date Created on November 30, 2025
+ * @brief Cabeçalho da comunicação UART e Interface de Display.
  */
 
 #ifndef COMM_H
@@ -10,34 +8,63 @@
 
 #include <stdint.h>
 
-/* * DECLARAÇÕES DE CONSTANTES (EXTERN)
- * O 'extern' avisa ao compilador que os valores estão no arquivo .c
- * Isso evita erro de "Multiple Definition" ao incluir em vários lugares.
+/* 
+ * ====================
+ * CONSTANTES E TABELAS
+ * ====================
  */
-extern const uint8_t LUT_Andar[];
-extern const uint8_t LUT_dir[];
-extern const uint8_t matrix_conf[];
 
 /**
- * @brief Recebe e salva os dados da UART no endereço designado.
- * Retorna 0 caso último caractere recebido seja <CR>.
- * Retorna 1 caso último caractere recebido seja diferente de <CR>.
+ * @brief LUT para os desenhos dos numeros 
+ */
+extern const uint8_t LUT_Andar[];
+
+/**
+ * @brief LUT para os desenhos dos status do elevador
+ */
+extern const uint8_t LUT_dir[];
+
+/**
+ * @brief Tabela contendo a sequência de comandos de inicialização do MAX7219.
+ */
+extern const uint8_t matrix_conf[];
+
+
+/*
+ * =====================
+ * PROTÓTIPOS DE FUNÇÕES
+ * ===================== 
+ */
+
+/**
+ * @brief Verifica o buffer da UART em busca de um pedido válido.
+ * @note Protocolo esperado: '$' + Origem + Destino + CR.
+ * * @param OrigemPedido -  Ponteiro onde será salvo o caractere da origem.
+ * @param DestinoPedido - Ponteiro onde será salvo o caractere do destino.
+ * * @return 0 - Sucesso, mensagem válida.
+ * @return 1 - Erro, mensagem incompleta.
  */
 int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 
-/*
- * @brief Acessa as variaveis globais e transmite pela UART
+/**
+ * @brief Coleta os estados globais do sistema e envia via telemetria.
+ * @note Envia: Andar atual, destino, motor, posição, velocidade e temperatura.
+ * Formato CSV iniciado por '$' e finalizado por CR.
  */
 void UART_EnviaDados(void);
 
-/*
- * Pega os valores das variaveis globais e atualiza a matriz de LEDs
+/**
+ * @brief Atualiza a Matriz de LEDs com base no estado atual.
+ * @details Renderiza o número do andar, a seta de direção
+ * e sobrepõe as solicitações de andares na linha inferior.
  */
 void MatrizLed (void);
 
-/*
- * Inicializa a Matriz (Envia configurações iniciais)
+/**
+ * @brief Inicializa o hardware da Matriz de LEDs.
+ * @details Configura a SPI, envia os comandos de setup para o MAX7219
+ * e limpa a tela.
  */
 void MatrizInicializa(void);
 
-#endif	/* COMM_H */
+#endif

@@ -1,11 +1,6 @@
 /**
  * @file globals.h
- * @author Arthur Marinho
- * @date Created on November 27, 2025, 11:17 AM
  * @brief Definições globais, constantes de hardware e variáveis de estado do Elevador.
- *
- * Este arquivo centraliza as variáveis exigidas para a telemetria (Tabela 1 do Roteiro)
- * e permite o compartilhamento de dados entre os módulos de Motor, Sensores e UART.
  */
 
 #ifndef GLOBALS_H

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['velocidade_5fatual_0',['velocidade_atual',['../globals_8c.html#ae2dae8d0a66916eeaf5c8bfff0880f7b',1,'velocidade_atual:&#160;globals.c'],['../globals_8h.html#ae2dae8d0a66916eeaf5c8bfff0880f7b',1,'velocidade_atual:&#160;globals.c']]],
-  ['verificar_5fsensores_1',['Verificar_Sensores',['../motor_8c.html#a7a4a696a0aa7bb04006df4e8c1443117',1,'Verificar_Sensores():&#160;motor.c'],['../motor_8h.html#a2d53e4c621f770c54b3b7e4b12350937',1,'Verificar_Sensores(void):&#160;motor.c']]]
+  ['temperatura_5fponte_0',['temperatura_ponte',['../globals_8c.html#aa71e55ae78ebe7b4723b855824084218',1,'temperatura_ponte:&#160;globals.c'],['../globals_8h.html#aa71e55ae78ebe7b4723b855824084218',1,'temperatura_ponte:&#160;globals.c']]],
+  ['tempo_5ftmr4_5fms_1',['TEMPO_TMR4_MS',['../motor_8c.html#a93cc1e71c2ab06cd0a77cff04ea4d300',1,'motor.c']]]
 ];

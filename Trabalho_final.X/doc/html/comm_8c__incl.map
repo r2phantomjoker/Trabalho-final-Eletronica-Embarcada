@@ -1,6 +1,6 @@
 <map id="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/comm.c" name="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/comm.c">
-<area shape="rect" id="Node000001" title="Implementação da comunicação UART e Driver MAX7219 (Corrigido)." alt="" coords="14,5,254,80"/>
-<area shape="rect" id="Node000002" href="$comm_8h.html" title="Cabeçalho da comunicação e interface." alt="" coords="5,136,74,163"/>
+<area shape="rect" id="Node000001" title="Implementação da comunicação UART e Driver MAX7219." alt="" coords="14,5,254,80"/>
+<area shape="rect" id="Node000002" href="$comm_8h.html" title="Cabeçalho da comunicação UART e Interface de Display." alt="" coords="5,136,74,163"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,83,63,126,59,123,102,78"/>
 <area shape="rect" id="Node000004" href="$globals_8h.html" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="98,136,171,163"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="135,78,137,121,132,120,133,83"/>

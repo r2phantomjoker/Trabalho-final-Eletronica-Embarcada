@@ -79,7 +79,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Implementação da comunicação UART e Driver MAX7219 (Corrigido).  
+<p>Implementação da comunicação UART e Driver MAX7219.  
 <a href="#details">Mais...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="comm_8h_source.html">comm.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
@@ -89,8 +89,8 @@ Gráfico de dependência de inclusões para comm.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="comm_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2comm_8c" loading="lazy" alt=""/></div>
 <map name="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2comm_8c" id="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2comm_8c">
-<area shape="rect" title="Implementação da comunicação UART e Driver MAX7219 (Corrigido)." alt="" coords="14,5,254,80"/>
-<area shape="rect" href="comm_8h.html" title="Cabeçalho da comunicação e interface." alt="" coords="5,136,74,163"/>
+<area shape="rect" title="Implementação da comunicação UART e Driver MAX7219." alt="" coords="14,5,254,80"/>
+<area shape="rect" href="comm_8h.html" title="Cabeçalho da comunicação UART e Interface de Display." alt="" coords="5,136,74,163"/>
 <area shape="poly" title=" " alt="" coords="100,83,63,126,59,123,102,78"/>
 <area shape="rect" href="globals_8h.html" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="98,136,171,163"/>
 <area shape="poly" title=" " alt="" coords="135,78,137,121,132,120,133,83"/>
@@ -109,27 +109,34 @@ Gráfico de dependência de inclusões para comm.c:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Definições e Macros</h2></td></tr>
 <tr class="memitem:a876ce77f3c672c7162658151e648389e" id="r_a876ce77f3c672c7162658151e648389e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a876ce77f3c672c7162658151e648389e">CR</a>&#160;&#160;&#160;13</td></tr>
+<tr class="memdesc:a876ce77f3c672c7162658151e648389e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definição do caractere ASCII para "Carriage Return". Utilizado como fim da mensagem no protocolo UART.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:ae12aefd2cb5fbd859a9e562e9a6bdd56" id="r_ae12aefd2cb5fbd859a9e562e9a6bdd56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae12aefd2cb5fbd859a9e562e9a6bdd56">MAX7219_Write</a> (uint8_t address, uint8_t data)</td></tr>
-<tr class="memdesc:ae12aefd2cb5fbd859a9e562e9a6bdd56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia um comando de 16 bits para o MAX7219 respeitando o protocolo. Protocolo: CS Low -&gt; Envia Endereço -&gt; Envia Dado -&gt; CS High (Latch).  <br /></td></tr>
 <tr class="memitem:aa8cdd475a5d3f45c5e339b7fa283f892" id="r_aa8cdd475a5d3f45c5e339b7fa283f892"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8cdd475a5d3f45c5e339b7fa283f892">UART_RecebePedido</a> (char *origem_pedido, char *destino_pedido)</td></tr>
-<tr class="memdesc:aa8cdd475a5d3f45c5e339b7fa283f892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recebe e salva os dados da UART no endereço designado. Retorna 0 caso último caractere recebido seja &lt;CR&gt;. Retorna 1 caso último caractere recebido seja diferente de &lt;CR&gt;.  <br /></td></tr>
+<tr class="memdesc:aa8cdd475a5d3f45c5e339b7fa283f892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tenta receber e decodificar um pacote de pedido via UART.  <br /></td></tr>
 <tr class="memitem:a94fb7a7c98b25162c9e6199c412a804e" id="r_a94fb7a7c98b25162c9e6199c412a804e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94fb7a7c98b25162c9e6199c412a804e">UART_EnviaDados</a> (void)</td></tr>
+<tr class="memdesc:a94fb7a7c98b25162c9e6199c412a804e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmite o pacote de telemetria do sistema via UART.  <br /></td></tr>
+<tr class="memitem:ae12aefd2cb5fbd859a9e562e9a6bdd56" id="r_ae12aefd2cb5fbd859a9e562e9a6bdd56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae12aefd2cb5fbd859a9e562e9a6bdd56">MAX7219_Write</a> (uint8_t address, uint8_t data)</td></tr>
+<tr class="memdesc:ae12aefd2cb5fbd859a9e562e9a6bdd56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia um pacote de 16 bits para o driver MAX7219 via SPI.  <br /></td></tr>
 <tr class="memitem:ad0c0b685abfe911c197b0aa5fe64592d" id="r_ad0c0b685abfe911c197b0aa5fe64592d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0c0b685abfe911c197b0aa5fe64592d">MatrizInicializa</a> (void)</td></tr>
-<tr class="memitem:a7d655def67975f77076e1a0930d7643a" id="r_a7d655def67975f77076e1a0930d7643a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d655def67975f77076e1a0930d7643a">Uniaomatrix</a> (void)</td></tr>
+<tr class="memdesc:ad0c0b685abfe911c197b0aa5fe64592d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o driver MAX7219 e prepara a Matriz de LEDs.  <br /></td></tr>
 <tr class="memitem:abd870b2a92dc5133753ca124973513a5" id="r_abd870b2a92dc5133753ca124973513a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd870b2a92dc5133753ca124973513a5">MatrizLed</a> (void)</td></tr>
+<tr class="memdesc:abd870b2a92dc5133753ca124973513a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza o conteúdo visual da Matriz de LEDs.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variáveis</h2></td></tr>
 <tr class="memitem:a214229d4987db98b5ee37e62bc7d7f98" id="r_a214229d4987db98b5ee37e62bc7d7f98"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a214229d4987db98b5ee37e62bc7d7f98">LUT_Andar</a> []</td></tr>
+<tr class="memdesc:a214229d4987db98b5ee37e62bc7d7f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tabela de padrões de bits para desenhar os números dos andares.  <br /></td></tr>
 <tr class="memitem:ad4ee12e05bb1e3163b7136601c31c937" id="r_ad4ee12e05bb1e3163b7136601c31c937"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4ee12e05bb1e3163b7136601c31c937">LUT_dir</a> []</td></tr>
+<tr class="memdesc:ad4ee12e05bb1e3163b7136601c31c937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tabela de padrões de bits para indicar o status do elevador.  <br /></td></tr>
 <tr class="memitem:a636937d8c031732b1c48c0f04a81eed9" id="r_a636937d8c031732b1c48c0f04a81eed9"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a636937d8c031732b1c48c0f04a81eed9">LUT_percurso</a> []</td></tr>
+<tr class="memdesc:a636937d8c031732b1c48c0f04a81eed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Máscara de bits para indicar andares solicitados na rota.  <br /></td></tr>
 <tr class="memitem:aad76415d9a719fccd112b9683dae1afb" id="r_aad76415d9a719fccd112b9683dae1afb"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad76415d9a719fccd112b9683dae1afb">matrix_conf</a> []</td></tr>
+<tr class="memdesc:aad76415d9a719fccd112b9683dae1afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tabela de inicialização e configuração do driver MAX7219.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Implementação da comunicação UART e Driver MAX7219 (Corrigido). </p>
+<div class="textblock"><p>Implementação da comunicação UART e Driver MAX7219. </p>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Definições e macros</h2>
 <a id="a876ce77f3c672c7162658151e648389e" name="a876ce77f3c672c7162658151e648389e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a876ce77f3c672c7162658151e648389e">&#9670;&#160;</a></span>CR</h2>
@@ -142,6 +149,8 @@ Variáveis</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definição do caractere ASCII para "Carriage Return". Utilizado como fim da mensagem no protocolo UART. </p>
 
 </div>
 </div>
@@ -161,6 +170,9 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Inicializa o driver MAX7219 e prepara a Matriz de LEDs. </p>
+<p>Inicializa o hardware da Matriz de LEDs. </p>
+
 </div>
 </div>
 <a id="abd870b2a92dc5133753ca124973513a5" name="abd870b2a92dc5133753ca124973513a5"></a>
@@ -177,6 +189,13 @@ Variáveis</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Atualiza o conteúdo visual da Matriz de LEDs. </p>
+<p>Atualiza a Matriz de LEDs com base no estado atual.</p>
+<p>A tela é dividida logicamente em duas áreas:</p><ul>
+<li>Parte Superior (Linhas 1-4): Exibe o número do andar atual.</li>
+<li>Parte Inferior (Linhas 5-8): Exibe a seta de direção e status. </li>
+</ul>
 
 </div>
 </div>
@@ -199,7 +218,24 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Envia um comando de 16 bits para o MAX7219 respeitando o protocolo. Protocolo: CS Low -&gt; Envia Endereço -&gt; Envia Dado -&gt; CS High (Latch). </p>
+<p>Envia um pacote de 16 bits para o driver MAX7219 via SPI. </p>
+<dl class="section note"><dt>Observação</dt><dd>O MAX7219 exige a seguinte sequência rigorosa:<ol type="1">
+<li>CS Low, Habilita comunicação.</li>
+<li>Envia 8 bits de Endereço, MSB.</li>
+<li>Envia 8 bits de Dados, LSB.</li>
+<li>CS High (Borda de subida carrega os dados no registrador interno - Latch).</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>Endereço do registrador do MAX7219. </td></tr>
+    <tr><td class="paramname">data</td><td>Valor a ser escrito no registrador. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -217,6 +253,20 @@ Variáveis</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Transmite o pacote de telemetria do sistema via UART. </p>
+<p>Coleta os estados globais do sistema e envia via telemetria.</p>
+<dl class="section note"><dt>Observação</dt><dd>Protocolo do Pacote: "$A,D,M,PPP,VV.V,TT.T\r" Onde:<ul>
+<li>$: Cabeçalho de início de frame.</li>
+<li>A: Andar Atual (0-9)</li>
+<li>D: Andar Destino (0-9)</li>
+<li>M: Estado do Motor (0-9)</li>
+<li>PPP: Posição em mm (000-999)</li>
+<li>VV.V: Velocidade (00.0-99.9)</li>
+<li>TT.T: Temperatura (00.0-99.9)</li>
+<li>\r: Terminador (Carriage Return) </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
@@ -239,24 +289,26 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Recebe e salva os dados da UART no endereço designado. Retorna 0 caso último caractere recebido seja &lt;CR&gt;. Retorna 1 caso último caractere recebido seja diferente de &lt;CR&gt;. </p>
-
-</div>
-</div>
-<a id="a7d655def67975f77076e1a0930d7643a" name="a7d655def67975f77076e1a0930d7643a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d655def67975f77076e1a0930d7643a">&#9670;&#160;</a></span>Uniaomatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Uniaomatrix </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Tenta receber e decodificar um pacote de pedido via UART. </p>
+<p>Verifica o buffer da UART em busca de um pedido válido.</p>
+<dl class="section note"><dt>Observação</dt><dd>Protocolo esperado: "$OD\r"<ul>
+<li>Onde: '$' = Início, O = Origem, D = Destino, \r = CR/13</li>
+<li></li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">origem_pedido</td><td>Ponteiro para armazenar o andar de origem do elevador. </td></tr>
+    <tr><td class="paramname">destino_pedido</td><td>Ponteiro para armazenar o andar de destino.<ul>
+<li></li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>0 - Pacote recebido e validado com o terminador correto. </dd>
+<dd>
+1 - Cabeçalho não encontrado ou pacote incompleto/corrompido. </dd></dl>
 
 </div>
 </div>
@@ -273,27 +325,41 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    </div>
 <div class="line">    0b00000000, </div>
 <div class="line">    0b00000001,</div>
 <div class="line">    0b11111111, </div>
 <div class="line">    0b01000001,</div>
 <div class="line"> </div>
+<div class="line">    </div>
 <div class="line">    0b01110001, </div>
 <div class="line">    0b10001001,</div>
 <div class="line">    0b10000101,</div>
 <div class="line">    0b01000011,</div>
+<div class="line">    </div>
 <div class="line">    </div>
 <div class="line">    0b01101110, </div>
 <div class="line">    0b10010001, </div>
 <div class="line">    0b10000001, </div>
 <div class="line">    0b01000010, </div>
 <div class="line"> </div>
+<div class="line">    </div>
 <div class="line">    0b11111111, </div>
 <div class="line">    0b00010000, </div>
 <div class="line">    0b00010000, </div>
 <div class="line">    0b11110000</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p>Tabela de padrões de bits para desenhar os números dos andares. </p>
+<p>LUT para os desenhos dos numeros.</p>
+<dl class="section note"><dt>Observação</dt><dd>Estrutura: Cada número é formado por 4 bytes<ul>
+<li>Índice 0-3: Andar 1</li>
+<li>Índice 4-7: Andar 2</li>
+<li>Índice 8-11: Andar 3</li>
+<li>Índice 12-15: Andar 4 </li>
+</ul>
+</dd></dl>
+
 </div>
 </div>
 <a id="ad4ee12e05bb1e3163b7136601c31c937" name="ad4ee12e05bb1e3163b7136601c31c937"></a>
@@ -307,33 +373,17 @@ Variáveis</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    0b00000000, </div>
-<div class="line">    0b00000000, </div>
-<div class="line">    0b00000000, </div>
-<div class="line">    0b00000000, </div>
-<div class="line">           </div>
-<div class="line">    0b00000000, </div>
-<div class="line">    0b00000010,</div>
-<div class="line">    0b00000100,</div>
-<div class="line">    0b00000010,</div>
-<div class="line">    </div>
-<div class="line">    0b00000000, </div>
-<div class="line">    0b00000010,</div>
-<div class="line">    0b00000001,</div>
-<div class="line">    0b00000010,</div>
-<div class="line">    </div>
-<div class="line">    0b00000000, </div>
-<div class="line">    0b00000010,</div>
-<div class="line">    0b00000010,</div>
-<div class="line">    0b00000010,</div>
-<div class="line">    </div>
-<div class="line">    0b00000000, </div>
-<div class="line">    0b00000010,</div>
-<div class="line">    0b00000010,</div>
-<div class="line">    0b00000010</div>
-<div class="line">}</div>
-</div><!-- fragment -->
+
+<p>Tabela de padrões de bits para indicar o status do elevador. </p>
+<p>LUT para os desenhos dos status do elevador.</p>
+<dl class="section note"><dt>Observação</dt><dd>Cada estado consome 4 bytes da memória. Estados representados na matriz:<ul>
+<li>Parado: Nenhum LED aceso</li>
+<li>Subindo: Seta apontando para cima</li>
+<li>Descendo: Seta apontando para baixo</li>
+<li>Esperar/Rev: Seta horizontal </li>
+</ul>
+</dd></dl>
+
 </div>
 </div>
 <a id="a636937d8c031732b1c48c0f04a81eed9" name="a636937d8c031732b1c48c0f04a81eed9"></a>
@@ -347,13 +397,16 @@ Variáveis</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Valor inicial:</b><div class="fragment"><div class="line">={</div>
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    0b00010000, </div>
-<div class="line">    0b00100000,</div>
-<div class="line">    0b01000000,</div>
-<div class="line">    0b10000000</div>
+<div class="line">    0b00100000, </div>
+<div class="line">    0b01000000, </div>
+<div class="line">    0b10000000  </div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p>Máscara de bits para indicar andares solicitados na rota. </p>
+<dl class="section note"><dt>Observação</dt><dd>Utilizado para acender um LED específico correspondente ao andar na rota. </dd></dl>
+
 </div>
 </div>
 <a id="aad76415d9a719fccd112b9683dae1afb" name="aad76415d9a719fccd112b9683dae1afb"></a>
@@ -368,14 +421,29 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    0x09,0x00,  </div>
-<div class="line">    0x0A,0x00,  </div>
-<div class="line">    0x0B,0x07,  </div>
-<div class="line">    0x0C,0x01,  </div>
-<div class="line">    0x0F,0x01,  </div>
-<div class="line">    0x0F,0x00,  </div>
+<div class="line">    0x09, 0x00,  </div>
+<div class="line">    0x0A, 0x00,  </div>
+<div class="line">    0x0B, 0x07,  </div>
+<div class="line">    0x0C, 0x01,  </div>
+<div class="line">    0x0F, 0x01,  </div>
+<div class="line">    0x0F, 0x00,  </div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p>Tabela de inicialização e configuração do driver MAX7219. </p>
+<p>Tabela contendo a sequência de comandos de inicialização do MAX7219.</p>
+<ul>
+<li><dl class="section note"><dt>Observação</dt><dd>Estrutura do vetor: Pares de bytes ordenados [Endereço do Registrador, Dado]. A função <a class="el" href="comm_8h.html#ad0c0b685abfe911c197b0aa5fe64592d" title="Inicializa o hardware da Matriz de LEDs.">MatrizInicializa()</a> percorre este vetor de 2 em 2 bytes.</dd></dl>
+</li>
+<li></li>
+</ul>
+<p>Configurações aplicadas:</p><ul>
+<li>0x09 (Decode Mode): 0x00 - Controle individual dos LEDs (Matriz).</li>
+<li>0x0A (Intensity): 0x00 - Brilho mínimo.</li>
+<li>0x0B (Scan Limit): 0x07 - Habilita todas as 8 linhas/dígitos.</li>
+<li>0x0C (Shutdown): 0x01 - Sai do modo de economia de energia.</li>
+<li>0x0F (Display Test):0x01 - Pisca a tela para reset visual. </li>
+</ul>
+
 </div>
 </div>
 </div><!-- contents -->

@@ -4730,7 +4730,7 @@ void OSCILLATOR_Initialize(void);
 void WDT_Initialize(void);
 # 19 "main.c" 2
 # 1 "./globals.h" 1
-# 84 "./globals.h"
+# 75 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4762,8 +4762,18 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint16_t temperatura_ponte;
-# 126 "./globals.h"
+
+
+
+
+
+
+
 extern volatile _Bool solicitacoes[4];
+
+
+
+
 
 typedef enum {
     ESTADO_PARADO,
@@ -4774,8 +4784,9 @@ typedef enum {
 } EstadoElevador;
 
 
-extern volatile EstadoElevador estado_atual;
 
+
+extern volatile EstadoElevador estado_atual;
 
 
 
@@ -4785,13 +4796,26 @@ extern _Bool chamadas_subida[4];
 
 
 
-
 extern _Bool chamadas_descida[4];
 
 
+
+
 extern uint16_t contador_telemetria;
+
+
+
+
 extern uint16_t contador_espera;
+
+
+
+
 extern char buffer_origem;
+
+
+
+
 extern char buffer_destino;
 # 20 "main.c" 2
 # 1 "./comm.h" 1
@@ -4855,14 +4879,7 @@ void Controle_Descer(void);
 
 
 void Controle_Parar(void);
-# 65 "./motor.h"
-int Buscar_Proxima_Parada(void);
-
-
-
-
-
-
+# 64 "./motor.h"
 _Bool Existe_Chamada_Acima(uint8_t andar_ref);
 
 

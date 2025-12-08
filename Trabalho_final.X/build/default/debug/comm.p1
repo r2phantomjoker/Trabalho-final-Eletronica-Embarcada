@@ -5,23 +5,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "348
 [; ;./mcc_generated_files/eusart.h: 348: void EUSART_Write(uint8_t txData);
 [v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
-"84 ./globals.h
-[; ;./globals.h: 84: extern volatile uint8_t andar_atual;
+"75 ./globals.h
+[; ;./globals.h: 75: extern volatile uint8_t andar_atual;
 [v _andar_atual `Vuc ~T0 @X0 0 e ]
-"90
-[; ;./globals.h: 90: extern volatile uint8_t andar_destino;
+"81
+[; ;./globals.h: 81: extern volatile uint8_t andar_destino;
 [v _andar_destino `Vuc ~T0 @X0 0 e ]
-"96
-[; ;./globals.h: 96: extern volatile uint8_t estado_motor;
+"87
+[; ;./globals.h: 87: extern volatile uint8_t estado_motor;
 [v _estado_motor `Vuc ~T0 @X0 0 e ]
-"102
-[; ;./globals.h: 102: extern volatile uint8_t posicao_mm;
+"93
+[; ;./globals.h: 93: extern volatile uint8_t posicao_mm;
 [v _posicao_mm `Vuc ~T0 @X0 0 e ]
-"108
-[; ;./globals.h: 108: extern volatile uint8_t velocidade_atual;
+"99
+[; ;./globals.h: 99: extern volatile uint8_t velocidade_atual;
 [v _velocidade_atual `Vuc ~T0 @X0 0 e ]
-"114
-[; ;./globals.h: 114: extern volatile uint16_t temperatura_ponte;
+"105
+[; ;./globals.h: 105: extern volatile uint16_t temperatura_ponte;
 [v _temperatura_ponte `Vus ~T0 @X0 0 e ]
 "2102 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2102:     struct {
@@ -63,11 +63,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;comm.c: 291:     uint8_t base_seta = estado_atual * 4;
 [c E2506 0 1 2 3 4 .. ]
 [n E2506 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"137 ./globals.h
-[; ;./globals.h: 137: extern volatile EstadoElevador estado_atual;
+"130 ./globals.h
+[; ;./globals.h: 130: extern volatile EstadoElevador estado_atual;
 [v _estado_atual `VE2506 ~T0 @X0 0 e ]
-"126
-[; ;./globals.h: 126: extern volatile _Bool solicitacoes[4];
+"113
+[; ;./globals.h: 113: extern volatile _Bool solicitacoes[4];
 [v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");

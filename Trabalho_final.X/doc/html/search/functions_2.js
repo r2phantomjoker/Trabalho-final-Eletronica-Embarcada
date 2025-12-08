@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['existe_5fchamada_5fabaixo_0',['Existe_Chamada_Abaixo',['../main_8c.html#a185752549fbb6f5580bd66f72cd75f82',1,'main.c']]],
-  ['existe_5fchamada_5facima_1',['Existe_Chamada_Acima',['../main_8c.html#ae928d17a9eaf9bd19c9d683dca75109e',1,'main.c']]]
+  ['limpar_5fchamada_5fatual_0',['Limpar_Chamada_Atual',['../motor_8c.html#af6542851aa8ef7bcb9195a0e0064f983',1,'Limpar_Chamada_Atual():&#160;motor.c'],['../motor_8h.html#ac99d89dfdc40856577390190162930b9',1,'Limpar_Chamada_Atual(void):&#160;motor.c']]]
 ];

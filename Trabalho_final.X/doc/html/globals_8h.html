@@ -104,13 +104,13 @@ Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com
 <div class="center"><img src="globals_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2globals_8hdep" loading="lazy" alt=""/></div>
 <map name="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2globals_8hdep" id="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2globals_8hdep">
 <area shape="rect" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="387,5,579,96"/>
-<area shape="rect" href="comm_8c.html" title="Implementação da comunicação UART e Driver MAX7219 (Corrigido)." alt="" coords="5,152,246,227"/>
+<area shape="rect" href="comm_8c.html" title="Implementação da comunicação UART e Driver MAX7219." alt="" coords="5,152,246,227"/>
 <area shape="poly" title=" " alt="" coords="370,95,223,154,221,149,375,93"/>
-<area shape="rect" href="globals_8c.html" title=" " alt="" coords="269,144,462,235"/>
+<area shape="rect" href="globals_8c.html" title="Alocação real de memória das variáveis globais do sistema." alt="" coords="269,144,462,235"/>
 <area shape="poly" title=" " alt="" coords="437,107,406,146,403,141,432,109"/>
-<area shape="rect" href="main_8c.html" title="Lógica Avançada: SCAN (Elevador Inteligente) com Display Sincronizado." alt="" coords="485,152,718,227"/>
+<area shape="rect" href="main_8c.html" title="Lógica Avançada: SCAN, Elevador Inteligente, com Display Sincronizado." alt="" coords="485,152,718,227"/>
 <area shape="poly" title=" " alt="" coords="533,106,572,152,567,151,531,111"/>
-<area shape="rect" href="motor_8c.html" title="Driver do Motor (Versão Otimizada &quot;Light&quot; &#45; Completa) Implementa a lógica de movimentação,..." alt="" coords="742,152,979,227"/>
+<area shape="rect" href="motor_8c.html" title="Driver do Motor (Versão Otimizada &quot;Light&quot; &#45; Completa)." alt="" coords="742,152,979,227"/>
 <area shape="poly" title=" " alt="" coords="594,89,761,151,756,151,594,95"/>
 </map>
 </div>
@@ -120,29 +120,24 @@ Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Definições e Macros</h2></td></tr>
 <tr class="memitem:a27d8e6d1290da24a1bbac1ee3a6c5fdb" id="r_a27d8e6d1290da24a1bbac1ee3a6c5fdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27d8e6d1290da24a1bbac1ee3a6c5fdb">MOTOR_PARADO</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:a27d8e6d1290da24a1bbac1ee3a6c5fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estados possíveis do motor (Variável 'M' na Tabela 1).  <br /></td></tr>
+<tr class="memdesc:a27d8e6d1290da24a1bbac1ee3a6c5fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definição dos estados físicos do motor.  <br /></td></tr>
 <tr class="memitem:a64570fdb79c096a9db9d30306589b0ce" id="r_a64570fdb79c096a9db9d30306589b0ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64570fdb79c096a9db9d30306589b0ce">MOTOR_SUBINDO</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:a64570fdb79c096a9db9d30306589b0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Movimento ascendente (Direção = 1).  <br /></td></tr>
 <tr class="memitem:a428cff26affeea76754199c1303c82e4" id="r_a428cff26affeea76754199c1303c82e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a428cff26affeea76754199c1303c82e4">MOTOR_DESCENDO</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memdesc:a428cff26affeea76754199c1303c82e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Movimento descendente (Direção = 0).  <br /></td></tr>
 <tr class="memitem:a49fa0b17c14564f1a6a6c3fe2787f1f0" id="r_a49fa0b17c14564f1a6a6c3fe2787f1f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49fa0b17c14564f1a6a6c3fe2787f1f0">CS_SetHigh</a>()</td></tr>
+<tr class="memdesc:a49fa0b17c14564f1a6a6c3fe2787f1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controle do Chip Select do Driver MAX7219.  <br /></td></tr>
 <tr class="memitem:a1dfb04be0d22ef09b34273206795571a" id="r_a1dfb04be0d22ef09b34273206795571a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dfb04be0d22ef09b34273206795571a">CS_SetLow</a>()</td></tr>
 <tr class="memitem:ae3d63425811376844a15e2124af58dd6" id="r_ae3d63425811376844a15e2124af58dd6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3d63425811376844a15e2124af58dd6">SENSOR_S1</a>&#160;&#160;&#160;PORTBbits.RB0</td></tr>
-<tr class="memdesc:ae3d63425811376844a15e2124af58dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensores Digitais (Térreo e 1º Andar). Conectados ao PORTB com Pull-Up ativado. Tipo: Sensor de Efeito Hall (A3144) - Coletor Aberto.  <br /></td></tr>
+<tr class="memdesc:ae3d63425811376844a15e2124af58dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensores Digitais. Tipo: Sensor de Efeito Hall - Coletor Aberto.  <br /></td></tr>
 <tr class="memitem:a2348bfb1e304c065e57cd549825c5c46" id="r_a2348bfb1e304c065e57cd549825c5c46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2348bfb1e304c065e57cd549825c5c46">SENSOR_S2</a>&#160;&#160;&#160;PORTBbits.RB3</td></tr>
-<tr class="memdesc:a2348bfb1e304c065e57cd549825c5c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensor do 1º Andar (Andar 1). Leitura direta do pino.  <br /></td></tr>
 <tr class="memitem:aec0e3eabad9a9bb310290b5f067e1e8f" id="r_aec0e3eabad9a9bb310290b5f067e1e8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec0e3eabad9a9bb310290b5f067e1e8f">SENSOR_S3</a>&#160;&#160;&#160;CM1CON0bits.C1OUT</td></tr>
-<tr class="memdesc:aec0e3eabad9a9bb310290b5f067e1e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensores Analógicos (2º e 3º Andar). Conectados ao PORTA e lidos através dos Comparadores Analógicos. Configuração: FVR (2.048V) na entrada Positiva, Sensor na Negativa.  <br /></td></tr>
+<tr class="memdesc:aec0e3eabad9a9bb310290b5f067e1e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensores Analógicos. Lidos através dos Comparadores Analógicos.  <br /></td></tr>
 <tr class="memitem:a8052543266ac71aaf0a25204389d2ab8" id="r_a8052543266ac71aaf0a25204389d2ab8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8052543266ac71aaf0a25204389d2ab8">SENSOR_S4</a>&#160;&#160;&#160;CM2CON0bits.C2OUT</td></tr>
-<tr class="memdesc:a8052543266ac71aaf0a25204389d2ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensor do 3º Andar (Andar 3). Lê a saída do Comparador 2.  <br /></td></tr>
 <tr class="memitem:a6c8de73bb604d91743c7f6f356eb171e" id="r_a6c8de73bb604d91743c7f6f356eb171e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c8de73bb604d91743c7f6f356eb171e">DIR</a>&#160;&#160;&#160;LATAbits.LATA7</td></tr>
-<tr class="memdesc:a6c8de73bb604d91743c7f6f356eb171e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controle do Pino de Direção (RA7). Usa o registrador LAT para escrita segura na saída.  <br /></td></tr>
+<tr class="memdesc:a6c8de73bb604d91743c7f6f356eb171e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controle do Pino de Direção - RA7.  <br /></td></tr>
 <tr class="memitem:a67a5f9a20f0f01fc7183c8c5a857d253" id="r_a67a5f9a20f0f01fc7183c8c5a857d253"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67a5f9a20f0f01fc7183c8c5a857d253">DIRECAO_SUBIR</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:a67a5f9a20f0f01fc7183c8c5a857d253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define pino RA7 em Nível Alto (Subida).  <br /></td></tr>
 <tr class="memitem:ab433673d53f59c6d1c580fb18298d02c" id="r_ab433673d53f59c6d1c580fb18298d02c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab433673d53f59c6d1c580fb18298d02c">DIRECAO_DESCER</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:ab433673d53f59c6d1c580fb18298d02c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define pino RA7 em Nível Baixo (Descida).  <br /></td></tr>
 <tr class="memitem:ad1b1c6c44e1e025f7a748396b2e6f9f4" id="r_ad1b1c6c44e1e025f7a748396b2e6f9f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1b1c6c44e1e025f7a748396b2e6f9f4">MOTOR_OFF</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:ad1b1c6c44e1e025f7a748396b2e6f9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valores de PWM (0 a 1023 - 10 bits). O roteiro sugere ciclo útil entre 40% e 50%[cite: 388]. 410 = ~40% de Duty Cycle.  <br /></td></tr>
+<tr class="memdesc:ad1b1c6c44e1e025f7a748396b2e6f9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valores de PWM .  <br /></td></tr>
 <tr class="memitem:a3249ae087e43a52e0182917edca0dc12" id="r_a3249ae087e43a52e0182917edca0dc12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3249ae087e43a52e0182917edca0dc12">MOTOR_ON</a>&#160;&#160;&#160;614</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -156,30 +151,41 @@ Enumerações</h2></td></tr>
 &#160;&#160;<a class="el" href="#aa5f70b30e01ae8c83ef5b4dbf65a83c7a128565a77c30327a9e2b385fca1ad67f">ESTADO_REVERSAO</a>
 <br />
  }</td></tr>
+<tr class="memdesc:aa5f70b30e01ae8c83ef5b4dbf65a83c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estados possíveis da Máquina de Estados.  <a href="#aa5f70b30e01ae8c83ef5b4dbf65a83c7">Mais...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variáveis</h2></td></tr>
 <tr class="memitem:aa04e3fa9df7646e92fc51a41e546f039" id="r_aa04e3fa9df7646e92fc51a41e546f039"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa04e3fa9df7646e92fc51a41e546f039">andar_atual</a></td></tr>
-<tr class="memdesc:aa04e3fa9df7646e92fc51a41e546f039"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Andar (A)': Último andar detectado pelos sensores. Faixa: 0 a 3.  <br /></td></tr>
+<tr class="memdesc:aa04e3fa9df7646e92fc51a41e546f039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Andar atual onde o elevador se encontra.  <br /></td></tr>
 <tr class="memitem:a3560682c490b40ad48d95659ab086803" id="r_a3560682c490b40ad48d95659ab086803"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3560682c490b40ad48d95659ab086803">andar_destino</a></td></tr>
-<tr class="memdesc:a3560682c490b40ad48d95659ab086803"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Destino (D)': Andar alvo da solicitação atual. Faixa: 0 a 3.  <br /></td></tr>
+<tr class="memdesc:a3560682c490b40ad48d95659ab086803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Andar de destino da solicitação atual.  <br /></td></tr>
 <tr class="memitem:a4be8cdf2607a58a0db7ad2f49d6482de" id="r_a4be8cdf2607a58a0db7ad2f49d6482de"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4be8cdf2607a58a0db7ad2f49d6482de">estado_motor</a></td></tr>
-<tr class="memdesc:a4be8cdf2607a58a0db7ad2f49d6482de"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Motor (M)': Estado atual do movimento. Valores: 0 (Parado), 1 (Subindo), 2 (Descendo).  <br /></td></tr>
+<tr class="memdesc:a4be8cdf2607a58a0db7ad2f49d6482de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado físico do motor.  <br /></td></tr>
 <tr class="memitem:a59c3ca0bd4a5ff47b83ea67d89ea195b" id="r_a59c3ca0bd4a5ff47b83ea67d89ea195b"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59c3ca0bd4a5ff47b83ea67d89ea195b">posicao_mm</a></td></tr>
-<tr class="memdesc:a59c3ca0bd4a5ff47b83ea67d89ea195b"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Posição (HHH)': Altura em milímetros em relação ao solo. Faixa: 0 a 180 mm[cite: 385].  <br /></td></tr>
+<tr class="memdesc:a59c3ca0bd4a5ff47b83ea67d89ea195b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posição estimada em milímetros.  <br /></td></tr>
 <tr class="memitem:ae2dae8d0a66916eeaf5c8bfff0880f7b" id="r_ae2dae8d0a66916eeaf5c8bfff0880f7b"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2dae8d0a66916eeaf5c8bfff0880f7b">velocidade_atual</a></td></tr>
-<tr class="memdesc:ae2dae8d0a66916eeaf5c8bfff0880f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Velocidade (VV.V)': Velocidade instantânea calculada via Encoder. Unidade: mm/s.  <br /></td></tr>
+<tr class="memdesc:ae2dae8d0a66916eeaf5c8bfff0880f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Velocidade instantânea.  <br /></td></tr>
 <tr class="memitem:aa71e55ae78ebe7b4723b855824084218" id="r_aa71e55ae78ebe7b4723b855824084218"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71e55ae78ebe7b4723b855824084218">temperatura_ponte</a></td></tr>
-<tr class="memdesc:aa71e55ae78ebe7b4723b855824084218"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Temperatura (TT.T)': Temperatura monitorada na Ponte H. Unidade: Graus Celsius (°C).  <br /></td></tr>
+<tr class="memdesc:aa71e55ae78ebe7b4723b855824084218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperatura monitorada na Ponte H.  <br /></td></tr>
 <tr class="memitem:a7b3384ea82f1b5b4ff5a25d84ac3ef54" id="r_a7b3384ea82f1b5b4ff5a25d84ac3ef54"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b3384ea82f1b5b4ff5a25d84ac3ef54">solicitacoes</a> [4]</td></tr>
-<tr class="memdesc:a7b3384ea82f1b5b4ff5a25d84ac3ef54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fila de solicitações de chamadas. Índice [0] = Térreo ... [3] = 3º Andar. true = Botão pressionado / Solicitação ativa.  <br /></td></tr>
+<tr class="memdesc:a7b3384ea82f1b5b4ff5a25d84ac3ef54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vetor unificado de solicitações para o Display.  <br /></td></tr>
 <tr class="memitem:a6f11b98cefc9ef55ab4ccc06dbcf0267" id="r_a6f11b98cefc9ef55ab4ccc06dbcf0267"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="#aa5f70b30e01ae8c83ef5b4dbf65a83c7">EstadoElevador</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f11b98cefc9ef55ab4ccc06dbcf0267">estado_atual</a></td></tr>
+<tr class="memdesc:a6f11b98cefc9ef55ab4ccc06dbcf0267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado atual do elevador.  <br /></td></tr>
+<tr class="memitem:a2b0db2913ef2fa5933235cbb5376dbfa" id="r_a2b0db2913ef2fa5933235cbb5376dbfa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0db2913ef2fa5933235cbb5376dbfa">chamadas_subida</a> [4]</td></tr>
+<tr class="memdesc:a2b0db2913ef2fa5933235cbb5376dbfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vetor de chamadas de subida.  <br /></td></tr>
+<tr class="memitem:af531910cc8c4b97c5066ba364c5e95d3" id="r_af531910cc8c4b97c5066ba364c5e95d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af531910cc8c4b97c5066ba364c5e95d3">chamadas_descida</a> [4]</td></tr>
+<tr class="memdesc:af531910cc8c4b97c5066ba364c5e95d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vetor de chamadas de descida.  <br /></td></tr>
+<tr class="memitem:a1b22e0c7e77243318825ff5c011eeeaf" id="r_a1b22e0c7e77243318825ff5c011eeeaf"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b22e0c7e77243318825ff5c011eeeaf">contador_telemetria</a></td></tr>
+<tr class="memdesc:a1b22e0c7e77243318825ff5c011eeeaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador para divisão de frequência da Telemetria.  <br /></td></tr>
+<tr class="memitem:a2c118d0e50b5404aad00fcc662780ad5" id="r_a2c118d0e50b5404aad00fcc662780ad5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c118d0e50b5404aad00fcc662780ad5">contador_espera</a></td></tr>
+<tr class="memdesc:a2c118d0e50b5404aad00fcc662780ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador para temporizações da Máquina de Estados.  <br /></td></tr>
+<tr class="memitem:a7488097aa5bff81d6baa8873cadd7d22" id="r_a7488097aa5bff81d6baa8873cadd7d22"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7488097aa5bff81d6baa8873cadd7d22">buffer_origem</a></td></tr>
+<tr class="memdesc:a7488097aa5bff81d6baa8873cadd7d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer temporário para o andar de origem.  <br /></td></tr>
+<tr class="memitem:ad69e560aa86b06d78c1db33c9cbeca37" id="r_ad69e560aa86b06d78c1db33c9cbeca37"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad69e560aa86b06d78c1db33c9cbeca37">buffer_destino</a></td></tr>
+<tr class="memdesc:ad69e560aa86b06d78c1db33c9cbeca37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer temporário para o andar de destino.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Definições globais, constantes de hardware e variáveis de estado do Elevador. </p>
-<dl class="section author"><dt>Autor</dt><dd>Arthur Marinho </dd></dl>
-<dl class="section date"><dt>Data</dt><dd>Created on November 27, 2025, 11:17 AM </dd></dl>
-<p>Este arquivo centraliza as variáveis exigidas para a telemetria (Tabela 1 do Roteiro) e permite o compartilhamento de dados entre os módulos de Motor, Sensores e UART. </p>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Definições e macros</h2>
 <a id="a49fa0b17c14564f1a6a6c3fe2787f1f0" name="a49fa0b17c14564f1a6a6c3fe2787f1f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a49fa0b17c14564f1a6a6c3fe2787f1f0">&#9670;&#160;</a></span>CS_SetHigh</h2>
@@ -197,6 +203,8 @@ Variáveis</h2></td></tr>
 </div><div class="memdoc">
 <b>Valor:</b><div class="fragment"><div class="line">LATBbits.LATB1 = 1</div>
 </div><!-- fragment -->
+<p>Controle do Chip Select do Driver MAX7219. </p>
+
 </div>
 </div>
 <a id="a1dfb04be0d22ef09b34273206795571a" name="a1dfb04be0d22ef09b34273206795571a"></a>
@@ -229,10 +237,7 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Controle do Pino de Direção (RA7). Usa o registrador LAT para escrita segura na saída. </p>
-<ul>
-<li></li>
-</ul>
+<p>Controle do Pino de Direção - RA7. </p>
 
 </div>
 </div>
@@ -248,8 +253,6 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Define pino RA7 em Nível Baixo (Descida). </p>
-
 </div>
 </div>
 <a id="a67a5f9a20f0f01fc7183c8c5a857d253" name="a67a5f9a20f0f01fc7183c8c5a857d253"></a>
@@ -263,8 +266,6 @@ Variáveis</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Define pino RA7 em Nível Alto (Subida). </p>
 
 </div>
 </div>
@@ -280,8 +281,6 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Movimento descendente (Direção = 0). </p>
-
 </div>
 </div>
 <a id="ad1b1c6c44e1e025f7a748396b2e6f9f4" name="ad1b1c6c44e1e025f7a748396b2e6f9f4"></a>
@@ -296,7 +295,8 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Valores de PWM (0 a 1023 - 10 bits). O roteiro sugere ciclo útil entre 40% e 50%[cite: 388]. 410 = ~40% de Duty Cycle. </p>
+<p>Valores de PWM . </p>
+<dl class="section note"><dt>Observação</dt><dd>614 = 60% de Duty Cycle. </dd></dl>
 
 </div>
 </div>
@@ -326,10 +326,7 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Estados possíveis do motor (Variável 'M' na Tabela 1). </p>
-<ul>
-<li>Motor desligado e travado </li>
-</ul>
+<p>Definição dos estados físicos do motor. </p>
 
 </div>
 </div>
@@ -345,8 +342,6 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Movimento ascendente (Direção = 1). </p>
-
 </div>
 </div>
 <a id="ae3d63425811376844a15e2124af58dd6" name="ae3d63425811376844a15e2124af58dd6"></a>
@@ -361,12 +356,12 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sensores Digitais (Térreo e 1º Andar). Conectados ao PORTB com Pull-Up ativado. Tipo: Sensor de Efeito Hall (A3144) - Coletor Aberto. </p>
-<ul>
-<li>Lógica:</li>
-<li>1 (HIGH): Sem ímã (Elevador longe).</li>
-<li>0 (LOW): Com ímã (Elevador no andar). Sensor do Térreo (Andar 0). Leitura direta do pino. </li>
+<p>Sensores Digitais. Tipo: Sensor de Efeito Hall - Coletor Aberto. </p>
+<dl class="section note"><dt>Observação</dt><dd>Lógica - Active low:<ul>
+<li>1 : Sem ímã - Elevador longe.</li>
+<li>0 : Com ímã - Elevador no andar. </li>
 </ul>
+</dd></dl>
 
 </div>
 </div>
@@ -382,8 +377,6 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sensor do 1º Andar (Andar 1). Leitura direta do pino. </p>
-
 </div>
 </div>
 <a id="aec0e3eabad9a9bb310290b5f067e1e8f" name="aec0e3eabad9a9bb310290b5f067e1e8f"></a>
@@ -398,12 +391,12 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sensores Analógicos (2º e 3º Andar). Conectados ao PORTA e lidos através dos Comparadores Analógicos. Configuração: FVR (2.048V) na entrada Positiva, Sensor na Negativa. </p>
-<ul>
-<li>Lógica (Invertida pelo Comparador):</li>
-<li>0 (LOW): Sem ímã (Sensor=5V &gt; Ref=2V -&gt; Saída 0).</li>
-<li>1 (HIGH): Com ímã (Sensor=0V &lt; Ref=2V -&gt; Saída 1). Sensor do 2º Andar (Andar 2). Lê a saída do Comparador 1. </li>
+<p>Sensores Analógicos. Lidos através dos Comparadores Analógicos. </p>
+<dl class="section note"><dt>Observação</dt><dd>Lógica - Active HIGH:<ul>
+<li>0 : Sem ímã (Elevador longe).</li>
+<li>1 : Com ímã (Elevador detectado). </li>
 </ul>
+</dd></dl>
 
 </div>
 </div>
@@ -419,8 +412,6 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sensor do 3º Andar (Andar 3). Lê a saída do Comparador 2. </p>
-
 </div>
 </div>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumerações</h2>
@@ -435,6 +426,8 @@ Variáveis</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Estados possíveis da Máquina de Estados. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumeradores</th></tr><tr><td class="fieldname"><a id="aa5f70b30e01ae8c83ef5b4dbf65a83c7ad085165c80754a828e055f4155fb604e" name="aa5f70b30e01ae8c83ef5b4dbf65a83c7ad085165c80754a828e055f4155fb604e"></a>ESTADO_PARADO&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa5f70b30e01ae8c83ef5b4dbf65a83c7a108fd91f7e7c58cf0b7f31b081917a62" name="aa5f70b30e01ae8c83ef5b4dbf65a83c7a108fd91f7e7c58cf0b7f31b081917a62"></a>ESTADO_SUBINDO&#160;</td><td class="fielddoc"></td></tr>
@@ -466,7 +459,9 @@ Variáveis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>'Andar (A)': Último andar detectado pelos sensores. Faixa: 0 a 3. </p>
+<p>Andar atual onde o elevador se encontra. </p>
+<dl class="section note"><dt>Observação</dt><dd>Faixa: 0 a 3.</dd></dl>
+<p>Andar atual onde o elevador se encontra. </p>
 
 </div>
 </div>
@@ -490,7 +485,157 @@ Variáveis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>'Destino (D)': Andar alvo da solicitação atual. Faixa: 0 a 3. </p>
+<p>Andar de destino da solicitação atual. </p>
+<dl class="section note"><dt>Observação</dt><dd>Faixa: 0 a 3.</dd></dl>
+<p>Andar de destino da solicitação atual. </p>
+
+</div>
+</div>
+<a id="ad69e560aa86b06d78c1db33c9cbeca37" name="ad69e560aa86b06d78c1db33c9cbeca37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad69e560aa86b06d78c1db33c9cbeca37">&#9670;&#160;</a></span>buffer_destino</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char buffer_destino</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer temporário para o andar de destino. </p>
+
+</div>
+</div>
+<a id="a7488097aa5bff81d6baa8873cadd7d22" name="a7488097aa5bff81d6baa8873cadd7d22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7488097aa5bff81d6baa8873cadd7d22">&#9670;&#160;</a></span>buffer_origem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char buffer_origem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer temporário para o andar de origem. </p>
+<p>Buffer temporário para o andar de origem. </p>
+
+</div>
+</div>
+<a id="af531910cc8c4b97c5066ba364c5e95d3" name="af531910cc8c4b97c5066ba364c5e95d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af531910cc8c4b97c5066ba364c5e95d3">&#9670;&#160;</a></span>chamadas_descida</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chamadas_descida[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vetor de chamadas de descida. </p>
+
+</div>
+</div>
+<a id="a2b0db2913ef2fa5933235cbb5376dbfa" name="a2b0db2913ef2fa5933235cbb5376dbfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0db2913ef2fa5933235cbb5376dbfa">&#9670;&#160;</a></span>chamadas_subida</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chamadas_subida[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vetor de chamadas de subida. </p>
+<p>Vetor de chamadas de subida. </p>
+
+</div>
+</div>
+<a id="a2c118d0e50b5404aad00fcc662780ad5" name="a2c118d0e50b5404aad00fcc662780ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c118d0e50b5404aad00fcc662780ad5">&#9670;&#160;</a></span>contador_espera</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t contador_espera</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador para temporizações da Máquina de Estados. </p>
+<p>Contador para temporizações da Máquina de Estados. </p>
+
+</div>
+</div>
+<a id="a1b22e0c7e77243318825ff5c011eeeaf" name="a1b22e0c7e77243318825ff5c011eeeaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b22e0c7e77243318825ff5c011eeeaf">&#9670;&#160;</a></span>contador_telemetria</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t contador_telemetria</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador para divisão de frequência da Telemetria. </p>
+<p>Contador para divisão de frequência da Telemetria. </p>
 
 </div>
 </div>
@@ -514,6 +659,9 @@ Variáveis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Estado atual do elevador. </p>
+<p>Estado atual do elevador. </p>
+
 </div>
 </div>
 <a id="a4be8cdf2607a58a0db7ad2f49d6482de" name="a4be8cdf2607a58a0db7ad2f49d6482de"></a>
@@ -536,7 +684,9 @@ Variáveis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>'Motor (M)': Estado atual do movimento. Valores: 0 (Parado), 1 (Subindo), 2 (Descendo). </p>
+<p>Estado físico do motor. </p>
+<dl class="section note"><dt>Observação</dt><dd>Valores: 0 (Parado), 1 (Subindo), 2 (Descendo).</dd></dl>
+<p>Estado físico do motor. </p>
 
 </div>
 </div>
@@ -560,7 +710,9 @@ Variáveis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>'Posição (HHH)': Altura em milímetros em relação ao solo. Faixa: 0 a 180 mm[cite: 385]. </p>
+<p>Posição estimada em milímetros. </p>
+<dl class="section note"><dt>Observação</dt><dd>Faixa: 0 a 180 mm.</dd></dl>
+<p>Posição estimada em milímetros. </p>
 
 </div>
 </div>
@@ -584,7 +736,9 @@ Variáveis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Fila de solicitações de chamadas. Índice [0] = Térreo ... [3] = 3º Andar. true = Botão pressionado / Solicitação ativa. </p>
+<p>Vetor unificado de solicitações para o Display. </p>
+<dl class="section note"><dt>Observação</dt><dd>Índice [0]=Térreo, [1]=1º Andar, [2]=2º Andar e [3]=3º Andar. true = LED deve acender, solicitação ativa.</dd></dl>
+<p>Vetor unificado de solicitações para o Display. </p>
 
 </div>
 </div>
@@ -608,7 +762,9 @@ Variáveis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>'Temperatura (TT.T)': Temperatura monitorada na Ponte H. Unidade: Graus Celsius (°C). </p>
+<p>Temperatura monitorada na Ponte H. </p>
+<dl class="section note"><dt>Observação</dt><dd>Unidade:°C.</dd></dl>
+<p>Temperatura monitorada na Ponte H. </p>
 
 </div>
 </div>
@@ -632,7 +788,9 @@ Variáveis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>'Velocidade (VV.V)': Velocidade instantânea calculada via Encoder. Unidade: mm/s. </p>
+<p>Velocidade instantânea. </p>
+<dl class="section note"><dt>Observação</dt><dd>Unidade: mm/s.</dd></dl>
+<p>Velocidade instantânea. </p>
 
 </div>
 </div>

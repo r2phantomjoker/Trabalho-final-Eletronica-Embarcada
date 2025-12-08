@@ -147,14 +147,7 @@ void Controle_Descer(void);
 
 
 void Controle_Parar(void);
-# 65 "./motor.h"
-int Buscar_Proxima_Parada(void);
-
-
-
-
-
-
+# 64 "./motor.h"
 _Bool Existe_Chamada_Acima(uint8_t andar_ref);
 
 
@@ -4414,7 +4407,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 10 "./globals.h" 2
-# 84 "./globals.h"
+# 75 "./globals.h"
 extern volatile uint8_t andar_atual;
 
 
@@ -4446,8 +4439,18 @@ extern volatile uint8_t velocidade_atual;
 
 
 extern volatile uint16_t temperatura_ponte;
-# 126 "./globals.h"
+
+
+
+
+
+
+
 extern volatile _Bool solicitacoes[4];
+
+
+
+
 
 typedef enum {
     ESTADO_PARADO,
@@ -4458,8 +4461,9 @@ typedef enum {
 } EstadoElevador;
 
 
-extern volatile EstadoElevador estado_atual;
 
+
+extern volatile EstadoElevador estado_atual;
 
 
 
@@ -4469,13 +4473,26 @@ extern _Bool chamadas_subida[4];
 
 
 
-
 extern _Bool chamadas_descida[4];
 
 
+
+
 extern uint16_t contador_telemetria;
+
+
+
+
 extern uint16_t contador_espera;
+
+
+
+
 extern char buffer_origem;
+
+
+
+
 extern char buffer_destino;
 # 10 "motor.c" 2
 # 1 "./mcc_generated_files/mcc.h" 1
@@ -4975,37 +4992,7 @@ void Verificar_Sensores() {
         posicao_mm = 180;
     }
 }
-# 198 "motor.c"
-int Buscar_Proxima_Parada() {
-
-    if (estado_atual == ESTADO_PARADO) {
-        for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
-        return -1;
-    }
-
-    if (estado_atual == ESTADO_SUBINDO) {
-        for (int i = andar_atual + 1; i <= 3; i++) {
-            if (solicitacoes[i]) return i;
-        }
-    }
-
-    if (estado_atual == ESTADO_DESCENDO) {
-        for (int i = andar_atual - 1; i >= 0; i--) {
-            if (solicitacoes[i]) return i;
-        }
-    }
-
-    for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
-
-    return -1;
-}
-
-
-
-
-
-
-
+# 193 "motor.c"
 _Bool Existe_Chamada_Acima(uint8_t andar_ref) {
 
     for (int i = andar_ref + 1; i <= 3; i++) {

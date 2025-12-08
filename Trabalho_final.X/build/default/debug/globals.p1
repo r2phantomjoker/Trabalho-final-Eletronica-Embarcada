@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"23 globals.c
-[; ;globals.c: 23: volatile EstadoElevador estado_atual = ESTADO_PARADO;
+"49 globals.c
+[; ;globals.c: 49: volatile EstadoElevador estado_atual = ESTADO_PARADO;
 [c E2497 0 1 2 3 4 .. ]
 [n E2497 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
@@ -477,44 +477,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6748
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 6748: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"11 globals.c
-[; ;globals.c: 11: volatile uint8_t andar_atual = 0;
+"13 globals.c
+[; ;globals.c: 13: volatile uint8_t andar_atual = 0;
 [v _andar_atual `Vuc ~T0 @X0 1 e ]
 [i _andar_atual
 -> -> 0 `i `uc
 ]
-"12
-[; ;globals.c: 12: volatile uint8_t andar_destino = 0;
+"18
+[; ;globals.c: 18: volatile uint8_t andar_destino = 0;
 [v _andar_destino `Vuc ~T0 @X0 1 e ]
 [i _andar_destino
 -> -> 0 `i `uc
 ]
-"13
-[; ;globals.c: 13: volatile uint8_t estado_motor = 0;
+"23
+[; ;globals.c: 23: volatile uint8_t estado_motor = 0;
 [v _estado_motor `Vuc ~T0 @X0 1 e ]
 [i _estado_motor
 -> -> 0 `i `uc
 ]
-"14
-[; ;globals.c: 14: volatile uint8_t posicao_mm = 0;
+"28
+[; ;globals.c: 28: volatile uint8_t posicao_mm = 0;
 [v _posicao_mm `Vuc ~T0 @X0 1 e ]
 [i _posicao_mm
 -> -> 0 `i `uc
 ]
-"15
-[; ;globals.c: 15: volatile uint8_t velocidade_atual = 0;
+"33
+[; ;globals.c: 33: volatile uint8_t velocidade_atual = 0;
 [v _velocidade_atual `Vuc ~T0 @X0 1 e ]
 [i _velocidade_atual
 -> -> 0 `i `uc
 ]
-"16
-[; ;globals.c: 16: volatile uint16_t temperatura_ponte = 0;
+"38
+[; ;globals.c: 38: volatile uint16_t temperatura_ponte = 0;
 [v _temperatura_ponte `Vus ~T0 @X0 1 e ]
 [i _temperatura_ponte
 -> -> 0 `i `us
 ]
-"20
-[; ;globals.c: 20: volatile _Bool solicitacoes[4] = {0, 0, 0, 0};
+"44
+[; ;globals.c: 44: volatile _Bool solicitacoes[4] = {0, 0, 0, 0};
 [v _solicitacoes `Va ~T0 @X0 -> 4 `i e ]
 [i _solicitacoes
 :U ..
@@ -524,14 +524,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `a
 ..
 ]
-"23
-[; ;globals.c: 23: volatile EstadoElevador estado_atual = ESTADO_PARADO;
+"49
+[; ;globals.c: 49: volatile EstadoElevador estado_atual = ESTADO_PARADO;
 [v _estado_atual `VE2497 ~T0 @X0 1 e ]
 [i _estado_atual
 . `E2497 0
 ]
-"30
-[; ;globals.c: 30: _Bool chamadas_subida[4] = {0, 0, 0, 0};
+"56
+[; ;globals.c: 56: _Bool chamadas_subida[4] = {0, 0, 0, 0};
 [v _chamadas_subida `a ~T0 @X0 -> 4 `i e ]
 [i _chamadas_subida
 :U ..
@@ -541,8 +541,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `a
 ..
 ]
-"31
-[; ;globals.c: 31: _Bool chamadas_descida[4] = {0, 0, 0, 0};
+"57
+[; ;globals.c: 57: _Bool chamadas_descida[4] = {0, 0, 0, 0};
 [v _chamadas_descida `a ~T0 @X0 -> 4 `i e ]
 [i _chamadas_descida
 :U ..
@@ -552,26 +552,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `a
 ..
 ]
-"33
-[; ;globals.c: 33: uint16_t contador_telemetria = 0;
+"63
+[; ;globals.c: 63: uint16_t contador_telemetria = 0;
 [v _contador_telemetria `us ~T0 @X0 1 e ]
 [i _contador_telemetria
 -> -> 0 `i `us
 ]
-"34
-[; ;globals.c: 34: uint16_t contador_espera = 0;
+"68
+[; ;globals.c: 68: uint16_t contador_espera = 0;
 [v _contador_espera `us ~T0 @X0 1 e ]
 [i _contador_espera
 -> -> 0 `i `us
 ]
-"38
-[; ;globals.c: 38: char buffer_origem = 0;
+"74
+[; ;globals.c: 74: char buffer_origem = 0;
 [v _buffer_origem `uc ~T0 @X0 1 e ]
 [i _buffer_origem
 -> -> 0 `i `uc
 ]
-"39
-[; ;globals.c: 39: char buffer_destino = 0;
+"75
+[; ;globals.c: 75: char buffer_destino = 0;
 [v _buffer_destino `uc ~T0 @X0 1 e ]
 [i _buffer_destino
 -> -> 0 `i `uc

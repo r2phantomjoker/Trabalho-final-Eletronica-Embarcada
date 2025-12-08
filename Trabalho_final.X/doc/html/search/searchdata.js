@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "abcdeglmpstuv",
+  0: "abcdefgilmpstuv",
   1: "cgm",
-  2: "bcelmsuv",
+  2: "celmsuv",
   3: "abcelmpstv",
   4: "e",
   5: "e",
-  6: "cdmst"
+  6: "cdmpst",
+  7: "defi"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "variables",
   4: "enums",
   5: "enumvalues",
-  6: "defines"
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Variáveis",
   4: "Enumerações",
   5: "Enumeradores",
-  6: "Definições e Macros"
+  6: "Definições e Macros",
+  7: "Páginas"
 };
 

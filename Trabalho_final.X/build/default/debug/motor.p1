@@ -2,28 +2,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "129 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 129: uint8_t TMR0_ReadTimer(void);
 [v _TMR0_ReadTimer `(uc ~T0 @X0 0 ef ]
-"96 ./globals.h
-[; ;./globals.h: 96: extern volatile uint8_t estado_motor;
+"87 ./globals.h
+[; ;./globals.h: 87: extern volatile uint8_t estado_motor;
 [v _estado_motor `Vuc ~T0 @X0 0 e ]
-"102
-[; ;./globals.h: 102: extern volatile uint8_t posicao_mm;
+"93
+[; ;./globals.h: 93: extern volatile uint8_t posicao_mm;
 [v _posicao_mm `Vuc ~T0 @X0 0 e ]
-"108
-[; ;./globals.h: 108: extern volatile uint8_t velocidade_atual;
+"99
+[; ;./globals.h: 99: extern volatile uint8_t velocidade_atual;
 [v _velocidade_atual `Vuc ~T0 @X0 0 e ]
 "106 motor.c
 [; ;motor.c: 106:         leitura_adc += ADC_GetConversion(channel_AN2);
-[c E2936 2 29 30 31 .. ]
-[n E2936 . channel_AN2 channel_Temp channel_DAC channel_FVR  ]
+[c E2935 2 29 30 31 .. ]
+[n E2935 . channel_AN2 channel_Temp channel_DAC channel_FVR  ]
 "288 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 288: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E2936 ]
-[v F213 `(v ~T0 @X0 1 tf1`ul ]
+[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E2935 ]
+[v F212 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
-[v __delay `JF213 ~T0 @X0 0 e ]
+[v __delay `JF212 ~T0 @X0 0 e ]
 [p i __delay ]
-"114 ./globals.h
-[; ;./globals.h: 114: extern volatile uint16_t temperatura_ponte;
+"105 ./globals.h
+[; ;./globals.h: 105: extern volatile uint16_t temperatura_ponte;
 [v _temperatura_ponte `Vus ~T0 @X0 0 e ]
 "2045 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2045:     struct {
@@ -50,8 +50,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "508
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 508: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
 [v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
-"84 ./globals.h
-[; ;./globals.h: 84: extern volatile uint8_t andar_atual;
+"75 ./globals.h
+[; ;./globals.h: 75: extern volatile uint8_t andar_atual;
 [v _andar_atual `Vuc ~T0 @X0 0 e ]
 "2164 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 2164:     struct {
@@ -77,19 +77,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _CM2CON0bits `VS118 ~T0 @X0 0 e@275 ]
 "172 motor.c
 [; ;motor.c: 172:         estado_atual = ESTADO_PARADO;
-[c E2508 0 1 2 3 4 .. ]
-[n E2508 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"137 ./globals.h
-[; ;./globals.h: 137: extern volatile EstadoElevador estado_atual;
-[v _estado_atual `VE2508 ~T0 @X0 0 e ]
-"126
-[; ;./globals.h: 126: extern volatile _Bool solicitacoes[4];
-[v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
-"143
-[; ;./globals.h: 143: extern _Bool chamadas_subida[4];
+[c E2507 0 1 2 3 4 .. ]
+[n E2507 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
+"130 ./globals.h
+[; ;./globals.h: 130: extern volatile EstadoElevador estado_atual;
+[v _estado_atual `VE2507 ~T0 @X0 0 e ]
+"135
+[; ;./globals.h: 135: extern _Bool chamadas_subida[4];
 [v _chamadas_subida `a ~T0 @X0 -> 0 `x e ]
-"149
-[; ;./globals.h: 149: extern _Bool chamadas_descida[4];
+"140
+[; ;./globals.h: 140: extern _Bool chamadas_descida[4];
 [v _chamadas_descida `a ~T0 @X0 -> 0 `x e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h: 54: __asm("INDF0 equ 00h");
@@ -659,7 +656,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "106
 [; ;motor.c: 106:         leitura_adc += ADC_GetConversion(channel_AN2);
-[e =+ _leitura_adc -> ( _ADC_GetConversion (1 . `E2936 0 `us ]
+[e =+ _leitura_adc -> ( _ADC_GetConversion (1 . `E2935 0 `us ]
 "107
 [; ;motor.c: 107:         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -766,7 +763,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _Controle_Parar ..  ]
 "172
 [; ;motor.c: 172:         estado_atual = ESTADO_PARADO;
-[e = _estado_atual . `E2508 0 ]
+[e = _estado_atual . `E2507 0 ]
 "173
 [; ;motor.c: 173:         posicao_mm = 0;
 [e = _posicao_mm -> -> 0 `i `uc ]
@@ -783,7 +780,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _Controle_Parar ..  ]
 "178
 [; ;motor.c: 178:         estado_atual = ESTADO_PARADO;
-[e = _estado_atual . `E2508 0 ]
+[e = _estado_atual . `E2507 0 ]
 "179
 [; ;motor.c: 179:         posicao_mm = 180;
 [e = _posicao_mm -> -> 180 `i `uc ]
@@ -795,237 +792,119 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor.c: 181: }
 [e :UE 372 ]
 }
-"198
-[; ;motor.c: 198: int Buscar_Proxima_Parada() {
-[v _Buscar_Proxima_Parada `(i ~T0 @X0 1 ef ]
-{
-[e :U _Buscar_Proxima_Parada ]
-[f ]
-"200
-[; ;motor.c: 200:     if (estado_atual == ESTADO_PARADO) {
-[e $ ! == -> _estado_atual `ui -> . `E2508 0 `ui 380  ]
-{
-"201
-[; ;motor.c: 201:         for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 381  ]
-[e $U 382  ]
-[e :U 381 ]
-[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 384  ]
-[e ) _i ]
-[e $UE 379  ]
-[e :U 384 ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 381  ]
-[e :U 382 ]
-}
-"202
-[; ;motor.c: 202:         return -1;
-[e ) -U -> 1 `i ]
-[e $UE 379  ]
-"203
-[; ;motor.c: 203:     }
-}
-[e :U 380 ]
-"205
-[; ;motor.c: 205:     if (estado_atual == ESTADO_SUBINDO) {
-[e $ ! == -> _estado_atual `ui -> . `E2508 1 `ui 385  ]
-{
-"206
-[; ;motor.c: 206:         for (int i = andar_atual + 1; i <= 3; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i + -> _andar_atual `i -> 1 `i ]
-[e $ <= _i -> 3 `i 386  ]
-[e $U 387  ]
-[e :U 386 ]
-{
-"207
-[; ;motor.c: 207:             if (solicitacoes[i]) return i;
-[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 389  ]
-[e ) _i ]
-[e $UE 379  ]
-[e :U 389 ]
-"208
-[; ;motor.c: 208:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ <= _i -> 3 `i 386  ]
-[e :U 387 ]
-}
-"209
-[; ;motor.c: 209:     }
-}
-[e :U 385 ]
-"211
-[; ;motor.c: 211:     if (estado_atual == ESTADO_DESCENDO) {
-[e $ ! == -> _estado_atual `ui -> . `E2508 2 `ui 390  ]
-{
-"212
-[; ;motor.c: 212:         for (int i = andar_atual - 1; i >= 0; i--) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i - -> _andar_atual `i -> 1 `i ]
-[e $ >= _i -> 0 `i 391  ]
-[e $U 392  ]
-[e :U 391 ]
-{
-"213
-[; ;motor.c: 213:             if (solicitacoes[i]) return i;
-[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 394  ]
-[e ) _i ]
-[e $UE 379  ]
-[e :U 394 ]
-"214
-[; ;motor.c: 214:         }
-}
-[e -- _i -> 1 `i ]
-[e $ >= _i -> 0 `i 391  ]
-[e :U 392 ]
-}
-"215
-[; ;motor.c: 215:     }
-}
-[e :U 390 ]
-"217
-[; ;motor.c: 217:     for (int i = 0; i < 4; i++) if (solicitacoes[i]) return i;
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 395  ]
-[e $U 396  ]
-[e :U 395 ]
-[e $ ! != -> *U + &U _solicitacoes * -> -> _i `ui `ux -> -> # *U &U _solicitacoes `ui `ux `i -> 0 `i 398  ]
-[e ) _i ]
-[e $UE 379  ]
-[e :U 398 ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 395  ]
-[e :U 396 ]
-}
-"219
-[; ;motor.c: 219:     return -1;
-[e ) -U -> 1 `i ]
-[e $UE 379  ]
-"220
-[; ;motor.c: 220: }
-[e :UE 379 ]
-}
-"228
-[; ;motor.c: 228: _Bool Existe_Chamada_Acima(uint8_t andar_ref) {
+"193
+[; ;motor.c: 193: _Bool Existe_Chamada_Acima(uint8_t andar_ref) {
 [v _Existe_Chamada_Acima `(a ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Existe_Chamada_Acima ]
 [v _andar_ref `uc ~T0 @X0 1 r1 ]
 [f ]
-"230
-[; ;motor.c: 230:     for (int i = andar_ref + 1; i <= 3; i++) {
+"195
+[; ;motor.c: 195:     for (int i = andar_ref + 1; i <= 3; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i + -> _andar_ref `i -> 1 `i ]
-[e $ <= _i -> 3 `i 400  ]
-[e $U 401  ]
-[e :U 400 ]
+[e $ <= _i -> 3 `i 380  ]
+[e $U 381  ]
+[e :U 380 ]
 {
-"232
-[; ;motor.c: 232:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
-[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 403  ]
+"197
+[; ;motor.c: 197:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
+[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 383  ]
 [e ) -> -> 1 `i `a ]
-[e $UE 399  ]
-[e :U 403 ]
-"233
-[; ;motor.c: 233:     }
+[e $UE 379  ]
+[e :U 383 ]
+"198
+[; ;motor.c: 198:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ <= _i -> 3 `i 400  ]
-[e :U 401 ]
+[e $ <= _i -> 3 `i 380  ]
+[e :U 381 ]
 }
-"234
-[; ;motor.c: 234:     return 0;
+"199
+[; ;motor.c: 199:     return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 399  ]
-"235
-[; ;motor.c: 235: }
-[e :UE 399 ]
+[e $UE 379  ]
+"200
+[; ;motor.c: 200: }
+[e :UE 379 ]
 }
-"243
-[; ;motor.c: 243: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref) {
+"208
+[; ;motor.c: 208: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref) {
 [v _Existe_Chamada_Abaixo `(a ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Existe_Chamada_Abaixo ]
 [v _andar_ref `uc ~T0 @X0 1 r1 ]
 [f ]
-"245
-[; ;motor.c: 245:     for (int i = 0; i < andar_ref; i++) {
+"210
+[; ;motor.c: 210:     for (int i = 0; i < andar_ref; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 408  ]
-[e :U 405 ]
+[e $U 388  ]
+[e :U 385 ]
 {
-"247
-[; ;motor.c: 247:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
-[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 409  ]
+"212
+[; ;motor.c: 212:         if (chamadas_subida[i] || chamadas_descida[i]) return 1;
+[e $ ! || != -> *U + &U _chamadas_subida * -> -> _i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux `i -> 0 `i != -> *U + &U _chamadas_descida * -> -> _i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux `i -> 0 `i 389  ]
 [e ) -> -> 1 `i `a ]
-[e $UE 404  ]
-[e :U 409 ]
-"248
-[; ;motor.c: 248:     }
+[e $UE 384  ]
+[e :U 389 ]
+"213
+[; ;motor.c: 213:     }
 }
 [e ++ _i -> 1 `i ]
-[e :U 408 ]
-[e $ < _i -> _andar_ref `i 405  ]
-[e :U 406 ]
+[e :U 388 ]
+[e $ < _i -> _andar_ref `i 385  ]
+[e :U 386 ]
 }
-"249
-[; ;motor.c: 249:     return 0;
+"214
+[; ;motor.c: 214:     return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 404  ]
-"250
-[; ;motor.c: 250: }
-[e :UE 404 ]
+[e $UE 384  ]
+"215
+[; ;motor.c: 215: }
+[e :UE 384 ]
 }
-"257
-[; ;motor.c: 257: void Limpar_Chamada_Atual() {
+"222
+[; ;motor.c: 222: void Limpar_Chamada_Atual() {
 [v _Limpar_Chamada_Atual `(v ~T0 @X0 1 ef ]
 {
 [e :U _Limpar_Chamada_Atual ]
 [f ]
-"260
-[; ;motor.c: 260:     if (estado_motor == 1 || estado_motor == 0) {
-[e $ ! || == -> _estado_motor `i -> 1 `i == -> _estado_motor `i -> 0 `i 411  ]
+"225
+[; ;motor.c: 225:     if (estado_motor == 1 || estado_motor == 0) {
+[e $ ! || == -> _estado_motor `i -> 1 `i == -> _estado_motor `i -> 0 `i 391  ]
 {
-"261
-[; ;motor.c: 261:         chamadas_subida[andar_atual] = 0;
+"226
+[; ;motor.c: 226:         chamadas_subida[andar_atual] = 0;
 [e = *U + &U _chamadas_subida * -> _andar_atual `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 0 `i `a ]
-"262
-[; ;motor.c: 262:     }
+"227
+[; ;motor.c: 227:     }
 }
-[e :U 411 ]
-"265
-[; ;motor.c: 265:     if (estado_motor == 2 || estado_motor == 0) {
-[e $ ! || == -> _estado_motor `i -> 2 `i == -> _estado_motor `i -> 0 `i 412  ]
+[e :U 391 ]
+"230
+[; ;motor.c: 230:     if (estado_motor == 2 || estado_motor == 0) {
+[e $ ! || == -> _estado_motor `i -> 2 `i == -> _estado_motor `i -> 0 `i 392  ]
 {
-"266
-[; ;motor.c: 266:         chamadas_descida[andar_atual] = 0;
+"231
+[; ;motor.c: 231:         chamadas_descida[andar_atual] = 0;
 [e = *U + &U _chamadas_descida * -> _andar_atual `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 0 `i `a ]
-"267
-[; ;motor.c: 267:     }
+"232
+[; ;motor.c: 232:     }
 }
-[e :U 412 ]
-"271
-[; ;motor.c: 271:     if (andar_atual == 3) chamadas_subida[3] = 0;
-[e $ ! == -> _andar_atual `i -> 3 `i 413  ]
+[e :U 392 ]
+"236
+[; ;motor.c: 236:     if (andar_atual == 3) chamadas_subida[3] = 0;
+[e $ ! == -> _andar_atual `i -> 3 `i 393  ]
 [e = *U + &U _chamadas_subida * -> -> -> 3 `i `ui `ux -> -> # *U &U _chamadas_subida `ui `ux -> -> 0 `i `a ]
-[e :U 413 ]
-"274
-[; ;motor.c: 274:     if (andar_atual == 0) chamadas_descida[0] = 0;
-[e $ ! == -> _andar_atual `i -> 0 `i 414  ]
+[e :U 393 ]
+"239
+[; ;motor.c: 239:     if (andar_atual == 0) chamadas_descida[0] = 0;
+[e $ ! == -> _andar_atual `i -> 0 `i 394  ]
 [e = *U + &U _chamadas_descida * -> -> -> 0 `i `ui `ux -> -> # *U &U _chamadas_descida `ui `ux -> -> 0 `i `a ]
-[e :U 414 ]
-"275
-[; ;motor.c: 275: }
-[e :UE 410 ]
+[e :U 394 ]
+"240
+[; ;motor.c: 240: }
+[e :UE 390 ]
 }

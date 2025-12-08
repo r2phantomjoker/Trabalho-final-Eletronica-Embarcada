@@ -41,7 +41,17 @@ var menudata={children:[
 {text:"u",url:"globals.html#index_u"},
 {text:"v",url:"globals.html#index_v"}]},
 {text:"Funções",url:"globals_func.html"},
-{text:"Variáveis",url:"globals_vars.html"},
+{text:"Variáveis",url:"globals_vars.html",children:[
+{text:"a",url:"globals_vars.html#index_a"},
+{text:"b",url:"globals_vars.html#index_b"},
+{text:"c",url:"globals_vars.html#index_c"},
+{text:"e",url:"globals_vars.html#index_e"},
+{text:"l",url:"globals_vars.html#index_l"},
+{text:"m",url:"globals_vars.html#index_m"},
+{text:"p",url:"globals_vars.html#index_p"},
+{text:"s",url:"globals_vars.html#index_s"},
+{text:"t",url:"globals_vars.html#index_t"},
+{text:"v",url:"globals_vars.html#index_v"}]},
 {text:"Enumerações",url:"globals_enum.html"},
 {text:"Enumeradores",url:"globals_eval.html"},
 {text:"Definições e Macros",url:"globals_defs.html"}]}]}]}

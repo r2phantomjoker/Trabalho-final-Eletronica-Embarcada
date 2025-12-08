@@ -1,9 +1,18 @@
 var searchData=
 [
-  ['sensor_5fs1_0',['SENSOR_S1',['../globals_8h.html#ae3d63425811376844a15e2124af58dd6',1,'globals.h']]],
-  ['sensor_5fs2_1',['SENSOR_S2',['../globals_8h.html#a2348bfb1e304c065e57cd549825c5c46',1,'globals.h']]],
-  ['sensor_5fs3_2',['SENSOR_S3',['../globals_8h.html#aec0e3eabad9a9bb310290b5f067e1e8f',1,'globals.h']]],
-  ['sensor_5fs4_3',['SENSOR_S4',['../globals_8h.html#a8052543266ac71aaf0a25204389d2ab8',1,'globals.h']]],
-  ['sensores_5fcalcularvelocidade_4',['SENSORES_CalcularVelocidade',['../motor_8c.html#aa43a65670d1eb6155fcb65c1944467f6',1,'SENSORES_CalcularVelocidade(void):&#160;motor.c'],['../motor_8h.html#aa43a65670d1eb6155fcb65c1944467f6',1,'SENSORES_CalcularVelocidade(void):&#160;motor.c']]],
-  ['solicitacoes_5',['solicitacoes',['../globals_8c.html#a7b3384ea82f1b5b4ff5a25d84ac3ef54',1,'solicitacoes:&#160;globals.c'],['../globals_8h.html#a7b3384ea82f1b5b4ff5a25d84ac3ef54',1,'solicitacoes:&#160;globals.c']]]
+  ['main_0',['main',['../main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667',1,'main.c']]],
+  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
+  ['matrix_5fconf_2',['matrix_conf',['../comm_8c.html#aad76415d9a719fccd112b9683dae1afb',1,'matrix_conf:&#160;comm.c'],['../comm_8h.html#aad76415d9a719fccd112b9683dae1afb',1,'matrix_conf:&#160;comm.c']]],
+  ['matrizinicializa_3',['MatrizInicializa',['../comm_8c.html#ad0c0b685abfe911c197b0aa5fe64592d',1,'MatrizInicializa(void):&#160;comm.c'],['../comm_8h.html#ad0c0b685abfe911c197b0aa5fe64592d',1,'MatrizInicializa(void):&#160;comm.c']]],
+  ['matrizled_4',['MatrizLed',['../comm_8c.html#abd870b2a92dc5133753ca124973513a5',1,'MatrizLed(void):&#160;comm.c'],['../comm_8h.html#abd870b2a92dc5133753ca124973513a5',1,'MatrizLed(void):&#160;comm.c']]],
+  ['max7219_5fwrite_5',['MAX7219_Write',['../comm_8c.html#ae12aefd2cb5fbd859a9e562e9a6bdd56',1,'comm.c']]],
+  ['max_5fpulsos_5ftopo_6',['MAX_PULSOS_TOPO',['../motor_8c.html#a87e85f52b039c47f73ebbf73ffbb9877',1,'motor.c']]],
+  ['microns_5fpor_5fpulso_7',['MICRONS_POR_PULSO',['../motor_8c.html#a6ef802f4bfec8ebeea91f558d5f14b17',1,'motor.c']]],
+  ['motor_2ec_8',['motor.c',['../motor_8c.html',1,'']]],
+  ['motor_2eh_9',['motor.h',['../motor_8h.html',1,'']]],
+  ['motor_5fdescendo_10',['MOTOR_DESCENDO',['../globals_8h.html#a428cff26affeea76754199c1303c82e4',1,'globals.h']]],
+  ['motor_5foff_11',['MOTOR_OFF',['../globals_8h.html#ad1b1c6c44e1e025f7a748396b2e6f9f4',1,'globals.h']]],
+  ['motor_5fon_12',['MOTOR_ON',['../globals_8h.html#a3249ae087e43a52e0182917edca0dc12',1,'globals.h']]],
+  ['motor_5fparado_13',['MOTOR_PARADO',['../globals_8h.html#a27d8e6d1290da24a1bbac1ee3a6c5fdb',1,'globals.h']]],
+  ['motor_5fsubindo_14',['MOTOR_SUBINDO',['../globals_8h.html#a64570fdb79c096a9db9d30306589b0ce',1,'globals.h']]]
 ];

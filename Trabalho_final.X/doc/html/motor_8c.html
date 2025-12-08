@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Driver do Motor (Versão Otimizada "Light" - Completa) Implementa a lógica de movimentação, controle de velocidade (PWM),direção e proteções de hardware (reversão brusca e fim de curso).  
+<p>Driver do Motor (Versão Otimizada "Light" - Completa).  
 <a href="#details">Mais...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="motor_8h_source.html">motor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
@@ -89,44 +89,76 @@ Gráfico de dependência de inclusões para motor.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="motor_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2motor_8c" loading="lazy" alt=""/></div>
 <map name="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2motor_8c" id="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2motor_8c">
-<area shape="rect" title="Driver do Motor (Versão Otimizada &quot;Light&quot; &#45; Completa) Implementa a lógica de movimentação,..." alt="" coords="78,5,315,80"/>
-<area shape="rect" href="motor_8h.html" title="Cabeçalho do driver de motor e sensores (Controle e Odometria)." alt="" coords="5,136,71,163"/>
-<area shape="poly" title=" " alt="" coords="140,83,71,129,68,125,142,78"/>
-<area shape="rect" href="globals_8h.html" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="95,136,168,163"/>
-<area shape="poly" title=" " alt="" coords="176,78,149,124,145,121,172,82"/>
-<area shape="rect" title=" " alt="" coords="193,128,334,171"/>
-<area shape="poly" title=" " alt="" coords="221,78,245,115,240,115,219,83"/>
-<area shape="rect" title=" " alt="" coords="358,128,499,171"/>
-<area shape="poly" title=" " alt="" coords="279,78,371,121,366,122,278,83"/>
-<area shape="rect" title=" " alt="" coords="12,219,77,245"/>
-<area shape="poly" title=" " alt="" coords="41,161,45,204,40,203,37,165"/>
-<area shape="poly" title=" " alt="" coords="120,163,71,210,67,206,115,163"/>
-<area shape="rect" title=" " alt="" coords="104,219,150,245"/>
-<area shape="poly" title=" " alt="" coords="133,161,131,205,126,202,129,165"/>
-<area shape="rect" title=" " alt="" coords="174,219,248,245"/>
-<area shape="poly" title=" " alt="" coords="145,161,191,208,186,208,143,166"/>
+<area shape="rect" title="Driver do Motor (Versão Otimizada &quot;Light&quot; &#45; Completa)." alt="" coords="82,5,320,80"/>
+<area shape="rect" href="motor_8h.html" title="Cabeçalho do driver de motor e sensores." alt="" coords="10,136,75,163"/>
+<area shape="poly" title=" " alt="" coords="144,83,76,129,72,125,146,78"/>
+<area shape="rect" href="globals_8h.html" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="99,136,172,163"/>
+<area shape="poly" title=" " alt="" coords="180,78,154,124,150,121,176,82"/>
+<area shape="rect" title=" " alt="" coords="197,128,338,171"/>
+<area shape="poly" title=" " alt="" coords="225,78,249,115,244,115,224,83"/>
+<area shape="rect" title=" " alt="" coords="362,128,504,171"/>
+<area shape="poly" title=" " alt="" coords="283,78,376,121,371,122,283,83"/>
+<area shape="rect" title=" " alt="" coords="104,219,168,245"/>
+<area shape="poly" title=" " alt="" coords="58,161,113,208,108,210,56,166"/>
+<area shape="rect" title=" " alt="" coords="5,219,80,245"/>
+<area shape="poly" title=" " alt="" coords="44,161,45,204,40,203,41,165"/>
+<area shape="poly" title=" " alt="" coords="138,161,138,205,133,202,134,165"/>
+<area shape="poly" title=" " alt="" coords="124,163,70,211,66,207,119,163"/>
+<area shape="rect" title=" " alt="" coords="193,219,239,245"/>
+<area shape="poly" title=" " alt="" coords="149,161,196,208,190,208,147,166"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Definições e Macros</h2></td></tr>
+<tr class="memitem:a87e85f52b039c47f73ebbf73ffbb9877" id="r_a87e85f52b039c47f73ebbf73ffbb9877"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87e85f52b039c47f73ebbf73ffbb9877">MAX_PULSOS_TOPO</a>&#160;&#160;&#160;220</td></tr>
+<tr class="memdesc:a87e85f52b039c47f73ebbf73ffbb9877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limite máximo de pulsos (segurança de software).  <br /></td></tr>
+<tr class="memitem:a859c426be7471fe8eb0d1d57a9d9a6cd" id="r_a859c426be7471fe8eb0d1d57a9d9a6cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a859c426be7471fe8eb0d1d57a9d9a6cd">POSICAO_MAX_MM</a>&#160;&#160;&#160;180</td></tr>
+<tr class="memdesc:a859c426be7471fe8eb0d1d57a9d9a6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posição física máxima em milímetros.  <br /></td></tr>
 <tr class="memitem:a6ef802f4bfec8ebeea91f558d5f14b17" id="r_a6ef802f4bfec8ebeea91f558d5f14b17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ef802f4bfec8ebeea91f558d5f14b17">MICRONS_POR_PULSO</a>&#160;&#160;&#160;837</td></tr>
+<tr class="memdesc:a6ef802f4bfec8ebeea91f558d5f14b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fator de conversão: 0.837 mm/pulso * 1000 = 837.  <br /></td></tr>
 <tr class="memitem:a93cc1e71c2ab06cd0a77cff04ea4d300" id="r_a93cc1e71c2ab06cd0a77cff04ea4d300"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93cc1e71c2ab06cd0a77cff04ea4d300">TEMPO_TMR4_MS</a>&#160;&#160;&#160;100</td></tr>
+<tr class="memdesc:a93cc1e71c2ab06cd0a77cff04ea4d300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Período de execução da tarefa de sensores (ms).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funções</h2></td></tr>
 <tr class="memitem:aa43a65670d1eb6155fcb65c1944467f6" id="r_aa43a65670d1eb6155fcb65c1944467f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa43a65670d1eb6155fcb65c1944467f6">SENSORES_CalcularVelocidade</a> (void)</td></tr>
-<tr class="memdesc:aa43a65670d1eb6155fcb65c1944467f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula Velocidade e Posição lendo o Hardware (TMR0).  <br /></td></tr>
+<tr class="memdesc:aa43a65670d1eb6155fcb65c1944467f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a telemetria do sistema (Velocidade, Posição e Temperatura).  <br /></td></tr>
 <tr class="memitem:afd44fc0c3c1597d5793c3b62e035017b" id="r_afd44fc0c3c1597d5793c3b62e035017b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd44fc0c3c1597d5793c3b62e035017b">Controle_Subir</a> ()</td></tr>
+<tr class="memdesc:afd44fc0c3c1597d5793c3b62e035017b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia comando para o motor subir.  <br /></td></tr>
 <tr class="memitem:a22b086521a8f5ebfb310f6e1bdeb5ab7" id="r_a22b086521a8f5ebfb310f6e1bdeb5ab7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22b086521a8f5ebfb310f6e1bdeb5ab7">Controle_Descer</a> ()</td></tr>
+<tr class="memdesc:a22b086521a8f5ebfb310f6e1bdeb5ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia comando para o motor descer.  <br /></td></tr>
 <tr class="memitem:a8cabf0137bf891c84d7dd1dac057e9cd" id="r_a8cabf0137bf891c84d7dd1dac057e9cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cabf0137bf891c84d7dd1dac057e9cd">Controle_Parar</a> ()</td></tr>
+<tr class="memdesc:a8cabf0137bf891c84d7dd1dac057e9cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Para o motor imediatamente.  <br /></td></tr>
 <tr class="memitem:a7a4a696a0aa7bb04006df4e8c1443117" id="r_a7a4a696a0aa7bb04006df4e8c1443117"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a4a696a0aa7bb04006df4e8c1443117">Verificar_Sensores</a> ()</td></tr>
-<tr class="memitem:a2c8338a1da0ed2c2eb28d02c345e7487" id="r_a2c8338a1da0ed2c2eb28d02c345e7487"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c8338a1da0ed2c2eb28d02c345e7487">Buscar_Proxima_Parada</a> ()</td></tr>
+<tr class="memdesc:a7a4a696a0aa7bb04006df4e8c1443117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica os sensores de fim de curso e de andar.  <br /></td></tr>
+<tr class="memitem:ae928d17a9eaf9bd19c9d683dca75109e" id="r_ae928d17a9eaf9bd19c9d683dca75109e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae928d17a9eaf9bd19c9d683dca75109e">Existe_Chamada_Acima</a> (uint8_t andar_ref)</td></tr>
+<tr class="memdesc:ae928d17a9eaf9bd19c9d683dca75109e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se existem chamadas pendentes acima do andar de referência.  <br /></td></tr>
+<tr class="memitem:a185752549fbb6f5580bd66f72cd75f82" id="r_a185752549fbb6f5580bd66f72cd75f82"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a185752549fbb6f5580bd66f72cd75f82">Existe_Chamada_Abaixo</a> (uint8_t andar_ref)</td></tr>
+<tr class="memdesc:a185752549fbb6f5580bd66f72cd75f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se existem chamadas pendentes abaixo do andar de referência.  <br /></td></tr>
+<tr class="memitem:af6542851aa8ef7bcb9195a0e0064f983" id="r_af6542851aa8ef7bcb9195a0e0064f983"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6542851aa8ef7bcb9195a0e0064f983">Limpar_Chamada_Atual</a> ()</td></tr>
+<tr class="memdesc:af6542851aa8ef7bcb9195a0e0064f983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpa a solicitação do andar atual após o atendimento.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Driver do Motor (Versão Otimizada "Light" - Completa) Implementa a lógica de movimentação, controle de velocidade (PWM),direção e proteções de hardware (reversão brusca e fim de curso). </p>
-<p>Autor: Arthur Marinho </p>
+<div class="textblock"><p>Driver do Motor (Versão Otimizada "Light" - Completa). </p>
+<p>Implementa a lógica de movimentação, controle de velocidade, direção e proteções de hardware do elevador. </p>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Definições e macros</h2>
+<a id="a87e85f52b039c47f73ebbf73ffbb9877" name="a87e85f52b039c47f73ebbf73ffbb9877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87e85f52b039c47f73ebbf73ffbb9877">&#9670;&#160;</a></span>MAX_PULSOS_TOPO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_PULSOS_TOPO&#160;&#160;&#160;220</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Limite máximo de pulsos (segurança de software). </p>
+
+</div>
+</div>
 <a id="a6ef802f4bfec8ebeea91f558d5f14b17" name="a6ef802f4bfec8ebeea91f558d5f14b17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ef802f4bfec8ebeea91f558d5f14b17">&#9670;&#160;</a></span>MICRONS_POR_PULSO</h2>
 
@@ -138,6 +170,24 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fator de conversão: 0.837 mm/pulso * 1000 = 837. </p>
+
+</div>
+</div>
+<a id="a859c426be7471fe8eb0d1d57a9d9a6cd" name="a859c426be7471fe8eb0d1d57a9d9a6cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a859c426be7471fe8eb0d1d57a9d9a6cd">&#9670;&#160;</a></span>POSICAO_MAX_MM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POSICAO_MAX_MM&#160;&#160;&#160;180</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Posição física máxima em milímetros. </p>
 
 </div>
 </div>
@@ -153,26 +203,11 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Período de execução da tarefa de sensores (ms). </p>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funções</h2>
-<a id="a2c8338a1da0ed2c2eb28d02c345e7487" name="a2c8338a1da0ed2c2eb28d02c345e7487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c8338a1da0ed2c2eb28d02c345e7487">&#9670;&#160;</a></span>Buscar_Proxima_Parada()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Buscar_Proxima_Parada </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a22b086521a8f5ebfb310f6e1bdeb5ab7" name="a22b086521a8f5ebfb310f6e1bdeb5ab7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22b086521a8f5ebfb310f6e1bdeb5ab7">&#9670;&#160;</a></span>Controle_Descer()</h2>
 
@@ -187,6 +222,10 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Envia comando para o motor descer. </p>
+<p>Ativa o motor para descer o elevador.</p>
+<dl class="section note"><dt>Observação</dt><dd>Configura o PWM com duty cycle <a class="el" href="globals_8h.html#a3249ae087e43a52e0182917edca0dc12">MOTOR_ON</a> e define <a class="el" href="globals_8h.html#a6c8de73bb604d91743c7f6f356eb171e" title="Controle do Pino de Direção - RA7.">DIR</a> como <a class="el" href="globals_8h.html#ab433673d53f59c6d1c580fb18298d02c">DIRECAO_DESCER</a>. </dd></dl>
 
 </div>
 </div>
@@ -205,6 +244,9 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Para o motor imediatamente. </p>
+<dl class="section note"><dt>Observação</dt><dd>Zera o PWM (<a class="el" href="globals_8h.html#ad1b1c6c44e1e025f7a748396b2e6f9f4" title="Valores de PWM .">MOTOR_OFF</a>) e define estado como <a class="el" href="globals_8h.html#a27d8e6d1290da24a1bbac1ee3a6c5fdb" title="Definição dos estados físicos do motor.">MOTOR_PARADO</a>. </dd></dl>
+
 </div>
 </div>
 <a id="afd44fc0c3c1597d5793c3b62e035017b" name="afd44fc0c3c1597d5793c3b62e035017b"></a>
@@ -221,6 +263,89 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Envia comando para o motor subir. </p>
+<p>Ativa o motor para subir o elevador.</p>
+<dl class="section note"><dt>Observação</dt><dd>Configura o PWM com duty cycle <a class="el" href="globals_8h.html#a3249ae087e43a52e0182917edca0dc12">MOTOR_ON</a> e define <a class="el" href="globals_8h.html#a6c8de73bb604d91743c7f6f356eb171e" title="Controle do Pino de Direção - RA7.">DIR</a> como <a class="el" href="globals_8h.html#a67a5f9a20f0f01fc7183c8c5a857d253">DIRECAO_SUBIR</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a185752549fbb6f5580bd66f72cd75f82" name="a185752549fbb6f5580bd66f72cd75f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a185752549fbb6f5580bd66f72cd75f82">&#9670;&#160;</a></span>Existe_Chamada_Abaixo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Existe_Chamada_Abaixo </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>andar_ref</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se existem chamadas pendentes abaixo do andar de referência. </p>
+<p>Verifica requisições abaixo de um andar.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">andar_ref</td><td>O andar a partir do qual a busca será feita. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se houver qualquer chamada, subida ou descida, abaixo. </dd>
+<dd>
+false Se não houver chamadas. </dd></dl>
+
+</div>
+</div>
+<a id="ae928d17a9eaf9bd19c9d683dca75109e" name="ae928d17a9eaf9bd19c9d683dca75109e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae928d17a9eaf9bd19c9d683dca75109e">&#9670;&#160;</a></span>Existe_Chamada_Acima()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Existe_Chamada_Acima </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>andar_ref</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se existem chamadas pendentes acima do andar de referência. </p>
+<p>Verifica requisições acima de um andar.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">andar_ref</td><td>O andar a partir do qual a busca será feita. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se houver qualquer chamada, subida ou descida, acima. </dd>
+<dd>
+false Se não houver chamadas. </dd></dl>
+
+</div>
+</div>
+<a id="af6542851aa8ef7bcb9195a0e0064f983" name="af6542851aa8ef7bcb9195a0e0064f983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6542851aa8ef7bcb9195a0e0064f983">&#9670;&#160;</a></span>Limpar_Chamada_Atual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Limpar_Chamada_Atual </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Limpa a solicitação do andar atual após o atendimento. </p>
+<p>Remove a pendência do andar atual dos vetores globais.</p>
+<p>Remove a pendência dos vetores globais (<a class="el" href="globals_8c.html#a2b0db2913ef2fa5933235cbb5376dbfa" title="Filas de processamento do algoritmo SCAN. Armazenam as requisições pendentes de subida e descida sepa...">chamadas_subida</a> ou <a class="el" href="globals_8c.html#af531910cc8c4b97c5066ba364c5e95d3" title="Vetor de chamadas de descida.">chamadas_descida</a>) baseando-se na direção atual do elevador e nas regras de fim de curso. </p>
 
 </div>
 </div>
@@ -239,9 +364,9 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calcula Velocidade e Posição lendo o Hardware (TMR0). </p>
-<p>Callback de baixa frequência para cálculos físicos. Lê o registrador de hardware TMR0 (Encoder), calcula a velocidade e atualiza a posição.</p>
-<dl class="section note"><dt>Observação</dt><dd>Deve ser chamada periodicamente (ex: Timer 4 a cada 100ms). </dd></dl>
+<p>Realiza a telemetria do sistema (Velocidade, Posição e Temperatura). </p>
+<p>Atualiza a telemetria do sistema (Velocidade e Posição).</p>
+<dl class="section note"><dt>Observação</dt><dd>Modifica as variáveis globais: <a class="el" href="globals_8c.html#a59c3ca0bd4a5ff47b83ea67d89ea195b" title="Posição absoluta inicial como 0 mm.">posicao_mm</a>, <a class="el" href="globals_8c.html#ae2dae8d0a66916eeaf5c8bfff0880f7b" title="Velocidade inicial 0 mm/s.">velocidade_atual</a> e <a class="el" href="globals_8c.html#aa71e55ae78ebe7b4723b855824084218" title="Temperatura inicial zerada.">temperatura_ponte</a>. </dd></dl>
 
 </div>
 </div>
@@ -259,6 +384,10 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verifica os sensores de fim de curso e de andar. </p>
+<p>Lê os sensores de andar.</p>
+<p>Realiza a leitura dos sensores S1, S2, S3 e S4 para atualizar a variável global <a class="el" href="globals_8c.html#aa04e3fa9df7646e92fc51a41e546f039" title="Inicia o sistema assumindo que o elevador está no Térreo.">andar_atual</a>. Também atua como segurança de hardware (Emergency Stop) caso o elevador passe dos limites. </p>
 
 </div>
 </div>

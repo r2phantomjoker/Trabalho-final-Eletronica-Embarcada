@@ -77,60 +77,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47 ./comm.h
 [; ;./comm.h: 47: int UART_RecebePedido(char* OrigemPedido, char* DestinoPedido);
 [v _UART_RecebePedido `(i ~T0 @X0 0 ef2`*uc`*uc ]
-"154 ./globals.h
-[; ;./globals.h: 154: extern char buffer_origem;
+"155 ./globals.h
+[; ;./globals.h: 155: extern char buffer_origem;
 [v _buffer_origem `uc ~T0 @X0 0 e ]
-"155
-[; ;./globals.h: 155: extern char buffer_destino;
+"160
+[; ;./globals.h: 160: extern char buffer_destino;
 [v _buffer_destino `uc ~T0 @X0 0 e ]
-"90
-[; ;./globals.h: 90: extern volatile uint8_t andar_destino;
+"81
+[; ;./globals.h: 81: extern volatile uint8_t andar_destino;
 [v _andar_destino `Vuc ~T0 @X0 0 e ]
-"143
-[; ;./globals.h: 143: extern _Bool chamadas_subida[4];
+"135
+[; ;./globals.h: 135: extern _Bool chamadas_subida[4];
 [v _chamadas_subida `a ~T0 @X0 -> 0 `x e ]
-"149
-[; ;./globals.h: 149: extern _Bool chamadas_descida[4];
+"140
+[; ;./globals.h: 140: extern _Bool chamadas_descida[4];
 [v _chamadas_descida `a ~T0 @X0 -> 0 `x e ]
 "31 ./motor.h
 [; ;./motor.h: 31: void Verificar_Sensores(void);
 [v _Verificar_Sensores `(v ~T0 @X0 0 ef ]
-"84 ./globals.h
-[; ;./globals.h: 84: extern volatile uint8_t andar_atual;
+"75 ./globals.h
+[; ;./globals.h: 75: extern volatile uint8_t andar_atual;
 [v _andar_atual `Vuc ~T0 @X0 0 e ]
-"84 ./motor.h
-[; ;./motor.h: 84: void Limpar_Chamada_Atual(void);
+"76 ./motor.h
+[; ;./motor.h: 76: void Limpar_Chamada_Atual(void);
 [v _Limpar_Chamada_Atual `(v ~T0 @X0 0 ef ]
 "104 main.c
 [; ;main.c: 104:                     estado_atual = ESTADO_ESPERA_PORTA;
 [c E2975 0 1 2 3 4 .. ]
 [n E2975 . ESTADO_PARADO ESTADO_SUBINDO ESTADO_DESCENDO ESTADO_ESPERA_PORTA ESTADO_REVERSAO  ]
-"137 ./globals.h
-[; ;./globals.h: 137: extern volatile EstadoElevador estado_atual;
+"130 ./globals.h
+[; ;./globals.h: 130: extern volatile EstadoElevador estado_atual;
 [v _estado_atual `VE2975 ~T0 @X0 0 e ]
-"153
-[; ;./globals.h: 153: extern uint16_t contador_espera;
+"150
+[; ;./globals.h: 150: extern uint16_t contador_espera;
 [v _contador_espera `us ~T0 @X0 0 e ]
-"72 ./motor.h
-[; ;./motor.h: 72: _Bool Existe_Chamada_Acima(uint8_t andar_ref);
+"64 ./motor.h
+[; ;./motor.h: 64: _Bool Existe_Chamada_Acima(uint8_t andar_ref);
 [v _Existe_Chamada_Acima `(a ~T0 @X0 0 ef1`uc ]
 "41
 [; ;./motor.h: 41: void Controle_Subir(void);
 [v _Controle_Subir `(v ~T0 @X0 0 ef ]
-"79
-[; ;./motor.h: 79: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref);
+"71
+[; ;./motor.h: 71: _Bool Existe_Chamada_Abaixo(uint8_t andar_ref);
 [v _Existe_Chamada_Abaixo `(a ~T0 @X0 0 ef1`uc ]
 "47
 [; ;./motor.h: 47: void Controle_Descer(void);
 [v _Controle_Descer `(v ~T0 @X0 0 ef ]
-"152 ./globals.h
-[; ;./globals.h: 152: extern uint16_t contador_telemetria;
+"145 ./globals.h
+[; ;./globals.h: 145: extern uint16_t contador_telemetria;
 [v _contador_telemetria `us ~T0 @X0 0 e ]
 "54 ./comm.h
 [; ;./comm.h: 54: void UART_EnviaDados(void);
 [v _UART_EnviaDados `(v ~T0 @X0 0 ef ]
-"126 ./globals.h
-[; ;./globals.h: 126: extern volatile _Bool solicitacoes[4];
+"113 ./globals.h
+[; ;./globals.h: 113: extern volatile _Bool solicitacoes[4];
 [v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
 "61 ./comm.h
 [; ;./comm.h: 61: void MatrizLed (void);

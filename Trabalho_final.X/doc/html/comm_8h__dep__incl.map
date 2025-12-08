@@ -1,7 +1,7 @@
 <map id="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/comm.h" name="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/comm.h">
-<area shape="rect" id="Node000001" title="Cabeçalho da comunicação e interface." alt="" coords="135,5,375,80"/>
-<area shape="rect" id="Node000002" href="$comm_8c.html" title="Implementação da comunicação UART e Driver MAX7219 (Corrigido)." alt="" coords="5,128,246,203"/>
+<area shape="rect" id="Node000001" title="Cabeçalho da comunicação UART e Interface de Display." alt="" coords="135,5,375,80"/>
+<area shape="rect" id="Node000002" href="$comm_8c.html" title="Implementação da comunicação UART e Driver MAX7219." alt="" coords="5,128,246,203"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,90,166,130,163,125,202,92"/>
-<area shape="rect" id="Node000003" href="$main_8c.html" title="Lógica Avançada: SCAN (Elevador Inteligente) com Display Sincronizado." alt="" coords="269,128,502,203"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title="Lógica Avançada: SCAN, Elevador Inteligente, com Display Sincronizado." alt="" coords="269,128,502,203"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="307,88,348,128,343,127,305,93"/>
 </map>

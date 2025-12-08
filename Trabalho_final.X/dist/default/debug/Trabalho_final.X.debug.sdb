@@ -22,7 +22,7 @@ ESTADO_DESCENDO 2
 ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
-"23 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\globals.c
+"49 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\globals.c
 [e E2497 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
@@ -31,14 +31,14 @@ ESTADO_ESPERA_PORTA 3
 ESTADO_REVERSAO 4
 ]
 "106 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
-[e E2936 . `uc
+[e E2935 . `uc
 channel_AN2 2
 channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
 "172
-[e E2508 . `uc
+[e E2507 . `uc
 ESTADO_PARADO 0
 ESTADO_SUBINDO 1
 ESTADO_DESCENDO 2
@@ -192,11 +192,11 @@ ESTADO_REVERSAO 4
 [v _Controle_Parar Controle_Parar `(v  1 e 1 0 ]
 "158
 [v _Verificar_Sensores Verificar_Sensores `(v  1 e 1 0 ]
-"228
+"193
 [v _Existe_Chamada_Acima Existe_Chamada_Acima `(a  1 e 1 0 ]
-"243
+"208
 [v _Existe_Chamada_Abaixo Existe_Chamada_Abaixo `(a  1 e 1 0 ]
-"257
+"222
 [v _Limpar_Chamada_Atual Limpar_Chamada_Atual `(v  1 e 1 0 ]
 [s S417 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
@@ -636,33 +636,33 @@ ESTADO_REVERSAO 4
 [v _LUT_percurso LUT_percurso `DC[4]uc  1 e 4 0 ]
 "117
 [v _matrix_conf matrix_conf `DC[12]uc  1 e 12 0 ]
-"11 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\globals.c
+"13 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\globals.c
 [v _andar_atual andar_atual `VEuc  1 e 1 0 ]
-"12
+"18
 [v _andar_destino andar_destino `VEuc  1 e 1 0 ]
-"13
-[v _estado_motor estado_motor `VEuc  1 e 1 0 ]
-"14
-[v _posicao_mm posicao_mm `VEuc  1 e 1 0 ]
-"15
-[v _velocidade_atual velocidade_atual `VEuc  1 e 1 0 ]
-"16
-[v _temperatura_ponte temperatura_ponte `VEus  1 e 2 0 ]
-"20
-[v _solicitacoes solicitacoes `VE[4]a  1 e 4 0 ]
 "23
-[v _estado_atual estado_atual `VEE2975  1 e 1 0 ]
-"30
-[v _chamadas_subida chamadas_subida `[4]a  1 e 4 0 ]
-"31
-[v _chamadas_descida chamadas_descida `[4]a  1 e 4 0 ]
+[v _estado_motor estado_motor `VEuc  1 e 1 0 ]
+"28
+[v _posicao_mm posicao_mm `VEuc  1 e 1 0 ]
 "33
-[v _contador_telemetria contador_telemetria `us  1 e 2 0 ]
-"34
-[v _contador_espera contador_espera `us  1 e 2 0 ]
+[v _velocidade_atual velocidade_atual `VEuc  1 e 1 0 ]
 "38
+[v _temperatura_ponte temperatura_ponte `VEus  1 e 2 0 ]
+"44
+[v _solicitacoes solicitacoes `VE[4]a  1 e 4 0 ]
+"49
+[v _estado_atual estado_atual `VEE2975  1 e 1 0 ]
+"56
+[v _chamadas_subida chamadas_subida `[4]a  1 e 4 0 ]
+"57
+[v _chamadas_descida chamadas_descida `[4]a  1 e 4 0 ]
+"63
+[v _contador_telemetria contador_telemetria `us  1 e 2 0 ]
+"68
+[v _contador_espera contador_espera `us  1 e 2 0 ]
+"74
 [v _buffer_origem buffer_origem `uc  1 e 1 0 ]
-"39
+"75
 [v _buffer_destino buffer_destino `uc  1 e 1 0 ]
 "62 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
@@ -939,9 +939,9 @@ ESTADO_REVERSAO 4
 [v _MatrizLed MatrizLed `(v  1 e 1 0 ]
 {
 "308
-[v MatrizLed@i_1687 i `uc  1 a 1 5 ]
+[v MatrizLed@i_1681 i `uc  1 a 1 5 ]
 "299
-[v MatrizLed@i_1685 i `uc  1 a 1 4 ]
+[v MatrizLed@i_1679 i `uc  1 a 1 4 ]
 "294
 [v MatrizLed@i i `uc  1 a 1 3 ]
 "291
@@ -956,7 +956,7 @@ ESTADO_REVERSAO 4
 [v _MatrizInicializa MatrizInicializa `(v  1 e 1 0 ]
 {
 "273
-[v MatrizInicializa@i_1680 i `uc  1 a 1 21 ]
+[v MatrizInicializa@i_1674 i `uc  1 a 1 21 ]
 "266
 [v MatrizInicializa@i i `uc  1 a 1 20 ]
 "276
@@ -971,34 +971,34 @@ ESTADO_REVERSAO 4
 [v MAX7219_Write@address address `uc  1 p 1 19 ]
 "251
 } 0
-"257 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
+"222 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\motor.c
 [v _Limpar_Chamada_Atual Limpar_Chamada_Atual `(v  1 e 1 0 ]
 {
-"275
+"240
 } 0
-"228
+"193
 [v _Existe_Chamada_Acima Existe_Chamada_Acima `(a  1 e 1 0 ]
 {
 [v Existe_Chamada_Acima@andar_ref andar_ref `uc  1 p 1 wreg ]
-"230
+"195
 [v Existe_Chamada_Acima@i i `i  1 a 2 20 ]
-"228
+"193
 [v Existe_Chamada_Acima@andar_ref andar_ref `uc  1 p 1 wreg ]
-"230
+"195
 [v Existe_Chamada_Acima@andar_ref andar_ref `uc  1 p 1 19 ]
-"235
+"200
 } 0
-"243
+"208
 [v _Existe_Chamada_Abaixo Existe_Chamada_Abaixo `(a  1 e 1 0 ]
 {
 [v Existe_Chamada_Abaixo@andar_ref andar_ref `uc  1 p 1 wreg ]
-"245
+"210
 [v Existe_Chamada_Abaixo@i i `i  1 a 2 20 ]
-"243
+"208
 [v Existe_Chamada_Abaixo@andar_ref andar_ref `uc  1 p 1 wreg ]
-"245
+"210
 [v Existe_Chamada_Abaixo@andar_ref andar_ref `uc  1 p 1 19 ]
-"250
+"215
 } 0
 "137 C:\Users\User\OneDrive - unb.br\Documentos\GitHub\Trabalho-final-Eletr-nica-Embarcada\Trabalho_final.X\mcc_generated_files/eusart.c
 [v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]

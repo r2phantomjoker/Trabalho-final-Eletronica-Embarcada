@@ -1,5 +1,7 @@
 <map id="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/motor.h" name="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/motor.h">
-<area shape="rect" id="Node000001" title="Cabeçalho do driver de motor e sensores (Controle e Odometria)." alt="" coords="5,5,243,80"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="92,128,156,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,78,126,113,122,111,122,82"/>
+<area shape="rect" id="Node000001" title="Cabeçalho do driver de motor e sensores." alt="" coords="5,5,243,80"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="45,128,110,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,79,92,115,88,112,104,82"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="134,128,208,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,78,161,114,155,113,140,83"/>
 </map>

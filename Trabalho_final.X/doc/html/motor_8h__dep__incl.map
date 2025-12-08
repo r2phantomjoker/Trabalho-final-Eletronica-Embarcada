@@ -1,7 +1,7 @@
 <map id="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/motor.h" name="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/motor.h">
-<area shape="rect" id="Node000001" title="Cabeçalho do driver de motor e sensores (Controle e Odometria)." alt="" coords="132,5,370,80"/>
-<area shape="rect" id="Node000002" href="$main_8c.html" title="Lógica Avançada: SCAN (Elevador Inteligente) com Display Sincronizado." alt="" coords="5,128,238,203"/>
+<area shape="rect" id="Node000001" title="Cabeçalho do driver de motor e sensores." alt="" coords="132,5,370,80"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title="Lógica Avançada: SCAN, Elevador Inteligente, com Display Sincronizado." alt="" coords="5,128,238,203"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,90,162,130,159,125,198,92"/>
-<area shape="rect" id="Node000003" href="$motor_8c.html" title="Driver do Motor (Versão Otimizada &quot;Light&quot; &#45; Completa) Implementa a lógica de movimentação,..." alt="" coords="262,128,499,203"/>
+<area shape="rect" id="Node000003" href="$motor_8c.html" title="Driver do Motor (Versão Otimizada &quot;Light&quot; &#45; Completa)." alt="" coords="262,128,499,203"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="302,89,344,128,338,127,301,94"/>
 </map>

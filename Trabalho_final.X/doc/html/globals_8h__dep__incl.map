@@ -1,11 +1,11 @@
 <map id="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/globals.h" name="C:/Users/User/OneDrive &#45; unb.br/Documentos/GitHub/Trabalho&#45;final&#45;Eletr&#45;nica&#45;Embarcada/Trabalho_final.X/globals.h">
 <area shape="rect" id="Node000001" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="387,5,579,96"/>
-<area shape="rect" id="Node000002" href="$comm_8c.html" title="Implementação da comunicação UART e Driver MAX7219 (Corrigido)." alt="" coords="5,152,246,227"/>
+<area shape="rect" id="Node000002" href="$comm_8c.html" title="Implementação da comunicação UART e Driver MAX7219." alt="" coords="5,152,246,227"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="370,95,223,154,221,149,375,93"/>
-<area shape="rect" id="Node000003" href="$globals_8c.html" title=" " alt="" coords="269,144,462,235"/>
+<area shape="rect" id="Node000003" href="$globals_8c.html" title="Alocação real de memória das variáveis globais do sistema." alt="" coords="269,144,462,235"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="437,107,406,146,403,141,432,109"/>
-<area shape="rect" id="Node000004" href="$main_8c.html" title="Lógica Avançada: SCAN (Elevador Inteligente) com Display Sincronizado." alt="" coords="485,152,718,227"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title="Lógica Avançada: SCAN, Elevador Inteligente, com Display Sincronizado." alt="" coords="485,152,718,227"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="533,106,572,152,567,151,531,111"/>
-<area shape="rect" id="Node000005" href="$motor_8c.html" title="Driver do Motor (Versão Otimizada &quot;Light&quot; &#45; Completa) Implementa a lógica de movimentação,..." alt="" coords="742,152,979,227"/>
+<area shape="rect" id="Node000005" href="$motor_8c.html" title="Driver do Motor (Versão Otimizada &quot;Light&quot; &#45; Completa)." alt="" coords="742,152,979,227"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="594,89,761,151,756,151,594,95"/>
 </map>

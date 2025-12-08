@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['temperatura_5fponte_0',['temperatura_ponte',['../globals_8c.html#aa71e55ae78ebe7b4723b855824084218',1,'temperatura_ponte:&#160;globals.c'],['../globals_8h.html#aa71e55ae78ebe7b4723b855824084218',1,'temperatura_ponte:&#160;globals.c']]],
-  ['tempo_5ftmr4_5fms_1',['TEMPO_TMR4_MS',['../motor_8c.html#a93cc1e71c2ab06cd0a77cff04ea4d300',1,'motor.c']]]
+  ['posicao_5fmax_5fmm_0',['POSICAO_MAX_MM',['../motor_8c.html#a859c426be7471fe8eb0d1d57a9d9a6cd',1,'motor.c']]],
+  ['posicao_5fmm_1',['posicao_mm',['../globals_8c.html#a59c3ca0bd4a5ff47b83ea67d89ea195b',1,'posicao_mm:&#160;globals.c'],['../globals_8h.html#a59c3ca0bd4a5ff47b83ea67d89ea195b',1,'posicao_mm:&#160;globals.c']]]
 ];

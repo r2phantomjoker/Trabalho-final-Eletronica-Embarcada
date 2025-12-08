@@ -76,13 +76,16 @@ $(function() {
   <div class="headertitle"><div class="title">Referência do Arquivo C:/Users/User/OneDrive - unb.br/Documentos/GitHub/Trabalho-final-Eletr-nica-Embarcada/Trabalho_final.X/globals.c</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Alocação real de memória das variáveis globais do sistema.  
+<a href="#details">Mais...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Gráfico de dependência de inclusões para globals.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="globals_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2globals_8c" loading="lazy" alt=""/></div>
 <map name="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2globals_8c" id="a_c_1_2_users_2_user_2_one_drive_01-_01unb_8br_2_documentos_2_git_hub_2_trabalho-final-_eletr-nica-_embarcada_2_trabalho__final_8_x_2globals_8c">
-<area shape="rect" title=" " alt="" coords="12,5,205,96"/>
+<area shape="rect" title="Alocação real de memória das variáveis globais do sistema." alt="" coords="12,5,205,96"/>
 <area shape="rect" href="globals_8h.html" title="Definições globais, constantes de hardware e variáveis de estado do Elevador." alt="" coords="72,144,145,171"/>
 <area shape="poly" title=" " alt="" coords="110,94,111,129,106,128,107,99"/>
 <area shape="rect" title=" " alt="" coords="5,219,52,245"/>
@@ -97,22 +100,38 @@ Gráfico de dependência de inclusões para globals.c:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variáveis</h2></td></tr>
 <tr class="memitem:aa04e3fa9df7646e92fc51a41e546f039" id="r_aa04e3fa9df7646e92fc51a41e546f039"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa04e3fa9df7646e92fc51a41e546f039">andar_atual</a> = 0</td></tr>
-<tr class="memdesc:aa04e3fa9df7646e92fc51a41e546f039"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Andar (A)': Último andar detectado pelos sensores. Faixa: 0 a 3.  <br /></td></tr>
+<tr class="memdesc:aa04e3fa9df7646e92fc51a41e546f039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia o sistema assumindo que o elevador está no Térreo.  <br /></td></tr>
 <tr class="memitem:a3560682c490b40ad48d95659ab086803" id="r_a3560682c490b40ad48d95659ab086803"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3560682c490b40ad48d95659ab086803">andar_destino</a> = 0</td></tr>
-<tr class="memdesc:a3560682c490b40ad48d95659ab086803"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Destino (D)': Andar alvo da solicitação atual. Faixa: 0 a 3.  <br /></td></tr>
+<tr class="memdesc:a3560682c490b40ad48d95659ab086803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destino inicial nulo até receber comando.  <br /></td></tr>
 <tr class="memitem:a4be8cdf2607a58a0db7ad2f49d6482de" id="r_a4be8cdf2607a58a0db7ad2f49d6482de"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4be8cdf2607a58a0db7ad2f49d6482de">estado_motor</a> = <a class="el" href="globals_8h.html#a27d8e6d1290da24a1bbac1ee3a6c5fdb">MOTOR_PARADO</a></td></tr>
-<tr class="memdesc:a4be8cdf2607a58a0db7ad2f49d6482de"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Motor (M)': Estado atual do movimento. Valores: 0 (Parado), 1 (Subindo), 2 (Descendo).  <br /></td></tr>
+<tr class="memdesc:a4be8cdf2607a58a0db7ad2f49d6482de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado físico inicial do motor como parado.  <br /></td></tr>
 <tr class="memitem:a59c3ca0bd4a5ff47b83ea67d89ea195b" id="r_a59c3ca0bd4a5ff47b83ea67d89ea195b"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59c3ca0bd4a5ff47b83ea67d89ea195b">posicao_mm</a> = 0</td></tr>
-<tr class="memdesc:a59c3ca0bd4a5ff47b83ea67d89ea195b"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Posição (HHH)': Altura em milímetros em relação ao solo. Faixa: 0 a 180 mm[cite: 385].  <br /></td></tr>
+<tr class="memdesc:a59c3ca0bd4a5ff47b83ea67d89ea195b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posição absoluta inicial como 0 mm.  <br /></td></tr>
 <tr class="memitem:ae2dae8d0a66916eeaf5c8bfff0880f7b" id="r_ae2dae8d0a66916eeaf5c8bfff0880f7b"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2dae8d0a66916eeaf5c8bfff0880f7b">velocidade_atual</a> = 0</td></tr>
-<tr class="memdesc:ae2dae8d0a66916eeaf5c8bfff0880f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Velocidade (VV.V)': Velocidade instantânea calculada via Encoder. Unidade: mm/s.  <br /></td></tr>
+<tr class="memdesc:ae2dae8d0a66916eeaf5c8bfff0880f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Velocidade inicial 0 mm/s.  <br /></td></tr>
 <tr class="memitem:aa71e55ae78ebe7b4723b855824084218" id="r_aa71e55ae78ebe7b4723b855824084218"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71e55ae78ebe7b4723b855824084218">temperatura_ponte</a> = 0</td></tr>
-<tr class="memdesc:aa71e55ae78ebe7b4723b855824084218"><td class="mdescLeft">&#160;</td><td class="mdescRight">'Temperatura (TT.T)': Temperatura monitorada na Ponte H. Unidade: Graus Celsius (°C).  <br /></td></tr>
+<tr class="memdesc:aa71e55ae78ebe7b4723b855824084218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperatura inicial zerada.  <br /></td></tr>
 <tr class="memitem:a7b3384ea82f1b5b4ff5a25d84ac3ef54" id="r_a7b3384ea82f1b5b4ff5a25d84ac3ef54"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b3384ea82f1b5b4ff5a25d84ac3ef54">solicitacoes</a> [4] = {false, false, false, false}</td></tr>
-<tr class="memdesc:a7b3384ea82f1b5b4ff5a25d84ac3ef54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fila de solicitações de chamadas. Índice [0] = Térreo ... [3] = 3º Andar. true = Botão pressionado / Solicitação ativa.  <br /></td></tr>
+<tr class="memdesc:a7b3384ea82f1b5b4ff5a25d84ac3ef54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vetor de visualização de chamadas. Inicializado com todos os andares 'false', sem chamadas.  <br /></td></tr>
 <tr class="memitem:a6f11b98cefc9ef55ab4ccc06dbcf0267" id="r_a6f11b98cefc9ef55ab4ccc06dbcf0267"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="globals_8h.html#aa5f70b30e01ae8c83ef5b4dbf65a83c7">EstadoElevador</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f11b98cefc9ef55ab4ccc06dbcf0267">estado_atual</a> = <a class="el" href="globals_8h.html#aa5f70b30e01ae8c83ef5b4dbf65a83c7ad085165c80754a828e055f4155fb604e">ESTADO_PARADO</a></td></tr>
+<tr class="memdesc:a6f11b98cefc9ef55ab4ccc06dbcf0267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado inicial da Máquina de Estados Lógica.  <br /></td></tr>
+<tr class="memitem:a2b0db2913ef2fa5933235cbb5376dbfa" id="r_a2b0db2913ef2fa5933235cbb5376dbfa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0db2913ef2fa5933235cbb5376dbfa">chamadas_subida</a> [4] = {false, false, false, false}</td></tr>
+<tr class="memdesc:a2b0db2913ef2fa5933235cbb5376dbfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filas de processamento do algoritmo SCAN. Armazenam as requisições pendentes de subida e descida separadamente.  <br /></td></tr>
+<tr class="memitem:af531910cc8c4b97c5066ba364c5e95d3" id="r_af531910cc8c4b97c5066ba364c5e95d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af531910cc8c4b97c5066ba364c5e95d3">chamadas_descida</a> [4] = {false, false, false, false}</td></tr>
+<tr class="memdesc:af531910cc8c4b97c5066ba364c5e95d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vetor de chamadas de descida.  <br /></td></tr>
+<tr class="memitem:a1b22e0c7e77243318825ff5c011eeeaf" id="r_a1b22e0c7e77243318825ff5c011eeeaf"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b22e0c7e77243318825ff5c011eeeaf">contador_telemetria</a> = 0</td></tr>
+<tr class="memdesc:a1b22e0c7e77243318825ff5c011eeeaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o contador de tempo de telemetria zerado.  <br /></td></tr>
+<tr class="memitem:a2c118d0e50b5404aad00fcc662780ad5" id="r_a2c118d0e50b5404aad00fcc662780ad5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c118d0e50b5404aad00fcc662780ad5">contador_espera</a> = 0</td></tr>
+<tr class="memdesc:a2c118d0e50b5404aad00fcc662780ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o contador de temporização de estados zerado.  <br /></td></tr>
+<tr class="memitem:a7488097aa5bff81d6baa8873cadd7d22" id="r_a7488097aa5bff81d6baa8873cadd7d22"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7488097aa5bff81d6baa8873cadd7d22">buffer_origem</a> = 0</td></tr>
+<tr class="memdesc:a7488097aa5bff81d6baa8873cadd7d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffers de recepção da UART. Inicializados com 0 por segurança.  <br /></td></tr>
+<tr class="memitem:ad69e560aa86b06d78c1db33c9cbeca37" id="r_ad69e560aa86b06d78c1db33c9cbeca37"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad69e560aa86b06d78c1db33c9cbeca37">buffer_destino</a> = 0</td></tr>
+<tr class="memdesc:ad69e560aa86b06d78c1db33c9cbeca37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer temporário para o andar de destino.  <br /></td></tr>
 </table>
-<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variáveis</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Alocação real de memória das variáveis globais do sistema. </p>
+<p>Este arquivo aloca e define os valores iniciais das variáveis. </p>
+</div><a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variáveis</h2>
 <a id="aa04e3fa9df7646e92fc51a41e546f039" name="aa04e3fa9df7646e92fc51a41e546f039"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa04e3fa9df7646e92fc51a41e546f039">&#9670;&#160;</a></span>andar_atual</h2>
 
@@ -125,7 +144,8 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>'Andar (A)': Último andar detectado pelos sensores. Faixa: 0 a 3. </p>
+<p>Inicia o sistema assumindo que o elevador está no Térreo. </p>
+<p>Andar atual onde o elevador se encontra. </p>
 
 </div>
 </div>
@@ -141,7 +161,108 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>'Destino (D)': Andar alvo da solicitação atual. Faixa: 0 a 3. </p>
+<p>Destino inicial nulo até receber comando. </p>
+<p>Andar de destino da solicitação atual. </p>
+
+</div>
+</div>
+<a id="ad69e560aa86b06d78c1db33c9cbeca37" name="ad69e560aa86b06d78c1db33c9cbeca37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad69e560aa86b06d78c1db33c9cbeca37">&#9670;&#160;</a></span>buffer_destino</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char buffer_destino = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buffer temporário para o andar de destino. </p>
+
+</div>
+</div>
+<a id="a7488097aa5bff81d6baa8873cadd7d22" name="a7488097aa5bff81d6baa8873cadd7d22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7488097aa5bff81d6baa8873cadd7d22">&#9670;&#160;</a></span>buffer_origem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char buffer_origem = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buffers de recepção da UART. Inicializados com 0 por segurança. </p>
+<p>Buffer temporário para o andar de origem. </p>
+
+</div>
+</div>
+<a id="af531910cc8c4b97c5066ba364c5e95d3" name="af531910cc8c4b97c5066ba364c5e95d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af531910cc8c4b97c5066ba364c5e95d3">&#9670;&#160;</a></span>chamadas_descida</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chamadas_descida[4] = {false, false, false, false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vetor de chamadas de descida. </p>
+
+</div>
+</div>
+<a id="a2b0db2913ef2fa5933235cbb5376dbfa" name="a2b0db2913ef2fa5933235cbb5376dbfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0db2913ef2fa5933235cbb5376dbfa">&#9670;&#160;</a></span>chamadas_subida</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chamadas_subida[4] = {false, false, false, false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filas de processamento do algoritmo SCAN. Armazenam as requisições pendentes de subida e descida separadamente. </p>
+<p>Vetor de chamadas de subida. </p>
+
+</div>
+</div>
+<a id="a2c118d0e50b5404aad00fcc662780ad5" name="a2c118d0e50b5404aad00fcc662780ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c118d0e50b5404aad00fcc662780ad5">&#9670;&#160;</a></span>contador_espera</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t contador_espera = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa o contador de temporização de estados zerado. </p>
+<p>Contador para temporizações da Máquina de Estados. </p>
+
+</div>
+</div>
+<a id="a1b22e0c7e77243318825ff5c011eeeaf" name="a1b22e0c7e77243318825ff5c011eeeaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b22e0c7e77243318825ff5c011eeeaf">&#9670;&#160;</a></span>contador_telemetria</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t contador_telemetria = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa o contador de tempo de telemetria zerado. </p>
+<p>Contador para divisão de frequência da Telemetria. </p>
 
 </div>
 </div>
@@ -157,6 +278,9 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Estado inicial da Máquina de Estados Lógica. </p>
+<p>Estado atual do elevador. </p>
+
 </div>
 </div>
 <a id="a4be8cdf2607a58a0db7ad2f49d6482de" name="a4be8cdf2607a58a0db7ad2f49d6482de"></a>
@@ -171,7 +295,8 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>'Motor (M)': Estado atual do movimento. Valores: 0 (Parado), 1 (Subindo), 2 (Descendo). </p>
+<p>Estado físico inicial do motor como parado. </p>
+<p>Estado físico do motor. </p>
 
 </div>
 </div>
@@ -187,7 +312,8 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>'Posição (HHH)': Altura em milímetros em relação ao solo. Faixa: 0 a 180 mm[cite: 385]. </p>
+<p>Posição absoluta inicial como 0 mm. </p>
+<p>Posição estimada em milímetros. </p>
 
 </div>
 </div>
@@ -203,7 +329,8 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fila de solicitações de chamadas. Índice [0] = Térreo ... [3] = 3º Andar. true = Botão pressionado / Solicitação ativa. </p>
+<p>Vetor de visualização de chamadas. Inicializado com todos os andares 'false', sem chamadas. </p>
+<p>Vetor unificado de solicitações para o Display. </p>
 
 </div>
 </div>
@@ -219,7 +346,8 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>'Temperatura (TT.T)': Temperatura monitorada na Ponte H. Unidade: Graus Celsius (°C). </p>
+<p>Temperatura inicial zerada. </p>
+<p>Temperatura monitorada na Ponte H. </p>
 
 </div>
 </div>
@@ -235,7 +363,8 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>'Velocidade (VV.V)': Velocidade instantânea calculada via Encoder. Unidade: mm/s. </p>
+<p>Velocidade inicial 0 mm/s. </p>
+<p>Velocidade instantânea. </p>
 
 </div>
 </div>

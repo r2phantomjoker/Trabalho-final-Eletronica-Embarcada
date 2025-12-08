@@ -29,7 +29,7 @@
 void main(void) {
     SYSTEM_Initialize();
 
-    // 1. Configurações Iniciais de Hardware
+    //Configurações Iniciais de Hardware
     
     // Configura o PORTB como digital 
     ANSELB = 0x00;          
@@ -38,7 +38,7 @@ void main(void) {
     TRISBbits.TRISB1 = 0;   
     LATBbits.LATB1 = 1;     // Inicializa em nível Alto 
     
-    // Desabilita interrupções por mudança de estado p
+    // Desabilita interrupções por mudança de estado
     INTCONbits.IOCIE = 0;   
     
     // Registra o callback 'SENSORES_CalcularVelocidade' no Timer 4
@@ -58,7 +58,6 @@ void main(void) {
     // Inicializa e limpa a matriz de LEDs
     MatrizInicializa();
     
-    // Loop Principal 
     while (1) {
         
         // A. COMUNICAÇÃO BLUETOOTH
@@ -222,7 +221,6 @@ void main(void) {
             contador_telemetria = 0; 
         }
 
-        // Base de tempo do sistema: 10ms 
         __delay_ms(10);
     }
 }

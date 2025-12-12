@@ -68,9 +68,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "52 ./motor.h
 [; ;./motor.h: 52: void Controle_Parar(void);
 [v _Controle_Parar `(v ~T0 @X0 0 ef ]
-"64 ./comm.h
-[; ;./comm.h: 64: void MatrizInicializa(void);
-[v _MatrizInicializa `(v ~T0 @X0 0 ef ]
 "213 ./mcc_generated_files/eusart.h
 [; ;./mcc_generated_files/eusart.h: 213: _Bool EUSART_is_rx_ready(void);
 [v _EUSART_is_rx_ready `(a ~T0 @X0 0 ef ]
@@ -132,11 +129,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "110 ./globals.h
 [; ;./globals.h: 110: extern volatile _Bool solicitacoes[4];
 [v _solicitacoes `Va ~T0 @X0 -> 0 `x e ]
-"57 ./comm.h
-[; ;./comm.h: 57: void MatrizLed (void);
-[v _MatrizLed `(v ~T0 @X0 0 ef ]
 [v F202 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
+"20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
 [v __delay `JF202 ~T0 @X0 0 e ]
 [p i __delay ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc/pic16f1827.h
@@ -653,9 +647,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56
 [; ;main.c: 56:     Controle_Parar();
 [e ( _Controle_Parar ..  ]
-"59
-[; ;main.c: 59:     MatrizInicializa();
-[e ( _MatrizInicializa ..  ]
 "61
 [; ;main.c: 61:     while (1) {
 [e :U 361 ]
@@ -1043,9 +1034,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < _i -> 4 `i 398  ]
 [e :U 399 ]
 }
-"218
-[; ;main.c: 218:             MatrizLed();
-[e ( _MatrizLed ..  ]
 "221
 [; ;main.c: 221:             contador_telemetria = 0;
 [e = _contador_telemetria -> -> 0 `i `us ]

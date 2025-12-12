@@ -1,84 +1,123 @@
-# 🚧 Controle de Elevador 4 Andares por Bluetooth
+# Controle de Elevador de 4 Andares por Bluetooth
 
-Projeto acadêmico desenvolvido para a disciplina **Eletrônica Embarcada (FGA0096)** da Universidade de Brasília.  
-O sistema simula o funcionamento de um elevador real utilizando microcontrolador PIC, controle de motor DC, sensores, comunicação Bluetooth e interface visual com matriz de LEDs.
+Este projeto de elevador foi desenvolvido para a disciplina de Eletrônica Embarcada 2025/2 da Universidade de Brasília, pelos alunos Arthur Marinho, Fernando de Melo e Gabriel Celestino. O principal objetivo deste projeto foi desenvolver um firmware para um elevador de 4 andares, utilizando um algoritmo de escalonamento SCAN para otimização do percurso. Além disso, o projeto conta com telemetria em tempo real via UART e interface visual por meio de uma Matriz de LEDs.
 
----
+## Software Utilizado
 
-## 📌 Objetivo
+Para a elaboração do projeto, foi utilizado o **MPLAB X IDE 6.25** para o desenvolvimento do firmware e para a testagem do sistema embarcado.
 
-Integrar os conteúdos aprendidos na disciplina por meio da criação de um sistema embarcado funcional.  
-O elevador deve atender solicitações de andares, otimizar seu percurso e apresentar informações ao usuário via Bluetooth e display LED.
+## Hardware Utilizado
 
----
+* **Bluetooth HC-06**
+* **PIC16F1827 (5V)**
+* **Motor CC com engrenagem**
+* **Ponte H TB6612FNG**
+* **Sensores de Efeito Hall A3144**
+* **Encoder óptico + disco**
+* **Matriz de LEDs com MAX7219**
+* **Sensor LM35**
 
-## 🧠 Funcionalidades Principais
+## Funcionalidades
 
-- Controle do motor DC por **PWM (10 bits)** + **direção digital**.
-- Gerenciamento de movimento com **ponte H TB6612FNG**.
-- **Sensores magnéticos Hall (S1–S4)** para detectar os andares.
-- **Encoder óptico** para medir posição (mm) e velocidade (mm/s).
-- Monitoramento da **temperatura da ponte H** com sensor LM35 (ADC 10 bits).
-- Interface visual com **matriz de LEDs MAX7219 via SPI (1 MHz)**.
-- Comunicação Bluetooth via **HC-06 UART (ASCII 19200bps)**.
-- Sistema de atendimento de **até 5 solicitações simultâneas** (origem → destino).
+* **Algoritmo SCAN:** Prioriza chamadas no sentido do movimento atual, otimizando a rota do elevador.
+* **Interface Visual (MAX7219):** A parte da direita exibe o andar atual do elevador, enquanto a esquerda mostra o estado do elevador (subindo, descendo, parado ou abrindo a porta) e os andares solicitados na rota.
+* **Telemetria UART:** Envia dados via Bluetooth com informações sobre o andar atual, destino, status do motor, posição (em mm), velocidade e temperatura.
+* **Controle PWM:** Lógica responsável pelo controle de velocidade e direção do motor.
 
----
+## Pinagem
 
-## 🔌 Hardware Utilizado
+| Pino PIC | Função | Descrição |
+| :--- | :--- | :--- |
+| **RA0** | Entrada | Sensor 3º Andar (S3) |
+| **RA1** | Entrada | Sensor 4º Andar (S4) |
+| **RA2** | Entrada | ADC |
+| **RA3** | Saída | PWM |
+| **RA4** | Entrada | Encoder |
+| **RA5** | Entrada | MCLR |
+| **RA6** | Saída | SDO |
+| **RA7** | Saída | DIR |
+| **RB0** | Entrada | Sensor 1º Andar (S1) |
+| **RB1** | Saída | CS |
+| **RB2** | Entrada | Rx |
+| **RB3** | Entrada | Sensor 2º Andar (S2) |
+| **RB4** | Saída | SCK |
+| **RB5** | Saída | Tx |
+| **RB6** | Entrada | CSPCLK |
+| **RB7** | Entrada/Saída | ICSDAT |
 
-- **PIC16F1827 (5V)**
-- **Motor CC com engrenagem**
-- **Ponte H TB6612FNG**
-- **Sensores de efeito Hall A3144**
-- **Encoder óptico + disco**
-- **Matriz LED 8x8 com MAX7219**
-- **Sensor LM35**
-- **Bluetooth HC-06**
+## Protocolo de Comunicação
 
----
+### Protocolo de Entrada de Dados
 
-## 📡 Comunicação Bluetooth
+O sistema processa até 5 solicitações, utilizando o seguinte formato CSV:
 
-O microcontrolador transmite um pacote a cada **300 ms** no formato ASCII:
+`$OD<CR>`
 
-Exemplo:
-**Campos:**
-- **A** → último andar atingido (0–3)
-- **D** → destino solicitado
-- **M** → estado do motor  
-  - 0 = parado  
-  - 1 = subindo  
-  - 2 = descendo
-- **HHH** → posição (0–180 mm)
-- **VV.V** → velocidade (mm/s, 1 casa decimal)
-- **TT.T** → temperatura da ponte H (°C)
+* **$**: Cabeçalho.
+* **O**: Origem do elevador (0-3).
+* **D**: Andar Destino (0-3).
+* **<CR>**: Carriage Return (fim de linha).
 
+### Protocolo de Saída de Dados
 
-## ▶️ Algoritmo de Atendimento
+O sistema envia pacotes de telemetria via UART com baud rate de 19600, no seguinte formato CSV:
 
-- São processadas **até 5 solicitações**.
-- O elevador atende **todas as paradas no mesmo sentido** antes de inverter.
-- Cada chamada possui **origem e destino**, que devem ser respeitados.
-- Quando não há solicitações, o sistema retorna para **andar 0 (repouso)**.
-- Proteções:
-  - **2s** de parada para embarque/desembarque
-  - **500ms** antes de inverter a direção
+`$A,D,M,PPP,VV.V,TT.T<CR>`
 
----
+* **$**: Cabeçalho.
+* **A**: Andar Atual (0-3).
+* **D**: Andar Destino (0-3).
+* **M**: Estado do Motor (0=Parado, 1=Subindo, 2=Descendo).
+* **PPP**: Posição em mm (ex: 180).
+* **VV.V**: Velocidade em mm/s (ex: 12.5).
+* **TT.T**: Temperatura em °C (ex: 45.0).
+* **<CR>**: Carriage Return (fim de linha).
 
-## 🖥️ Interface na Matriz de LEDs (MAX7219)
+## Interface na Matriz de LEDs (MAX7219)
 
-- Colunas 1–4: último andar atingido.
-- Colunas superiores 5–7: seta indicando **direção do movimento**.
-- Colunas inferiores 5–7: pontos representando os **andares pendentes**.
+### Colunas 1 a 4:
+* **Linhas de 7 a 4:** Andares presentes nas solicitações de movimento do elevador.
+* **Linhas de 0 a 2:** Estado atual do elevador: *↑* - Elevador subindo, *↓* - Elevador descendo, *-* - Elevador esperando a porta abrir/fechar, **" "** - Elevador parado.
 
-Essa visualização facilita o monitoramento do sistema em tempo real.
+### Colunas 5 a 8: Andar atual do elevador.
+
+## Máquina de Estados
+
+O sistema opera com base em 5 estados:
+
+1. **PARADO:** Aguardando chamadas.
+2. **SUBINDO:** Motor ativo, monitorando sensores acima.
+3. **DESCENDO:** Motor ativo, monitorando sensores abaixo.
+4. **ESPERA_PORTA:** Temporização de 2 segundos para embarque/desembarque.
+5. **REVERSÃO:** Tempo de segurança de 0.5 segundos antes de inverter a rotação.
+
+## Estrutura do Firmware
+
+O código é modularizado para facilitar a manutenção e compreensão do projeto:
+
+* `main.c`: Loop principal, inicialização e orquestração das tarefas.
+* `motor.c`: Driver de controle de hardware, PWM, sensores de efeito Hall, temperatura e encoder, além das funções de lógica relacionadas às solicitações.
+* `comm.c`: Driver de controle dos LEDs e comunicação UART.
+* `globals.c`: Alocação de variáveis globais e flags de estado.
+
+## Como Rodar
+
+1. Abra o projeto no **MPLAB X IDE**.
+2. Certifique-se de ter o compilador **XC8** instalado.
+3. Compile e grave no microcontrolador.
+4. Utilize um programa como **Serial Bluetooth Terminal** para a comunicação Bluetooth e ler os dados pelo terminal.
+5. Execute o código Python presente na pasta **elevator1x4** para ler a telemetria do elevador, conectando o elevador via Bluetooth.
+
+## Vídeo
+Vídeo explicativo do projeto, detalhes sobre o código utilizado, configurações do MCC, simulações feitas no Debugger e testes realizados no elevador com telemetria em tempo real: 
+- [Trabalho final de EE- 2025/2 - Grupo 1](https://youtu.be/C-G2z3W_Hf0?si=PeSgyDbds9OFjuQ4)
+
+## Fluxograma Lógico do Projeto
 
 ```mermaid
 flowchart TB
     A(["Inicializa configurações
-    basicas"]) --> 
+    básicas"]) --> 
     B{"UART
     recebeu algo?"}
     style B stroke:#2962FF,fill:#BBDEFB,color:#000000
@@ -91,7 +130,7 @@ flowchart TB
 
     B -- Sim --> b1{"Dados 
     recebidos 
-    são validos?"}
+    são válidos?"}
     B -- Não --> 
     C["Realiza leitura de sensores"]
     b1 -- Sim --> b1t{"Andar
@@ -134,8 +173,8 @@ flowchart TB
 
     K([Disparo da Rotina
     Timer / Interrupção]) --> L["Ler TMR0
-    delta = atual - ultimo
-    Atualiza ultimo_valor"]
+    delta = atual - último
+    Atualiza último_valor"]
     
     L --> M{"Qual o estado
     do motor?"}

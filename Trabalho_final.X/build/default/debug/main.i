@@ -4931,7 +4931,6 @@ void main(void) {
     Controle_Parar();
 
 
-    MatrizInicializa();
 
     while (1) {
 
@@ -5090,7 +5089,7 @@ void main(void) {
             }
 
 
-            MatrizLed();
+
 
 
             contador_telemetria = 0;
